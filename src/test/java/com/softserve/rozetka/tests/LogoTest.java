@@ -10,6 +10,6 @@ public class LogoTest extends BaseTest{
     @Test
     public void checkThatSiteHasLogo(){
        Assert.assertTrue(new HomePage(driver)
-               .clickOnLogo(Elements.logo));
+               .clickOnLogo(Elements.getLogo()));
     }
 }
