@@ -12,4 +12,14 @@ public class HomePage extends BasePage {
     public boolean clickOnLogo(By logo){
         return driver.findElement(logo).isDisplayed();
     }
+
+    public HomePage clickOnCatalogButton(By catalogButton){
+        driver.findElement(catalogButton).click();
+        return this;
+    }
+    public NotebooksAndComputersPage clickOnNotebooksAndComputersCategory(By notebooksAndComputersCategory){
+        waitForElementToAppear(notebooksAndComputersCategory);
+        driver.findElement(notebooksAndComputersCategory).click();
+        return new NotebooksAndComputersPage(driver);
+    }
 }

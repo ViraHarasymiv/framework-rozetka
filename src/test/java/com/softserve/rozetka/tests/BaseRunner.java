@@ -15,7 +15,6 @@ public class BaseRunner {
     }
 
 
-    @BeforeClass
     public void setDriver(){
         beforeSuite();
         driver = new ChromeDriver();

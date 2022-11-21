@@ -8,6 +8,11 @@ import org.testng.annotations.Test;
 
 public class LogoTest extends BaseRunner{
 
+    @BeforeClass
+    public void driverSetUp(){
+        setDriver();
+    }
+
     @Test
     public void checkThatSiteHasLogo(){
        Assert.assertTrue(new HomePage(driver)
