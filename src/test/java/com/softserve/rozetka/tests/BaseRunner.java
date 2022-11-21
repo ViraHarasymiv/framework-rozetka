@@ -14,17 +14,13 @@ public class BaseRunner {
         WebDriverManager.chromedriver().setup();
     }
 
+
     @BeforeClass
     public void setDriver(){
         beforeSuite();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(ROZETKA_URL);
-    }
-
-    @AfterTest
-    public void driverClose(){
-        afterSuite();
     }
 
     @AfterSuite

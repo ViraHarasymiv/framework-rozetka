@@ -3,6 +3,7 @@ package com.softserve.rozetka.tests;
 import com.softserve.rozetka.locators.HomePageElements;
 import com.softserve.rozetka.pages.HomePage;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class LogoTest extends BaseRunner{
