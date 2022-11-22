@@ -16,7 +16,6 @@ public class BaseRunner {
 
 
     public void setDriver(){
-        beforeSuite();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(ROZETKA_URL);
