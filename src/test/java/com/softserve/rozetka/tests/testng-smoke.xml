@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke" verbose="1" >
+    <test name="Tests of Rozetka Notebooks category" >
+        <classes>
+            <class name="com.softserve.rozetka.tests.NotebooksSortingTest"/>
+        </classes>
+    </test>
+</suite>
