@@ -4,6 +4,7 @@ import com.softserve.rozetka.locators.*;
 import com.softserve.rozetka.pages.HomePage;
 import com.softserve.rozetka.pages.LoginPage;
 import com.softserve.rozetka.pages.NotebooksPage;
+import com.softserve.rozetka.pages.RegistrationPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Sleeper;
@@ -17,6 +18,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.softserve.rozetka.pages.LoginPage.UNREGISTERED_EMAIL;
+
 public class LoginPageTest extends BaseRunner {
     private static final String INVALID_EMAIL_OR_PHONE_MESSAGE  = "Введено невірну адресу ел. пошти або номер телефону";
     private static final String TYPE_OF_EMAIL_PHONE_FIELD  = "form__row validation_type_error";
@@ -25,10 +28,10 @@ public class LoginPageTest extends BaseRunner {
     public void setPreconditions() {
         setDriver();
         new HomePage(driver)
-                .clickOnLoginButton(HomePageElements.getUserProfileButton());
+                .clickOnLoginButton(HomePageElements.getLoginToAccountButton());
     }
     @Test(priority = 1)
-    public void checkErrorInvalidEmailOrPhone() {
+    public void checkErrorInvalidEmail() {
         new LoginPage(driver)
                 .enterInvalidEmail(LoginPageElements.getEmailAndPhoneField())
                 .clickOnPasswordField(LoginPageElements.getPasswordField());
@@ -38,5 +41,15 @@ public class LoginPageTest extends BaseRunner {
         for(int i = 0; i < rgb.length ;i++){
             Assert.assertEquals(rgb[i], BORDER_COLOR_EMAIL_FIELD[i]);
         }
+    }
+    @Test(priority = 2)
+    public void checkErrorUnregisteredEmail() {
+        new LoginPage(driver)
+                .clickOnSignInButton(LoginPageElements.getSignInButton());
+        Assert.assertEquals(driver.findElement(RegistrationPageElements.getNameField()).getText(), "Ім'я");
+        Assert.assertEquals(driver.findElement(RegistrationPageElements.getSurnameField()).getText(), "Прізвище");
+        Assert.assertEquals(driver.findElement(RegistrationPageElements.getPhoneField()).getText(), "Номер телефону");
+        Assert.assertEquals(driver.findElement(RegistrationPageElements.getEmailField()).getText(), "Ел. пошта");
+        Assert.assertEquals(driver.findElement(RegistrationPageElements.getPasswordField()).getText(), "Придумайте пароль");
     }
 }

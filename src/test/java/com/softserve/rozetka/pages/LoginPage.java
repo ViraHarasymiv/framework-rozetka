@@ -8,6 +8,8 @@ import org.openqa.selenium.interactions.Actions;
 
 public class LoginPage extends BasePage {
     private static final String INVALID_EMAIL  = "testdqwerty123";
+    public static final String UNREGISTERED_EMAIL  = "testqwerty123@gmail.com";
+    private static final String PASSWORD_FOR_UNREGISTERED_EMAIL  = "1";
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -20,6 +22,16 @@ public class LoginPage extends BasePage {
     public LoginPage clickOnPasswordField(By passwordField){
         waitForElementToAppear(passwordField);
         driver.findElement(passwordField).click();
+        return this;
+    }
+    public LoginPage clickOnLoginButton(By loginButton){
+        waitForElementToAppear(loginButton);
+        driver.findElement(loginButton).click();
+        return this;
+    }
+    public LoginPage clickOnSignInButton(By signInButton){
+        waitForElementToAppear(signInButton);
+        driver.findElement(signInButton).click();
         return this;
     }
 }
