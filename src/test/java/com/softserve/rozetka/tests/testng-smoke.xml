@@ -3,6 +3,7 @@
     <test name="Tests of Rozetka Notebooks category" >
         <classes>
             <class name="com.softserve.rozetka.tests.NotebooksSortingTest"/>
+            <class name="com.softserve.rozetka.tests.NoteBookFilteringTest"/>
         </classes>
     </test>
 </suite>

@@ -9,10 +9,6 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public boolean clickOnLogo(By logo){
-        return driver.findElement(logo).isDisplayed();
-    }
-
     public HomePage clickOnCatalogButton(By catalogButton){
         driver.findElement(catalogButton).click();
         return this;

@@ -7,15 +7,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class PriceIncreasedItemsPage extends BasePage{
-    private static final String url = "https://rozetka.com.ua/ua/notebooks/c80004/producer=dell;sort=cheap/";
+private static final String URL = "https://rozetka.com.ua/ua/notebooks/c80004/sort=cheap/";
 
     public PriceIncreasedItemsPage(WebDriver driver) {
         super(driver);
     }
-    public List<Integer> getActualPricesOfSortedFromLowerToHigherItems(By fromLoweToHigherPricingSortedItems){
-        waitForUrlToBe(url);
-        waitForElementsToAppear(fromLoweToHigherPricingSortedItems);
-        return driver.findElements(fromLoweToHigherPricingSortedItems)
+    public List<Integer> getActualPricesOfSortedFromLowerToHigherItems(By fromLowerToHigherPricingSortedItems){
+        waitForUrlToBe(URL);
+        waitForElementsToAppear(fromLowerToHigherPricingSortedItems);
+        return driver.findElements(fromLowerToHigherPricingSortedItems)
                 .stream()
                 .map(webelement -> webelement.getText().replaceAll(" ",""))
                 .map(w -> Integer.parseInt(w))
