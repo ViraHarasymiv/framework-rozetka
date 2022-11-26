@@ -18,4 +18,9 @@ public class HomePage extends BasePage {
         driver.findElement(notebooksAndComputersCategory).click();
         return new NotebooksAndComputersPage(driver);
     }
+    public LoginPage clickOnLoginButton(By loginBtn){
+        waitForElementToAppear(loginBtn);
+        driver.findElement(loginBtn).click();
+        return new LoginPage(driver);
+    }
 }
