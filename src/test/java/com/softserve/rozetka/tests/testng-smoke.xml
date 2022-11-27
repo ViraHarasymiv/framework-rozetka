@@ -4,6 +4,7 @@
         <classes>
             <class name="com.softserve.rozetka.tests.NotebooksSortingTest"/>
             <class name="com.softserve.rozetka.tests.NoteBookFilteringTest"/>
+            <class name="com.softserve.rozetka.tests.LoginPageTest"></class>
         </classes>
     </test>
 </suite>
