@@ -23,4 +23,9 @@ public class RemindPasswordPage extends BasePage{
         driver.findElement(rememberedYourPasswordButton).click();
         return this;
     }
+    public RemindPasswordPage clickOnCloseFormButton(By closeFormButton){
+        waitForElementToAppear(closeFormButton);
+        driver.findElement(closeFormButton).click();
+        return this;
+    }
 }
