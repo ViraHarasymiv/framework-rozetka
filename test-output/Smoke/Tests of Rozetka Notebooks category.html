@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Tests of Rozetka Notebooks category</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Nov 26 14:13:22 EET 2022</td>
+<td>Started on:</td><td>Tue Nov 29 12:12:14 EET 2022</td>
 </tr>
-<tr><td>Total time:</td><td>30 seconds (30208 ms)</td>
+<tr><td>Total time:</td><td>36 seconds (36372 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,57 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.softserve.rozetka.tests.NotebooksSortingTest.checkNotebooksFilteringFromLowerToHigher()'><b>checkNotebooksFilteringFromLowerToHigher</b><br>Test class: com.softserve.rozetka.tests.NotebooksSortingTest</td>
-<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
-	at com.softserve.rozetka.tests.NotebooksSortingTest.checkNotebooksFilteringFromLowerToHigher(NotebooksSortingTest.java:31)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace870019773", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace870019773'><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertTrue(Assert.java:56)
-	at org.testng.Assert.assertTrue(Assert.java:66)
-	at com.softserve.rozetka.tests.NotebooksSortingTest.checkNotebooksFilteringFromLowerToHigher(NotebooksSortingTest.java:31)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:806)
-	at org.testng.TestRunner.run(TestRunner.java:601)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-</pre></div></td>
-<td>4</td>
-<td>com.softserve.rozetka.tests.NotebooksSortingTest@18ce0030</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -127,20 +76,35 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='com.softserve.rozetka.tests.NoteBookFilteringTest.checkSearchingNotebooksOfOneBrand()'><b>checkSearchingNotebooksOfOneBrand</b><br>Test class: com.softserve.rozetka.tests.NoteBookFilteringTest</td>
+<td></td>
+<td>4</td>
+<td>com.softserve.rozetka.tests.NoteBookFilteringTest@71b1176b</td></tr>
+<tr>
+<td title='com.softserve.rozetka.tests.LoginPageTest.checkErrorInvalidEmail()'><b>checkErrorInvalidEmail</b><br>Test class: com.softserve.rozetka.tests.LoginPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.softserve.rozetka.tests.LoginPageTest@1a04f701</td></tr>
+<tr>
+<td title='com.softserve.rozetka.tests.NotebooksSortingTest.checkNotebooksFilteringFromLowerToHigher()'><b>checkNotebooksFilteringFromLowerToHigher</b><br>Test class: com.softserve.rozetka.tests.NotebooksSortingTest</td>
+<td></td>
+<td>4</td>
+<td>com.softserve.rozetka.tests.NotebooksSortingTest@5276e6b0</td></tr>
+<tr>
 <td title='com.softserve.rozetka.tests.NoteBookFilteringTest.checkSearchingNotebooksOfInvalidBrand()'><b>checkSearchingNotebooksOfInvalidBrand</b><br>Test class: com.softserve.rozetka.tests.NoteBookFilteringTest</td>
 <td></td>
-<td>5</td>
-<td>com.softserve.rozetka.tests.NoteBookFilteringTest@6dbb137d</td></tr>
+<td>6</td>
+<td>com.softserve.rozetka.tests.NoteBookFilteringTest@71b1176b</td></tr>
+<tr>
+<td title='com.softserve.rozetka.tests.LoginPageTest.checkErrorUnregisteredEmail()'><b>checkErrorUnregisteredEmail</b><br>Test class: com.softserve.rozetka.tests.LoginPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.softserve.rozetka.tests.LoginPageTest@1a04f701</td></tr>
 <tr>
 <td title='com.softserve.rozetka.tests.NotebooksSortingTest.checkNotebooksFilteringFromHigherToLower()'><b>checkNotebooksFilteringFromHigherToLower</b><br>Test class: com.softserve.rozetka.tests.NotebooksSortingTest</td>
 <td></td>
 <td>2</td>
-<td>com.softserve.rozetka.tests.NotebooksSortingTest@18ce0030</td></tr>
-<tr>
-<td title='com.softserve.rozetka.tests.NoteBookFilteringTest.checkSearchingNotebooksOfOneBrand()'><b>checkSearchingNotebooksOfOneBrand</b><br>Test class: com.softserve.rozetka.tests.NoteBookFilteringTest</td>
-<td></td>
-<td>4</td>
-<td>com.softserve.rozetka.tests.NoteBookFilteringTest@6dbb137d</td></tr>
+<td>com.softserve.rozetka.tests.NotebooksSortingTest@5276e6b0</td></tr>
 </table><p>
 </body>
 </html>

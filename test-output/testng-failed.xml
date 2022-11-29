@@ -3,15 +3,14 @@
 <suite name="Failed suite [Smoke]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Tests of Rozetka Notebooks category(failed)">
     <classes>
-      <class name="com.softserve.rozetka.tests.NotebooksSortingTest">
+      <class name="com.softserve.rozetka.tests.LoginPageTest">
         <methods>
-          <include name="checkNotebooksFilteringFromLowerToHigher"/>
+          <include name="checkErrorInvalidEmail"/>
+          <include name="setPreconditions"/>
           <include name="afterSuite"/>
           <include name="beforeSuite"/>
-          <include name="closeWindow"/>
-          <include name="setPreconditions"/>
         </methods>
-      </class> <!-- com.softserve.rozetka.tests.NotebooksSortingTest -->
+      </class> <!-- com.softserve.rozetka.tests.LoginPageTest -->
     </classes>
   </test> <!-- Tests of Rozetka Notebooks category(failed) -->
 </suite> <!-- Failed suite [Smoke] -->
