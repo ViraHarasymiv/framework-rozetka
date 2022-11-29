@@ -34,4 +34,9 @@ public class RegistrationPage extends BasePage {
         driver.findElement(passwordField).click();
         return this;
     }
+    public RegistrationPage clickOnCloseFormButton(By closeFormButton){
+        waitForElementToAppear(closeFormButton);
+        driver.findElement(closeFormButton).click();
+        return this;
+    }
 }
