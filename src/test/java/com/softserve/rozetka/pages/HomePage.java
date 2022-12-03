@@ -4,7 +4,7 @@ import com.softserve.rozetka.locators.HomePageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends BasePage {
+public class HomePage extends BasePage implements IcanCloseBunner{
     private By catalogButton = HomePageElements.getCatalogButton();
     private By notebooksAndComputersCategory = HomePageElements.getNotebooksAndComputersCategory();
 
@@ -16,6 +16,7 @@ public class HomePage extends BasePage {
         driver.findElement(catalogButton).click();
         return this;
     }
+
     public NotebooksAndComputersPage clickOnNotebooksAndComputersCategory(){
         waitForElementToAppear(notebooksAndComputersCategory);
         driver.findElement(notebooksAndComputersCategory).click();
@@ -26,4 +27,13 @@ public class HomePage extends BasePage {
         driver.findElement(loginBtn).click();
         return new LoginPage(driver);
     }
-}
+
+    @Override
+    public HomePage closeBunner() {
+        if (driver.findElements(bunner).size() !=0 ){
+            driver.findElement(bunnerClose).click();
+        }
+        return this;
+    }
+    }
+

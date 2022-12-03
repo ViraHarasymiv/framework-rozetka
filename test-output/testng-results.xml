@@ -1,65 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="10" passed="6" failed="0" skipped="0">
+<testng-results ignored="4" total="13" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-29T12:12:14 EET" name="Smoke" finished-at="2022-11-29T12:12:50 EET" duration-ms="36372">
+  <suite started-at="2022-12-03T05:21:03 EET" name="Smoke" finished-at="2022-12-03T05:21:37 EET" duration-ms="34453">
     <groups>
     </groups>
-    <test started-at="2022-11-29T12:12:14 EET" name="Tests of Rozetka Notebooks category" finished-at="2022-11-29T12:12:50 EET" duration-ms="36372">
+    <test started-at="2022-12-03T05:21:03 EET" name="Tests of Rozetka Notebooks category" finished-at="2022-12-03T05:21:37 EET" duration-ms="34453">
       <class name="com.softserve.rozetka.tests.NotebooksSortingTest">
-        <test-method is-config="true" signature="setPreconditions()[pri:0, instance:com.softserve.rozetka.tests.NotebooksSortingTest@5276e6b0]" started-at="2022-11-29T12:12:19 EET" name="setPreconditions" finished-at="2022-11-29T12:12:25 EET" duration-ms="6462" status="PASS">
+        <test-method is-config="true" signature="setPreconditions()[pri:0, instance:com.softserve.rozetka.tests.NotebooksSortingTest@6b26e945]" started-at="2022-12-03T05:21:09 EET" name="setPreconditions" finished-at="2022-12-03T05:21:16 EET" duration-ms="6523" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setPreconditions -->
-        <test-method signature="checkNotebooksFilteringFromLowerToHigher()[pri:1, instance:com.softserve.rozetka.tests.NotebooksSortingTest@5276e6b0]" started-at="2022-11-29T12:12:25 EET" name="checkNotebooksFilteringFromLowerToHigher" finished-at="2022-11-29T12:12:30 EET" duration-ms="4978" status="PASS">
+        <test-method signature="checkNotebooksFilteringFromLowerToHigher()[pri:1, instance:com.softserve.rozetka.tests.NotebooksSortingTest@6b26e945]" started-at="2022-12-03T05:21:16 EET" name="checkNotebooksFilteringFromLowerToHigher" finished-at="2022-12-03T05:21:20 EET" duration-ms="4087" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkNotebooksFilteringFromLowerToHigher -->
-        <test-method signature="checkNotebooksFilteringFromHigherToLower()[pri:2, instance:com.softserve.rozetka.tests.NotebooksSortingTest@5276e6b0]" started-at="2022-11-29T12:12:30 EET" name="checkNotebooksFilteringFromHigherToLower" finished-at="2022-11-29T12:12:33 EET" duration-ms="2935" status="PASS">
+        <test-method signature="checkNotebooksFilteringFromHigherToLower()[pri:2, instance:com.softserve.rozetka.tests.NotebooksSortingTest@6b26e945]" started-at="2022-12-03T05:21:20 EET" name="checkNotebooksFilteringFromHigherToLower" finished-at="2022-12-03T05:21:22 EET" duration-ms="2573" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkNotebooksFilteringFromHigherToLower -->
-        <test-method is-config="true" signature="closeWindow()[pri:0, instance:com.softserve.rozetka.tests.NotebooksSortingTest@5276e6b0]" started-at="2022-11-29T12:12:33 EET" name="closeWindow" finished-at="2022-11-29T12:12:34 EET" duration-ms="254" status="PASS">
+        <test-method is-config="true" signature="closeWindow()[pri:0, instance:com.softserve.rozetka.tests.NotebooksSortingTest@6b26e945]" started-at="2022-12-03T05:21:22 EET" name="closeWindow" finished-at="2022-12-03T05:21:23 EET" duration-ms="242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeWindow -->
       </class> <!-- com.softserve.rozetka.tests.NotebooksSortingTest -->
       <class name="com.softserve.rozetka.tests.LoginPageTest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.softserve.rozetka.tests.LoginPageTest@1a04f701]" started-at="2022-11-29T12:12:13 EET" name="beforeSuite" finished-at="2022-11-29T12:12:14 EET" duration-ms="582" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.softserve.rozetka.tests.LoginPageTest@33afa13b]" started-at="2022-12-03T05:21:02 EET" name="beforeSuite" finished-at="2022-12-03T05:21:03 EET" duration-ms="596" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="setPreconditions()[pri:0, instance:com.softserve.rozetka.tests.LoginPageTest@1a04f701]" started-at="2022-11-29T12:12:14 EET" name="setPreconditions" finished-at="2022-11-29T12:12:18 EET" duration-ms="3607" status="PASS">
+        <test-method is-config="true" signature="setPreconditions()[pri:0, instance:com.softserve.rozetka.tests.LoginPageTest@33afa13b]" started-at="2022-12-03T05:21:03 EET" name="setPreconditions" finished-at="2022-12-03T05:21:07 EET" duration-ms="4058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setPreconditions -->
-        <test-method signature="checkErrorInvalidEmail()[pri:1, instance:com.softserve.rozetka.tests.LoginPageTest@1a04f701]" started-at="2022-11-29T12:12:18 EET" name="checkErrorInvalidEmail" finished-at="2022-11-29T12:12:19 EET" duration-ms="995" status="PASS">
+        <test-method signature="checkErrorInvalidEmail()[pri:1, instance:com.softserve.rozetka.tests.LoginPageTest@33afa13b]" started-at="2022-12-03T05:21:07 EET" name="checkErrorInvalidEmail" finished-at="2022-12-03T05:21:07 EET" duration-ms="587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkErrorInvalidEmail -->
-        <test-method signature="checkErrorUnregisteredEmail()[pri:2, instance:com.softserve.rozetka.tests.LoginPageTest@1a04f701]" started-at="2022-11-29T12:12:19 EET" name="checkErrorUnregisteredEmail" finished-at="2022-11-29T12:12:19 EET" duration-ms="286" status="PASS">
+        <test-method signature="checkErrorUnregisteredEmail()[pri:2, instance:com.softserve.rozetka.tests.LoginPageTest@33afa13b]" started-at="2022-12-03T05:21:07 EET" name="checkErrorUnregisteredEmail" finished-at="2022-12-03T05:21:08 EET" duration-ms="366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkErrorUnregisteredEmail -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.softserve.rozetka.tests.LoginPageTest@1a04f701]" started-at="2022-11-29T12:12:50 EET" name="afterSuite" finished-at="2022-11-29T12:12:51 EET" duration-ms="251" status="PASS">
+        <test-method signature="checkOpenPasswordRecoveryFormAfterClickingOnRemindPasswordButton()[pri:3, instance:com.softserve.rozetka.tests.LoginPageTest@33afa13b]" started-at="2022-12-03T05:21:08 EET" name="checkOpenPasswordRecoveryFormAfterClickingOnRemindPasswordButton" finished-at="2022-12-03T05:21:08 EET" duration-ms="349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkOpenPasswordRecoveryFormAfterClickingOnRemindPasswordButton -->
+        <test-method signature="checkHideShowPasswordButtonShowsPasswordOnEvenNumberClicks()[pri:4, instance:com.softserve.rozetka.tests.LoginPageTest@33afa13b]" started-at="2022-12-03T05:21:08 EET" name="checkHideShowPasswordButtonShowsPasswordOnEvenNumberClicks" finished-at="2022-12-03T05:21:09 EET" duration-ms="582" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkHideShowPasswordButtonShowsPasswordOnEvenNumberClicks -->
+        <test-method signature="checkHideShowPasswordButtonShowsPasswordOnOddNumberClicks()[pri:5, instance:com.softserve.rozetka.tests.LoginPageTest@33afa13b]" started-at="2022-12-03T05:21:09 EET" name="checkHideShowPasswordButtonShowsPasswordOnOddNumberClicks" finished-at="2022-12-03T05:21:09 EET" duration-ms="349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkHideShowPasswordButtonShowsPasswordOnOddNumberClicks -->
+        <test-method is-config="true" signature="closeWindow()[pri:0, instance:com.softserve.rozetka.tests.LoginPageTest@33afa13b]" started-at="2022-12-03T05:21:09 EET" name="closeWindow" finished-at="2022-12-03T05:21:09 EET" duration-ms="218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeWindow -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.softserve.rozetka.tests.LoginPageTest@33afa13b]" started-at="2022-12-03T05:21:37 EET" name="afterSuite" finished-at="2022-12-03T05:21:37 EET" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- com.softserve.rozetka.tests.LoginPageTest -->
       <class name="com.softserve.rozetka.tests.NoteBookFilteringTest">
-        <test-method is-config="true" signature="setPreconditions()[pri:0, instance:com.softserve.rozetka.tests.NoteBookFilteringTest@71b1176b]" started-at="2022-11-29T12:12:34 EET" name="setPreconditions" finished-at="2022-11-29T12:12:39 EET" duration-ms="5823" status="PASS">
+        <test-method is-config="true" signature="setPreconditions()[pri:0, instance:com.softserve.rozetka.tests.NoteBookFilteringTest@63a65a25]" started-at="2022-12-03T05:21:23 EET" name="setPreconditions" finished-at="2022-12-03T05:21:29 EET" duration-ms="6153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setPreconditions -->
-        <test-method signature="checkSearchingNotebooksOfOneBrand()[pri:1, instance:com.softserve.rozetka.tests.NoteBookFilteringTest@71b1176b]" started-at="2022-11-29T12:12:39 EET" name="checkSearchingNotebooksOfOneBrand" finished-at="2022-11-29T12:12:44 EET" duration-ms="4666" status="PASS">
+        <test-method signature="checkSearchingNotebooksOfOneBrand()[pri:1, instance:com.softserve.rozetka.tests.NoteBookFilteringTest@63a65a25]" started-at="2022-12-03T05:21:29 EET" name="checkSearchingNotebooksOfOneBrand" finished-at="2022-12-03T05:21:33 EET" duration-ms="4506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkSearchingNotebooksOfOneBrand -->
-        <test-method signature="checkSearchingNotebooksOfInvalidBrand()[pri:2, instance:com.softserve.rozetka.tests.NoteBookFilteringTest@71b1176b]" started-at="2022-11-29T12:12:44 EET" name="checkSearchingNotebooksOfInvalidBrand" finished-at="2022-11-29T12:12:50 EET" duration-ms="6073" status="PASS">
+        <test-method signature="checkSearchingNotebooksOfInvalidBrand()[pri:2, instance:com.softserve.rozetka.tests.NoteBookFilteringTest@63a65a25]" started-at="2022-12-03T05:21:33 EET" name="checkSearchingNotebooksOfInvalidBrand" finished-at="2022-12-03T05:21:36 EET" duration-ms="2648" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkSearchingNotebooksOfInvalidBrand -->
-        <test-method is-config="true" signature="closeWindow()[pri:0, instance:com.softserve.rozetka.tests.NoteBookFilteringTest@71b1176b]" started-at="2022-11-29T12:12:50 EET" name="closeWindow" finished-at="2022-11-29T12:12:50 EET" duration-ms="243" status="PASS">
+        <test-method is-config="true" signature="closeWindow()[pri:0, instance:com.softserve.rozetka.tests.NoteBookFilteringTest@63a65a25]" started-at="2022-12-03T05:21:36 EET" name="closeWindow" finished-at="2022-12-03T05:21:37 EET" duration-ms="1161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeWindow -->

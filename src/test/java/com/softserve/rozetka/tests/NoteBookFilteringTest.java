@@ -22,9 +22,12 @@ public class NoteBookFilteringTest extends BaseRunner {
     public void setPreconditions() {
         setDriver();
         new HomePage(driver)
+                .closeBunner()
                 .clickOnCatalogButton()
                 .clickOnNotebooksAndComputersCategory()
-                .clickOnNotebooksCategory();
+                .closeBunner()
+                .clickOnNotebooksCategory()
+                .closeBunner();
     }
 
     @Test(priority = 1)
