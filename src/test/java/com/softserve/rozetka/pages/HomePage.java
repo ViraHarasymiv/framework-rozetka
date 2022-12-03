@@ -4,7 +4,7 @@ import com.softserve.rozetka.locators.HomePageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends BasePage implements IcanCloseBunner{
+public class HomePage extends BasePage implements ICanCloseBunner {
     private By catalogButton = HomePageElements.getCatalogButton();
     private By notebooksAndComputersCategory = HomePageElements.getNotebooksAndComputersCategory();
 

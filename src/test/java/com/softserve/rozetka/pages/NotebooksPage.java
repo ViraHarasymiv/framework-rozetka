@@ -1,6 +1,5 @@
 package com.softserve.rozetka.pages;
 
-import com.softserve.rozetka.locators.BunnerElements;
 import com.softserve.rozetka.locators.NotebooksPageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
-public class NotebooksPage extends BasePage implements IcanCloseBunner{
+public class NotebooksPage extends BasePage implements ICanCloseBunner {
     private By sortField = NotebooksPageElements.getSortField();
     private By fromLowerToHigherOption = NotebooksPageElements.getFromLowerToHigherOption();
     private By  brandField = NotebooksPageElements.getBrandField();

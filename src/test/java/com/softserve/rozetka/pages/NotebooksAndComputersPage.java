@@ -4,7 +4,7 @@ import com.softserve.rozetka.locators.NotebooksAndComputersPageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class NotebooksAndComputersPage extends BasePage implements IcanCloseBunner{
+public class NotebooksAndComputersPage extends BasePage implements ICanCloseBunner {
     private By notebooksCategory = NotebooksAndComputersPageElements.getNotebooksCategory();
 
     public NotebooksAndComputersPage(WebDriver driver) {
