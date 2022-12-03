@@ -17,17 +17,16 @@ public class NotebooksSortingTest extends BaseRunner {
     public void setPreconditions() {
         setDriver();
          new HomePage(driver)
-                .clickOnCatalogButton(HomePageElements.getCatalogButton())
-                .clickOnNotebooksAndComputersCategory(HomePageElements.getNotebooksAndComputersCategory())
-                .clickOnNotebooksCategory(NotebooksAndComputersPageElements.getNotebooksCategory());
+                .clickOnCatalogButton()
+                .clickOnNotebooksAndComputersCategory()
+                .clickOnNotebooksCategory();
     }
 
     @Test(priority = 1)
     public void checkNotebooksFilteringFromLowerToHigher() {
         List<Integer> actualPricesOfSortedItems = new NotebooksPage(driver)
-                .selectLowerToHigherOption(NotebooksPageElements.getSortField(),NotebooksPageElements.getFromLowerToHigherOption())
-                .getActualPricesOfSortedFromLowerToHigherItems(PriceIncreasedItemsPageElements
-                        .getFromLoweToHigherPricingSortedItems());
+                .selectLowerToHigherOption()
+                .getActualPricesOfSortedFromLowerToHigherItems();
         Assert.assertTrue(actualPricesOfSortedItems.equals(actualPricesOfSortedItems
                 .stream()
                 .sorted(Comparator.naturalOrder())
@@ -37,9 +36,8 @@ public class NotebooksSortingTest extends BaseRunner {
     @Test(priority = 2)
     public void checkNotebooksFilteringFromHigherToLower() {
         List<Integer> actualPriceOfSortedItems = new NotebooksPage(driver)
-                .selectHigherToLoweOption(NotebooksPageElements.getSortField())
-                .getActualPricesOfSortedFromHigherToLowerItems(PriceDecreasedItemsPageElements
-                        .getFromHigherToLowerPricingSortedItems());
+                .selectHigherToLoweOption()
+                .getActualPricesOfSortedFromHigherToLowerItems();
         Assert.assertTrue(actualPriceOfSortedItems.equals(actualPriceOfSortedItems
                 .stream()
                 .sorted(Comparator.reverseOrder())

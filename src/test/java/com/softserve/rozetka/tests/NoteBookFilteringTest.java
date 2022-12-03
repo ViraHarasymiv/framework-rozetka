@@ -22,17 +22,17 @@ public class NoteBookFilteringTest extends BaseRunner {
     public void setPreconditions() {
         setDriver();
         new HomePage(driver)
-                .clickOnCatalogButton(HomePageElements.getCatalogButton())
-                .clickOnNotebooksAndComputersCategory(HomePageElements.getNotebooksAndComputersCategory())
-                .clickOnNotebooksCategory(NotebooksAndComputersPageElements.getNotebooksCategory());
+                .clickOnCatalogButton()
+                .clickOnNotebooksAndComputersCategory()
+                .clickOnNotebooksCategory();
     }
 
     @Test(priority = 1)
     public void checkSearchingNotebooksOfOneBrand() {
         List<WebElement> results = new NotebooksPage(driver)
-                .enterBrand(NotebooksPageElements.getBrandField())
-                .clickOnBrandsCheckBox(NotebooksPageElements.getDellCheckBox())
-                .getItems(BrandsPageElements.getItemsOfOneBrand());
+                .enterBrand()
+                .clickOnBrandsCheckBox()
+                .getItems();
         Assert.assertTrue(results
                 .stream()
                 .allMatch(webelement -> webelement.getText().contains(BRAND)));
@@ -41,8 +41,8 @@ public class NoteBookFilteringTest extends BaseRunner {
     @Test(priority = 2)
     public void checkSearchingNotebooksOfInvalidBrand() {
         List<WebElement> allCheckBoxes = new NotebooksPage(driver)
-                .enterInvalidBrand(NotebooksPageElements.getBrandField())
-                .getBrandCheckBoxes(NotebooksPageElements.getAnyBrandCheckBox());
+                .enterInvalidBrand()
+                .getBrandCheckBoxes();
         Assert.assertTrue(allCheckBoxes.isEmpty());
     }
 
