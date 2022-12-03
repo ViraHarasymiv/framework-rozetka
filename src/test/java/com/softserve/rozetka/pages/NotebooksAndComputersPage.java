@@ -19,7 +19,7 @@ public class NotebooksAndComputersPage extends BasePage implements ICanCloseBunn
 
     @Override
     public NotebooksAndComputersPage closeBunner() {
-        if (driver.findElements(bunner).size() !=0 ){
+        if (!driver.findElements(bunner).isEmpty()){
             driver.findElement(bunnerClose).click();
         }
         return this;

@@ -63,7 +63,7 @@ public class NotebooksPage extends BasePage implements ICanCloseBunner {
 
     @Override
     public BasePage closeBunner() {
-        if (driver.findElements(bunner).size() !=0 ){
+        if (!driver.findElements(bunner).isEmpty()){
             driver.findElement(bunnerClose).click();
         }
         return this;
