@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class PriceIncreasedItemsPage extends BasePage{
     private By fromLowerToHigherPricingSortedItems = PriceIncreasedItemsPageElements.getFromLoweToHigherPricingSortedItems();
-private static final String URL = "https://rozetka.com.ua/ua/notebooks/c80004/sort=cheap/";
+    private static final String URL = "https://rozetka.com.ua/ua/notebooks/c80004/sort=cheap/";
 
     public PriceIncreasedItemsPage(WebDriver driver) {
         super(driver);

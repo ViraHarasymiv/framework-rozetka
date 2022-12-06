@@ -1,9 +1,7 @@
 package com.softserve.rozetka.tests;
 
-import com.softserve.rozetka.locators.*;
 import com.softserve.rozetka.pages.HomePage;
 import com.softserve.rozetka.pages.NotebooksPage;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 

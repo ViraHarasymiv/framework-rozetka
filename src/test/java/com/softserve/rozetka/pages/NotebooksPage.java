@@ -14,11 +14,16 @@ public class NotebooksPage extends BasePage implements ICanCloseBunner {
     private By  brandField = NotebooksPageElements.getBrandField();
     private By dellCheckBox = NotebooksPageElements.getDellCheckBox();
     private By anyBrandCheckBox = NotebooksPageElements.getAnyBrandCheckBox();
+    private By minRange = NotebooksPageElements.getMinRange();
+    private By maxRange = NotebooksPageElements.getMaxRange();
+    private By submitPriceButton = NotebooksPageElements.getSubmitPriceButton();
 
     private static final String FROM_LOWER_TO_HIGHER_OPTION  = "Від дешевих до дорогих";
     private static final String FROM_HIGHER_TO_LOWER_OPTION = "Від дорогих до дешевих";
     private static final String BRAND = "Dell";
     private static final String INVALID_BRAND = "&";
+    private static final String MIN_PRICE = "5000";
+    private static final String MAX_PRICE = "20000";
 
     public NotebooksPage(WebDriver driver) {
         super(driver);
@@ -62,10 +67,30 @@ public class NotebooksPage extends BasePage implements ICanCloseBunner {
         }
 
     @Override
-    public BasePage closeBunner() {
+    public NotebooksPage closeBunner() {
         if (!driver.findElements(bunner).isEmpty()){
             driver.findElement(bunnerClose).click();
         }
         return this;
+    }
+    public NotebooksPage scrollToPriceRange(){
+        Actions actions = new Actions(driver);
+        actions.scrollToElement(driver.findElement(minRange)).perform();
+        return this;
+    }
+    public NotebooksPage enterMinPrice(){
+        driver.findElement(minRange).clear();
+        driver.findElement(minRange).sendKeys(MIN_PRICE);
+        return this;
+    }
+    public NotebooksPage enterMaxPrice(){
+        driver.findElement(maxRange).clear();
+        driver.findElement(maxRange).sendKeys(MAX_PRICE);
+        return this;
+    }
+    public RangedByPriceItemsPage clickOnSubmitButton(){
+        waitForElementToBeClickable(submitPriceButton);
+        driver.findElement(submitPriceButton).click();
+        return new RangedByPriceItemsPage(driver);
     }
 }

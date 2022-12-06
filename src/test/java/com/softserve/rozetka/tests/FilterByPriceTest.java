@@ -10,8 +10,9 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class NoteBookFilteringTest extends BaseRunner {
-    private static final String BRAND = "Dell";
+public class FilterByPriceTest extends BaseRunner{
+    private static final int MIN_RANGE = 5000;
+    private static final int MAX_RANGE = 20000;
 
     @BeforeClass
     public void setPreconditions() {
@@ -24,28 +25,23 @@ public class NoteBookFilteringTest extends BaseRunner {
                 .clickOnNotebooksCategory()
                 .closeBunner();
     }
-
-    @Test(priority = 1)
-    public void checkSearchingNotebooksOfOneBrand() {
-        List<WebElement> results = new NotebooksPage(driver)
-                .enterBrand()
-                .clickOnBrandsCheckBox()
-                .getItems();
-        Assert.assertTrue(results
+    @Test
+    public void checkThePriceRange(){
+        List<WebElement> allItemsRangedByPrice = new NotebooksPage(driver)
+                .scrollToPriceRange()
+                .enterMinPrice()
+                .enterMaxPrice()
+                .clickOnSubmitButton()
+                .getItemsRangedByPrice();
+        Assert.assertTrue(allItemsRangedByPrice
                 .stream()
-                .allMatch(webelement -> webelement.getText().contains(BRAND)));
+                .map(web -> web.getText().replaceAll(" ", ""))
+                .map(st->Integer.parseInt(st))
+                .allMatch(price->price <= MAX_RANGE && price >= MIN_RANGE)
+        );
     }
-
-    @Test(priority = 2)
-    public void checkSearchingNotebooksOfInvalidBrand() {
-        List<WebElement> allCheckBoxes = new NotebooksPage(driver)
-                .enterInvalidBrand()
-                .getBrandCheckBoxes();
-        Assert.assertTrue(allCheckBoxes.isEmpty());
-    }
-
     @AfterClass
     public void closeWindow(){
-       afterSuite();
+        afterSuite();
     }
 }

@@ -34,4 +34,8 @@ public class BasePage {
     protected void waitForUrlToBe(String url){
         wait.until(ExpectedConditions.urlToBe(url));
     }
+
+    protected void waitForElementToBeClickable(By locator){
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
 }
