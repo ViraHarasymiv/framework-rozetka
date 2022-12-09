@@ -28,13 +28,13 @@ public class LoginPageTest extends BaseRunner {
     public void setPreconditions() {
         setDriver();
         new HomePage(driver)
-                .clickOnLoginButton(HomePageElements.getLoginToAccountButton());
+                .clickOnLoginButton();
     }
     @Test(priority = 1)
     public void checkErrorInvalidEmail() {
         new LoginPage(driver)
-                .enterInvalidEmail(LoginPageElements.getEmailAndPhoneField())
-                .clickOnPasswordField(LoginPageElements.getPasswordField());
+                .enterInvalidEmail()
+                .clickOnPasswordField();
         Assert.assertEquals(driver.findElement(LoginPageElements.getErrorInvalidEmailOrPhoneField()).getText(), INVALID_EMAIL_OR_PHONE_MESSAGE);
         Assert.assertEquals(driver.findElement(LoginPageElements.getTypeOfEmailOrPhoneField()).getAttribute("class"), TYPE_OF_EMAIL_PHONE_FIELD);
         String[] rgb = driver.findElement(LoginPageElements.getErrorInvalidEmailOrPhoneField()).getCssValue("border-bottom-color").replaceAll("(rgba)|(rgb)|(\\()|(\\s)|(\\))","").split(",");
@@ -45,40 +45,42 @@ public class LoginPageTest extends BaseRunner {
     @Test(priority = 2)
     public void checkErrorUnregisteredEmail() {
         new LoginPage(driver)
-                .clickOnSignInButton(LoginPageElements.getSignInButton());
+                .clickOnSignInButton();
         Assert.assertEquals(driver.findElement(RegistrationPageElements.getNameField()).getText(), "Ім'я");
         Assert.assertEquals(driver.findElement(RegistrationPageElements.getSurnameField()).getText(), "Прізвище");
         Assert.assertEquals(driver.findElement(RegistrationPageElements.getPhoneField()).getText(), "Номер телефону");
         Assert.assertEquals(driver.findElement(RegistrationPageElements.getEmailField()).getText(), "Ел. пошта");
         Assert.assertEquals(driver.findElement(RegistrationPageElements.getPasswordField()).getText(), "Придумайте пароль");
-        driver.findElement(RegistrationPageElements.getCloseFormButton()).click();
+        new LoginPage(driver)
+                .closeLoginForm();
     }
     @Test(priority = 3)
     public void checkOpenPasswordRecoveryFormAfterClickingOnRemindPasswordButton() {
         new HomePage(driver)
-                .clickOnLoginButton(HomePageElements.getLoginToAccountButton());
+                .clickOnLoginButton();
         new LoginPage(driver)
-                .clickOnSignInButton(LoginPageElements.getRemindPasswordButton());
+                .clickOnRemindPasswordButton();
         Assert.assertEquals(driver.findElement(RemindPasswordPageElements.getTemporaryPasswordButton()).getText(), "Отримати тимчасовий пароль");
         Assert.assertEquals(driver.findElement(RemindPasswordPageElements.getRememberedYourPasswordButton()).getText(), "Я згадав свій пароль");
-        driver.findElement(RemindPasswordPageElements.getCloseFormButton()).click();
+        new LoginPage(driver)
+                .closeLoginForm();
     }
     @Test(priority = 4)
     public void checkHideShowPasswordButtonShowsPasswordOnEvenNumberClicks(){
         new HomePage(driver)
-                .clickOnLoginButton(HomePageElements.getLoginToAccountButton());
+                .clickOnLoginButton();
         new LoginPage(driver)
-                .enterInvalidPassword(LoginPageElements.getPasswordField())
-                .clickOnHideShowPasswordButton(LoginPageElements.getHideShowPasswordButton())
-                .clickOnHideShowPasswordButton(LoginPageElements.getHideShowPasswordButton());
+                .enterInvalidPassword()
+                .clickOnHideShowPasswordButton()
+                .clickOnHideShowPasswordButton();
         Assert.assertEquals(driver.findElement(LoginPageElements.getHideShowPasswordButtonHref()).getAttribute("href"), HIDE_ATTRIBUTE_HIDESHOW_PASSWORD);
         Assert.assertEquals(driver.findElement(LoginPageElements.getPasswordField()).getAttribute("type"), "password");
     }
     @Test(priority = 5)
     public void checkHideShowPasswordButtonShowsPasswordOnOddNumberClicks(){
         new LoginPage(driver)
-                .enterInvalidPassword(LoginPageElements.getPasswordField())
-                .clickOnHideShowPasswordButton(LoginPageElements.getHideShowPasswordButton());
+                .enterInvalidPassword()
+                .clickOnHideShowPasswordButton();
         Assert.assertEquals(driver.findElement(LoginPageElements.getHideShowPasswordButtonHref()).getAttribute("href"), SHOW_ATTRIBUTE_HIDESHOW_PASSWORD);
         Assert.assertEquals(driver.findElement(LoginPageElements.getPasswordField()).getAttribute("type"), "text");
     }

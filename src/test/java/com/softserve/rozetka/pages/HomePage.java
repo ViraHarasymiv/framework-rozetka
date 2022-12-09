@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class HomePage extends BasePage implements ICanCloseBunner {
     private By catalogButton = HomePageElements.getCatalogButton();
     private By notebooksAndComputersCategory = HomePageElements.getNotebooksAndComputersCategory();
+    private By loginBtn = HomePageElements.getLoginToAccountButton();
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -22,7 +23,7 @@ public class HomePage extends BasePage implements ICanCloseBunner {
         driver.findElement(notebooksAndComputersCategory).click();
         return new NotebooksAndComputersPage(driver);
     }
-    public LoginPage clickOnLoginButton(By loginBtn){
+    public LoginPage clickOnLoginButton(){
         waitForElementToAppear(loginBtn);
         driver.findElement(loginBtn).click();
         return new LoginPage(driver);
@@ -35,5 +36,5 @@ public class HomePage extends BasePage implements ICanCloseBunner {
         }
         return this;
     }
-    }
+}
 
