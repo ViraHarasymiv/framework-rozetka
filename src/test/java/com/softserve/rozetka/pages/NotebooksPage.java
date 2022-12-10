@@ -89,7 +89,7 @@ public class NotebooksPage extends BasePage implements ICanCloseBunner {
         return this;
     }
     public RangedByPriceItemsPage clickOnSubmitButton(){
-        waitForElementToBeClickable(submitPriceButton);
+        waitForElementBecomeClickable(submitPriceButton);
         driver.findElement(submitPriceButton).click();
         return new RangedByPriceItemsPage(driver);
     }
