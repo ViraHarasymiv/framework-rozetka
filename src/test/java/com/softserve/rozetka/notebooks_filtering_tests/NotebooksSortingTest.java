@@ -32,7 +32,7 @@ public class NotebooksSortingTest extends BaseRunner {
                 .allMatch(el->el.contains(SEARCH_BRAND)));
     }
     @Test(priority = 2)
-    public void checkFilteringByPrice() {
+    public void checkNotebooksFilteringByPrice() {
         List<NotebooksComponent> results = new HomePage(driver)
                 .getHeaderComponent()
                 .clickOnCatalogButton()
@@ -42,7 +42,6 @@ public class NotebooksSortingTest extends BaseRunner {
                 .clickOnNotebooksMenu()
                 .openPage()
                 .getFilterContent()
-                .scrollToPriceRange()
                 .enterMinPrice()
                 .enterMaxPrice()
                 .clickOnSubmitButton()

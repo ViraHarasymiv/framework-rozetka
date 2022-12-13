@@ -95,12 +95,10 @@ public class FilterContent extends BasePO {
         waitForElementsToDisappear(getCheckBoxes());
         return getCheckBoxes();
     }
-    public FilterContent scrollToPriceRange(){
+
+    public FilterContent enterMinPrice(){
         Actions actions = new Actions(driver);
         actions.scrollToElement(getMinRangeInput()).perform();
-        return this;
-    }
-    public FilterContent enterMinPrice(){
         getMinRangeInput().clear();
         getMinRangeInput().sendKeys(MIN_PRICE);
         return this;
