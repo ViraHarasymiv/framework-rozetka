@@ -10,6 +10,9 @@ import java.util.List;
 
 public class NotebooksFilteringTest extends BaseRunner {
     private final static String SEARCH_BRAND = "Dell";
+    private final static int MIN_PRICE = 5000;
+    private final static int MAX_PRICE = 20000;
+
 
     @Test(priority = 1)
     public void checkNotebooksFilteringByBrand() {
@@ -50,7 +53,7 @@ public class NotebooksFilteringTest extends BaseRunner {
                 .stream()
                 .map(el->el.getPrice().getText().replaceAll(" ",""))
                 .map(webEl -> Integer.parseInt(webEl))
-                .allMatch(element -> element >= 5000 && element <= 20000));
+                .allMatch(element -> element >= MIN_PRICE && element <= MAX_PRICE));
     }
     }
 
