@@ -27,7 +27,7 @@ public class NotebooksFilteringTest extends BaseRunnerForNotebooksPage {
     }
 
     @Test(priority = 2)
-    public void checkNotebooksFilteringByPrice() {
+    public void checkNotebooksFilteringByPriceRange() {
         List<Integer> results = new NotebooksPage(driver)
                 .getFilterContent()
                 .enterMinPrice()

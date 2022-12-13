@@ -1,7 +1,5 @@
 package com.softserve.rozetka.pages.decreased_by_price_notebooks_page;
 
-import com.softserve.rozetka.pages.BasePO;
-import com.softserve.rozetka.pages.BasePageWithHeader;
 import com.softserve.rozetka.pages.BasePageWithHeaderAndProductsItems;
 import org.openqa.selenium.WebDriver;
 

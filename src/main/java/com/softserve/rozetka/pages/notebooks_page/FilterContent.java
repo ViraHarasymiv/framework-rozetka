@@ -6,7 +6,6 @@ import com.softserve.rozetka.pages.dell_notebooks_page.DellNotebooksPage;
 import com.softserve.rozetka.pages.ranged_by_price_notebooks_page.RangedByPriceNotebooksPage;
 import com.softserve.rozetka.utils.BrandsOptionsReader;
 import com.softserve.rozetka.utils.PricesOptionsReader;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

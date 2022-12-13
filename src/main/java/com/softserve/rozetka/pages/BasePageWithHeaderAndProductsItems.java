@@ -1,7 +1,6 @@
 package com.softserve.rozetka.pages;
 
 import com.softserve.rozetka.locators.product_items_locators.ProductItemsLocators;
-import com.softserve.rozetka.pages.header.HeaderComponent;
 import com.softserve.rozetka.pages.product_item.ProductItem;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

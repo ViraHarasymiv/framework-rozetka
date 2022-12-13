@@ -1,11 +1,9 @@
 package com.softserve.rozetka.notebooks_page_tests;
 
-import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
 import com.softserve.rozetka.pages.notebooks_page.SortingContent;
 import com.softserve.rozetka.runners.BaseRunnerForNotebooksPage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.Comparator;

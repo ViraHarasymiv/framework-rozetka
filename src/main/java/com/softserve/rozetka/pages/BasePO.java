@@ -32,13 +32,5 @@ public class BasePO {
     protected void waitForElementBecomeClickable(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-    protected void waitForUrlToBe(String url){
-        wait.until(ExpectedConditions.urlToBe(url));
-    }
-
-    public void waitForPageLoadComplete() {
-        wait.until(
-                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-    }
 }
 

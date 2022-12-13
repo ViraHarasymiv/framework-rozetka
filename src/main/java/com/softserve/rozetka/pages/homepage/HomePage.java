@@ -1,6 +1,5 @@
 package com.softserve.rozetka.pages.homepage;
 
-import com.softserve.rozetka.pages.BasePO;
 import com.softserve.rozetka.pages.BasePageWithHeader;
 import org.openqa.selenium.WebDriver;
 
