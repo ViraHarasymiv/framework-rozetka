@@ -1,20 +1,22 @@
 package com.softserve.rozetka.pages.notebooks_page;
 
 import com.softserve.rozetka.pages.BasePageWithHeader;
+import com.softserve.rozetka.pages.BasePageWithHeaderAndProductsItems;
 import org.openqa.selenium.WebDriver;
 
-public class NotebooksPage extends BasePageWithHeader {
+public class NotebooksPage extends BasePageWithHeaderAndProductsItems {
+    private final static String URL = "https://rozetka.com.ua/ua/notebooks/c80004/";
     protected FilterContent filterContent;
     protected SortingContent sortingContent;
-
-    private static final String URL = "https://rozetka.com.ua/ua/notebooks/c80004/";
 
     public NotebooksPage(WebDriver driver) {
         super(driver);
         filterContent = new FilterContent(driver);
         sortingContent = new SortingContent(driver);
     }
-    public NotebooksPage openPage(){
+
+    @Override
+    public NotebooksPage openPage() {
         driver.navigate().to(URL);
         return this;
     }

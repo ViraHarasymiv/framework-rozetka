@@ -1,6 +1,6 @@
-package com.softserve.rozetka.elements.header;
+package com.softserve.rozetka.pages.header;
 
-import com.softserve.rozetka.locators.headerLocators.MenuCategoriesLocators;
+import com.softserve.rozetka.locators.header_locators.MenuCategoriesLocators;
 import com.softserve.rozetka.pages.BasePO;
 import com.softserve.rozetka.pages.computers_and_notebooks_page.ComputersAndNotebooksPage;
 import org.openqa.selenium.WebDriver;

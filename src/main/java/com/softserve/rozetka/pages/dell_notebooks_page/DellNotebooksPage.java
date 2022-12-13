@@ -1,28 +1,19 @@
 package com.softserve.rozetka.pages.dell_notebooks_page;
 
-import com.softserve.rozetka.locators.notebooks_page_locators.NotebookComponentLocators;
-import com.softserve.rozetka.pages.BasePageWithHeader;
-import com.softserve.rozetka.pages.notebooks_page.NotebooksComponent;
+import com.softserve.rozetka.pages.BasePageWithHeaderAndProductsItems;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class DellNotebooksPage extends BasePageWithHeader {
-    private List<NotebooksComponent> items;
+public class DellNotebooksPage extends BasePageWithHeaderAndProductsItems {
+    private static final String URL = "https://rozetka.com.ua/ua/notebooks/c80004/producer=dell/";
 
     public DellNotebooksPage(WebDriver driver) {
         super(driver);
     }
 
-    public List<NotebooksComponent> getTitles() {
-        items = new ArrayList<>();
-        List<WebElement> elements = driver.findElements(NotebookComponentLocators.TITLE.getPath());
-        for (WebElement webElement: elements){
-            items.add(new NotebooksComponent(driver,webElement));
-        }
-        return items;
+    @Override
+    public DellNotebooksPage openPage() {
+        driver.navigate().to(URL);
+        return this;
     }
 }
 

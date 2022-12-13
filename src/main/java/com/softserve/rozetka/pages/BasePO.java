@@ -11,7 +11,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class BasePO {
-    private static final int TIME = 5000;
+    private static final int TIME = 8000;
     protected WebDriver driver;
     protected WebDriverWait wait;
 

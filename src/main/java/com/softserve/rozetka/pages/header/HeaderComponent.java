@@ -1,6 +1,6 @@
-package com.softserve.rozetka.elements.header;
+package com.softserve.rozetka.pages.header;
 
-import com.softserve.rozetka.locators.headerLocators.HeaderLocators;
+import com.softserve.rozetka.locators.header_locators.HeaderLocators;
 import com.softserve.rozetka.pages.BasePO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,11 +10,11 @@ public class HeaderComponent extends BasePO {
     private WebElement loginButton;
     private WebElement catalogButton;
     private WebElement cartIcon;
-   // private CategoriesMenu categoriesMenu;
+   private CategoriesMenu categoriesMenu;
 
     public HeaderComponent(WebDriver driver) {
         super(driver);
-       // categoriesMenu = new CategoriesMenu(driver);
+       categoriesMenu = new CategoriesMenu(driver);
     }
     public WebElement getCatalogButton(){
         if(catalogButton == null){
@@ -46,6 +46,6 @@ public class HeaderComponent extends BasePO {
     public CategoriesMenu clickOnCatalogButton(){
         waitForElementToAppear(getCatalogButton());
         getCatalogButton().click();
-        return new CategoriesMenu(driver);
+        return categoriesMenu;
     }
 }

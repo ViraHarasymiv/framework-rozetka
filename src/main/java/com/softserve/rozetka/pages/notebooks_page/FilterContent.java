@@ -73,16 +73,17 @@ public class FilterContent extends BasePO {
     }
     public FilterContent enterValidBrand(){
         waitForElementToAppear(getBrandField());
-        Actions actions = new Actions(driver);
-        actions.sendKeys(VALID_BRAND).perform();
+        getBrandField().click();
+        getBrandField().sendKeys(VALID_BRAND);
         return this;
     }
 
-    public FilterContent enterInvalidBrand(){
+    public List<WebElement> enterInvalidBrand(){
         waitForElementToAppear(getBrandField());
         Actions actions = new Actions(driver);
-        actions.click(getBrandField()).sendKeys(INVALID_BRAND).perform();
-        return this;
+        actions.sendKeys(getBrandField(),INVALID_BRAND).perform();
+        waitForElementsToDisappear(getCheckBoxes());
+        return this.driver.findElements(FilterContentLocators.CHECKBOXES.getPath());
     }
 
     public DellNotebooksPage clickOnBrandsCheckBox(){
@@ -91,14 +92,11 @@ public class FilterContent extends BasePO {
         getDellCheckBox().click();
         return new DellNotebooksPage(driver);
     }
-    public List<WebElement> getBrandCheckBoxes() {
-        waitForElementsToDisappear(getCheckBoxes());
-        return getCheckBoxes();
-    }
 
     public FilterContent enterMinPrice(){
         Actions actions = new Actions(driver);
         actions.scrollToElement(getMinRangeInput()).perform();
+        waitForElementToAppear(getMinRangeInput());
         getMinRangeInput().clear();
         getMinRangeInput().sendKeys(MIN_PRICE);
         return this;

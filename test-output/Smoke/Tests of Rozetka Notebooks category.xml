@@ -11,22 +11,22 @@
   <testcase classname="com.softserve.rozetka.tests.NoteBookFilteringTest" name="checkSearchingNotebooksOfOneBrand" time="4.174"/>
   <testcase classname="com.softserve.rozetka.tests.NoteBookFilteringTest" name="checkSearchingNotebooksOfInvalidBrand" time="2.627"/>
   <testcase classname="com.softserve.rozetka.tests.FilterByPriceTest" name="checkThePriceRange" time="3.844"/>
-  <testcase classname="com.softserve.rozetka.runners.BaseRunner" name="@BeforeSuite beforeSuite" time="0.0">
+  <testcase classname="com.softserve.rozetka.runners.BaseRunnerForNotebooksPage" name="@BeforeSuite beforeSuite" time="0.0">
     <ignored/>
   </testcase> <!-- @BeforeSuite beforeSuite -->
-  <testcase classname="com.softserve.rozetka.runners.BaseRunner" name="@BeforeSuite beforeSuite" time="0.0">
+  <testcase classname="com.softserve.rozetka.runners.BaseRunnerForNotebooksPage" name="@BeforeSuite beforeSuite" time="0.0">
     <ignored/>
   </testcase> <!-- @BeforeSuite beforeSuite -->
-  <testcase classname="com.softserve.rozetka.runners.BaseRunner" name="@AfterSuite afterSuite" time="0.0">
+  <testcase classname="com.softserve.rozetka.runners.BaseRunnerForNotebooksPage" name="@AfterSuite afterSuite" time="0.0">
     <ignored/>
   </testcase> <!-- @AfterSuite afterSuite -->
-  <testcase classname="com.softserve.rozetka.runners.BaseRunner" name="@AfterSuite afterSuite" time="0.0">
+  <testcase classname="com.softserve.rozetka.runners.BaseRunnerForNotebooksPage" name="@AfterSuite afterSuite" time="0.0">
     <ignored/>
   </testcase> <!-- @AfterSuite afterSuite -->
-  <testcase classname="com.softserve.rozetka.runners.BaseRunner" name="@BeforeSuite beforeSuite" time="0.0">
+  <testcase classname="com.softserve.rozetka.runners.BaseRunnerForNotebooksPage" name="@BeforeSuite beforeSuite" time="0.0">
     <ignored/>
   </testcase> <!-- @BeforeSuite beforeSuite -->
-  <testcase classname="com.softserve.rozetka.runners.BaseRunner" name="@AfterSuite afterSuite" time="0.0">
+  <testcase classname="com.softserve.rozetka.runners.BaseRunnerForNotebooksPage" name="@AfterSuite afterSuite" time="0.0">
     <ignored/>
   </testcase> <!-- @AfterSuite afterSuite -->
 </testsuite> <!-- Tests of Rozetka Notebooks category -->

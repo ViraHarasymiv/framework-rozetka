@@ -1,13 +1,14 @@
 package com.softserve.rozetka.pages.computers_and_notebooks_page;
 
 import com.softserve.rozetka.locators.computers_and_notebooks_page_locators.MenuSectionLocators;
+import com.softserve.rozetka.pages.BasePO;
 import com.softserve.rozetka.pages.BasePageWithHeader;
 import com.softserve.rozetka.pages.notebooks_page.FilterContent;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MenuSection extends BasePageWithHeader {
+public class MenuSection extends BasePO {
     private WebElement notebooksMenu;
     private WebElement computersNettopsMonoblocksMenu;
     private WebElement monitorsMenu;
@@ -15,8 +16,6 @@ public class MenuSection extends BasePageWithHeader {
     private WebElement tabletsMenu;
     private WebElement cablesAndAdaptersMenu;
     protected СomputerComponents сomputerComponents;
-
-    private static final String URL = "https://rozetka.com.ua/ua/computers-notebooks/c80253/";
 
     public MenuSection(WebDriver driver) {
         super(driver);
@@ -64,7 +63,6 @@ public class MenuSection extends BasePageWithHeader {
         return cablesAndAdaptersMenu;
     }
     public NotebooksPage clickOnNotebooksMenu()  {
-        waitForUrlToBe(URL);
         waitForElementToAppear(getNotebooksMenu());
         waitForElementBecomeClickable(getNotebooksMenu());
         getNotebooksMenu().click();

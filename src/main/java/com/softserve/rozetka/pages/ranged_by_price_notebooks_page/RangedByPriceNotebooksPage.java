@@ -1,32 +1,21 @@
 package com.softserve.rozetka.pages.ranged_by_price_notebooks_page;
 
-import com.softserve.rozetka.locators.notebooks_page_locators.NotebookComponentLocators;
 import com.softserve.rozetka.pages.BasePageWithHeader;
-import com.softserve.rozetka.pages.notebooks_page.NotebooksComponent;
+import com.softserve.rozetka.pages.BasePageWithHeaderAndProductsItems;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class RangedByPriceNotebooksPage extends BasePageWithHeader {
-    private List<NotebooksComponent> items;
+public class RangedByPriceNotebooksPage extends BasePageWithHeaderAndProductsItems {
+    private static final String URL = "https://rozetka.com.ua/ua/notebooks/c80004/price=5000-20000/";
 
     public RangedByPriceNotebooksPage(WebDriver driver) {
         super(driver);
     }
 
-    public List<Integer> getPrices() {
-        items = new ArrayList<>();
-        List<WebElement> elements = driver.findElements(NotebookComponentLocators.PRICE.getPath());
-        for (WebElement webElement: elements){
-            items.add(new NotebooksComponent(driver,webElement));
-        }
-        return items.stream()
-                .map(el->el.getPrice().getText().replaceAll(" ",""))
-                .map(webEl -> Integer.parseInt(webEl))
-                .collect(Collectors.toList());
+    @Override
+    public RangedByPriceNotebooksPage openPage() {
+        driver.navigate().to(URL);
+        return this;
     }
-
 }
