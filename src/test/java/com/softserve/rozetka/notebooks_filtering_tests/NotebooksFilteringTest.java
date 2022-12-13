@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 
 import java.util.List;
 
-public class NotebooksSortingTest extends BaseRunner {
+public class NotebooksFilteringTest extends BaseRunner {
     private final static String SEARCH_BRAND = "Dell";
 
     @Test(priority = 1)
