@@ -36,7 +36,7 @@ public class NotebooksFilteringTest extends BaseRunner {
     }
     @Test(priority = 2)
     public void checkNotebooksFilteringByPrice() {
-        List<NotebooksComponent> results = new HomePage(driver)
+        List<Integer> results = new HomePage(driver)
                 .getHeaderComponent()
                 .clickOnCatalogButton()
                 .clickOnNotebooksAndComputersCategory()
@@ -51,8 +51,6 @@ public class NotebooksFilteringTest extends BaseRunner {
                 .getPrices();
         Assert.assertTrue(results
                 .stream()
-                .map(el->el.getPrice().getText().replaceAll(" ",""))
-                .map(webEl -> Integer.parseInt(webEl))
                 .allMatch(element -> element >= MIN_PRICE && element <= MAX_PRICE));
     }
     }

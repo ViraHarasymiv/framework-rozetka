@@ -17,13 +17,16 @@ public class RangedByPriceNotebooksPage extends BasePageWithHeader {
         super(driver);
     }
 
-    public List<NotebooksComponent> getPrices() {
+    public List<Integer> getPrices() {
         items = new ArrayList<>();
         List<WebElement> elements = driver.findElements(NotebookComponentLocators.PRICE.getPath());
         for (WebElement webElement: elements){
             items.add(new NotebooksComponent(driver,webElement));
         }
-        return items;
+        return items.stream()
+                .map(el->el.getPrice().getText().replaceAll(" ",""))
+                .map(webEl -> Integer.parseInt(webEl))
+                .collect(Collectors.toList());
     }
 
 }
