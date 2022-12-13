@@ -1,4 +1,4 @@
-package com.softserve.rozetka.tests;
+package com.softserve.rozetka.runners;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ public class BaseRunner {
         WebDriverManager.chromedriver().setup();
     }
 
-
+    @BeforeMethod
     public void setDriver(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -26,5 +26,9 @@ public class BaseRunner {
         if(driver != null){
             driver.quit();
         }
+    }
+    @AfterMethod
+    public void closeWindow(){
+        afterSuite();
     }
 }

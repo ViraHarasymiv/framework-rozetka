@@ -3,20 +3,9 @@ package com.softserve.rozetka.tests;
 import com.softserve.rozetka.locators.*;
 import com.softserve.rozetka.pages.HomePage;
 import com.softserve.rozetka.pages.LoginPage;
-import com.softserve.rozetka.pages.NotebooksPage;
-import com.softserve.rozetka.pages.RegistrationPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Sleeper;
+import com.softserve.rozetka.runners.BaseRunner;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import org.openqa.selenium.support.Color;
-
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static com.softserve.rozetka.pages.LoginPage.UNREGISTERED_EMAIL;
 
 public class LoginPageTest extends BaseRunner {
     private static final String INVALID_EMAIL_OR_PHONE_MESSAGE  = "Введено невірну адресу ел. пошти або номер телефону";
