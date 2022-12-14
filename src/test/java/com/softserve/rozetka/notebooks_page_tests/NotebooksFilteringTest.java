@@ -28,7 +28,7 @@ public class NotebooksFilteringTest extends BaseRunner {
     }
 
     @Test(priority = 1)
-    public void checkNotebooksFilteringByBrand() {
+    public void checkNotebooksFilteringByValidBrandName() {
         List<String> results = new NotebooksPage(driver)
                 .getFilterContent()
                 .enterValidBrand()
@@ -55,7 +55,7 @@ public class NotebooksFilteringTest extends BaseRunner {
     }
 
     @Test(priority = 3)
-    public void checkNotebooksFilteringByInvalidBrand() {
+    public void checkNotebooksFilteringByInvalidBrandName() {
     List<WebElement>allCheckBoxes = new NotebooksPage(driver)
                 .getFilterContent()
                 .enterInvalidBrand();
