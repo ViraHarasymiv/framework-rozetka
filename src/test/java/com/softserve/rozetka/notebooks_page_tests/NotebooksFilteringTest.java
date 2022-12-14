@@ -1,17 +1,31 @@
 package com.softserve.rozetka.notebooks_page_tests;
 
+import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
-import com.softserve.rozetka.runners.BaseRunnerForNotebooksPage;
+import com.softserve.rozetka.runners.BaseRunner;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.util.List;
 
-public class NotebooksFilteringTest extends BaseRunnerForNotebooksPage {
+public class NotebooksFilteringTest extends BaseRunner {
     private final static String SEARCH_BRAND = "Dell";
     private final static int MIN_PRICE = 5000;
     private final static int MAX_PRICE = 20000;
+
+    @BeforeMethod
+    public void beforeEveryTestGoToNotebooksPage(){
+       setDriver();
+        new HomePage(driver)
+                .getHeaderComponent()
+                .clickOnCatalogButton()
+                .clickOnNotebooksAndComputersCategory()
+                .openPage()
+                .getMenuSection()
+                .clickOnNotebooksMenu();
+    }
 
     @Test(priority = 1)
     public void checkNotebooksFilteringByBrand() {

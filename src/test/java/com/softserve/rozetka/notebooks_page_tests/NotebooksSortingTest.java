@@ -1,16 +1,30 @@
 package com.softserve.rozetka.notebooks_page_tests;
 
+import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
 import com.softserve.rozetka.pages.notebooks_page.SortingContent;
-import com.softserve.rozetka.runners.BaseRunnerForNotebooksPage;
+import com.softserve.rozetka.runners.BaseRunner;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class NotebooksSortingTest extends BaseRunnerForNotebooksPage {
+public class NotebooksSortingTest extends BaseRunner {
+
+    @BeforeMethod
+    public void beforeEveryTestGoToNotebooksPage(){
+        setDriver();
+        new HomePage(driver)
+                .getHeaderComponent()
+                .clickOnCatalogButton()
+                .clickOnNotebooksAndComputersCategory()
+                .openPage()
+                .getMenuSection()
+                .clickOnNotebooksMenu();
+    }
 
     @Test(priority = 1)
     public void checkSortingFromLowerToHigherPrice(){

@@ -3,11 +3,11 @@ package com.softserve.rozetka.tests;
 import com.softserve.rozetka.locators.*;
 import com.softserve.rozetka.pages.HomePage;
 import com.softserve.rozetka.pages.LoginPage;
-import com.softserve.rozetka.runners.BaseRunnerForNotebooksPage;
+import com.softserve.rozetka.runners.BaseRunner;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class LoginPageTest extends BaseRunnerForNotebooksPage {
+public class LoginPageTest extends BaseRunner {
     private static final String INVALID_EMAIL_OR_PHONE_MESSAGE  = "Введено невірну адресу ел. пошти або номер телефону";
     private static final String TYPE_OF_EMAIL_PHONE_FIELD  = "form__row validation_type_error";
     private static final String[] BORDER_COLOR_EMAIL_FIELD  = new String[]{"248", "65", "71", "1"};
