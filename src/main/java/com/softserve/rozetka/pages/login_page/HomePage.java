@@ -1,6 +1,6 @@
-package com.softserve.rozetka.pages;
+package com.softserve.rozetka.pages.login_page;
 
-import com.softserve.rozetka.locators.HomePageElements;
+import com.softserve.rozetka.locators.login_page_locators.HomePageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

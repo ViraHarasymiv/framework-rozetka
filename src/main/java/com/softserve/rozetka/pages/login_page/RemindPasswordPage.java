@@ -1,7 +1,6 @@
-package com.softserve.rozetka.pages;
+package com.softserve.rozetka.pages.login_page;
 
-import com.softserve.rozetka.locators.RegistrationPageElements;
-import com.softserve.rozetka.locators.RemindPasswordPageElements;
+import com.softserve.rozetka.locators.login_page_locators.RemindPasswordPageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

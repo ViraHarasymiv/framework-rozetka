@@ -1,4 +1,4 @@
-package com.softserve.rozetka.pages;
+package com.softserve.rozetka.pages.login_page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
