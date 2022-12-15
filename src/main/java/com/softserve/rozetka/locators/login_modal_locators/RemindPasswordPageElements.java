@@ -1,4 +1,4 @@
-package com.softserve.rozetka.locators.login_page_locators;
+package com.softserve.rozetka.locators.login_modal_locators;
 
 import org.openqa.selenium.By;
 

@@ -5,7 +5,6 @@ import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
 import com.softserve.rozetka.pages.notebooks_page.SortingContent;
 import com.softserve.rozetka.runners.BaseRunner;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

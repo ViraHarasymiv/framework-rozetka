@@ -2,6 +2,8 @@ package com.softserve.rozetka.pages.header;
 
 import com.softserve.rozetka.locators.header_locators.HeaderLocators;
 import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.login_component.LoginModal;
+import com.softserve.rozetka.pages.login_page.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -45,6 +47,10 @@ public class HeaderComponent extends BasePO {
             loginButton = this.driver.findElement(HeaderLocators.LOGIN_BUTTON.getPath());
         }
         return loginButton;
+    }
+    public LoginModal clickOnLoginButton(){
+        waitForElementToAppear(getLoginButton()).click();
+        return new LoginModal(driver);
     }
 
     public CategoriesMenu clickOnCatalogButton(){

@@ -1,6 +1,6 @@
 package com.softserve.rozetka.pages.login_page;
 
-import com.softserve.rozetka.locators.login_page_locators.LoginPageElements;
+import com.softserve.rozetka.locators.login_modal_locators.LoginPageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -19,6 +19,7 @@ public class LoginPage extends BasePage implements ICloseLoginForm {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
+
     public LoginPage enterInvalidEmail(){
         waitForElementToAppear(emailAndPhoneField);
         Actions actions = new Actions(driver);
