@@ -5,6 +5,7 @@ import com.softserve.rozetka.pages.BasePO;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class MenuSection extends BasePO {
     private WebElement notebooksMenu;
@@ -62,8 +63,9 @@ public class MenuSection extends BasePO {
     }
     public NotebooksPage clickOnNotebooksMenu()  {
         waitForElementToAppear(getNotebooksMenu());
-        waitForElementBecomeClickable(getNotebooksMenu());
-        getNotebooksMenu().click();
+        Actions actions = new Actions(driver);
+        actions.scrollToElement(getNotebooksMenu()).perform();
+        waitForElementBecomeClickable(getNotebooksMenu()).click();
         return new NotebooksPage(driver);
     }
 }

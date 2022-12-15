@@ -15,14 +15,11 @@ public class ComputersAndNotebooksPage extends BasePageWithHeader{
         сomputerComponents = new СomputerComponents(driver);
    }
 
-    @Override
-    public ComputersAndNotebooksPage openPage() {
-        driver.navigate().to(URL);
-        return this;
-    }
-
     public MenuSection getMenuSection() {
+        waitForUrlToBe(URL);
         return menuSection;
     }
-    public СomputerComponents getСomputerComponents(){return сomputerComponents;}
+    public СomputerComponents getСomputerComponents(){
+        waitForUrlToBe(URL);
+        return сomputerComponents;}
 }

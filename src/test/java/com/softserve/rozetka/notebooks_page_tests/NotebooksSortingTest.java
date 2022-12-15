@@ -21,7 +21,6 @@ public class NotebooksSortingTest extends BaseRunner {
                 .getHeaderComponent()
                 .clickOnCatalogButton()
                 .clickOnNotebooksAndComputersCategory()
-                .openPage()
                 .getMenuSection()
                 .clickOnNotebooksMenu();
     }
@@ -31,8 +30,7 @@ public class NotebooksSortingTest extends BaseRunner {
         List<Integer> actualPrices = new NotebooksPage(driver)
                 .getSortingContent()
                 .selectLowerToHigherOption()
-                .openPage()
-                .getPrices();
+                .getIntegerPrices();
         Assert.assertTrue(actualPrices.equals(actualPrices
                 .stream()
                 .sorted()
@@ -42,8 +40,7 @@ public class NotebooksSortingTest extends BaseRunner {
     public void checkSortingFromHigherToLowerPrice(){
         List<Integer> actualPrices = new SortingContent(driver)
                 .selectHigherToLowerOption()
-                .openPage()
-                .getPrices();
+                .getIntegerPrices();
         Assert.assertTrue(actualPrices.equals(actualPrices
                 .stream()
                 .sorted(Comparator.reverseOrder())

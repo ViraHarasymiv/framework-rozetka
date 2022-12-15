@@ -44,8 +44,7 @@ public class HeaderComponent extends BasePO {
     }
 
     public CategoriesMenu clickOnCatalogButton(){
-        waitForElementToAppear(getCatalogButton());
-        getCatalogButton().click();
+        waitForElementToAppear(getCatalogButton()).click();
         return categoriesMenu;
     }
 }

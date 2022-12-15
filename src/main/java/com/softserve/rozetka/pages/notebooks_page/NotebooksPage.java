@@ -14,17 +14,13 @@ public class NotebooksPage extends BasePageWithHeaderAndProductsItems {
         sortingContent = new SortingContent(driver);
     }
 
-    @Override
-    public NotebooksPage openPage() {
-        driver.navigate().to(URL);
-        return this;
-    }
-
     public FilterContent getFilterContent() {
+        waitForUrlToBe(URL);
         return filterContent;
     }
 
     public SortingContent getSortingContent() {
+        waitForUrlToBe(URL);
         return sortingContent;
     }
 

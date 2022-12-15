@@ -10,9 +10,4 @@ public class HomePage extends BasePageWithHeader {
         super(driver);
     }
 
-    @Override
-    public HomePage openPage() {
-       driver.navigate().to(URL);
-       return this;
-    }
 }

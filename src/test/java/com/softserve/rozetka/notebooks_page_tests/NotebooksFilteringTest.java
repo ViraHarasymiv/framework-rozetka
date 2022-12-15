@@ -4,7 +4,6 @@ import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
 import com.softserve.rozetka.runners.BaseRunner;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -22,7 +21,6 @@ public class NotebooksFilteringTest extends BaseRunner {
                 .getHeaderComponent()
                 .clickOnCatalogButton()
                 .clickOnNotebooksAndComputersCategory()
-                .openPage()
                 .getMenuSection()
                 .clickOnNotebooksMenu();
     }
@@ -33,8 +31,7 @@ public class NotebooksFilteringTest extends BaseRunner {
                 .getFilterContent()
                 .enterValidBrand()
                 .clickOnBrandsCheckBox()
-                .openPage()
-                .getTitles();
+                .getStringTitles();
         Assert.assertTrue(results
                 .stream()
                 .allMatch(el -> el.contains(SEARCH_BRAND)));
@@ -47,8 +44,7 @@ public class NotebooksFilteringTest extends BaseRunner {
                 .enterMinPrice()
                 .enterMaxPrice()
                 .clickOnSubmitButton()
-                .openPage()
-                .getPrices();
+                .getIntegerPrices();
         Assert.assertTrue(results
                 .stream()
                 .allMatch(element -> element >= MIN_PRICE && element <= MAX_PRICE));

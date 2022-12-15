@@ -16,30 +16,24 @@ public class BasePageWithHeaderAndProductsItems extends BasePageWithHeader{
         super(driver);
     }
 
-    @Override
-    public BasePageWithHeaderAndProductsItems openPage() {
-        return this;
-    }
-    public List<String> getTitles() {
+    public List<ProductItem> getTitles() {
         productItems = new ArrayList<>();
         List<WebElement> elements = driver.findElements(ProductItemsLocators.TITLE.getPath());
         for (WebElement webElement: elements){
             productItems.add(new ProductItem(driver,webElement));
         }
-        return productItems
-                .stream()
-                .map(element->element.getTitle().getText())
-                .collect(Collectors.toList());
+        return productItems;
     }
-    public List<Integer> getPrices() {
+    public List<Integer> getIntegerPrices() {
         productItems = new ArrayList<>();
         List<WebElement> elements = driver.findElements(ProductItemsLocators.PRICE.getPath());
         for (WebElement webElement: elements){
             productItems.add(new ProductItem(driver,webElement));
         }
-        return productItems.stream()
-                .map(el->el.getPrice().getText().replaceAll(" ",""))
-                .map(webEl -> Integer.parseInt(webEl))
+        return productItems
+                .stream()
+                .map(webElement -> webElement.getPrice().getText().replaceAll(" ",""))
+                .map(el -> Integer.parseInt(el))
                 .collect(Collectors.toList());
     }
     public List<ProductItem>getLikeButtons(){
@@ -49,5 +43,16 @@ public class BasePageWithHeaderAndProductsItems extends BasePageWithHeader{
             productItems.add(new ProductItem(driver,webElement));
         }
         return productItems;
+    }
+    public List<String> getStringTitles() {
+        productItems = new ArrayList<>();
+        List<WebElement> elements = driver.findElements(ProductItemsLocators.TITLE.getPath());
+        for (WebElement webElement: elements){
+            productItems.add(new ProductItem(driver,webElement));
+        }
+        return productItems
+                .stream()
+                .map(webElement -> webElement.getTitle().getText())
+                .collect(Collectors.toList());
     }
 }

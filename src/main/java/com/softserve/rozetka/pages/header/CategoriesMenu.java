@@ -30,9 +30,7 @@ public class CategoriesMenu extends BasePO {
 
     public ComputersAndNotebooksPage clickOnNotebooksAndComputersCategory(){
         waitForElementToAppear(getMenuWrapper());
-        waitForElementToAppear(getNotebooksAndComputersCategory());
-        getNotebooksAndComputersCategory().click();
+        waitForElementToAppear(getNotebooksAndComputersCategory()).click();
         return new ComputersAndNotebooksPage(driver);
     }
-
 }
