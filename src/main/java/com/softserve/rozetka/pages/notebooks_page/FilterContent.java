@@ -31,6 +31,7 @@ public class FilterContent extends BasePO {
 
     public WebElement getBrandField() {
         if(brandField == null){
+            waitForPresenceOfElement(FilterContentLocators.BRAND_FIELD.getPath());
             brandField = this.driver.findElement(FilterContentLocators.BRAND_FIELD.getPath());
         }
         return brandField;
@@ -45,6 +46,7 @@ public class FilterContent extends BasePO {
 
     public WebElement getMinRangeInput() {
         if(minRangeInput == null){
+            waitForPresenceOfElement(FilterContentLocators.MIN_RANGE_INPUT.getPath());
             minRangeInput = this.driver.findElement(FilterContentLocators.MIN_RANGE_INPUT.getPath());
         }
         return minRangeInput;
@@ -52,6 +54,7 @@ public class FilterContent extends BasePO {
 
     public WebElement getMaxRangeInput() {
         if(maxRangeInput == null){
+            waitForPresenceOfElement(FilterContentLocators.MAX_RANGE_INPUT.getPath());
             maxRangeInput = this.driver.findElement(FilterContentLocators.MAX_RANGE_INPUT.getPath());
         }
         return maxRangeInput;
@@ -59,6 +62,7 @@ public class FilterContent extends BasePO {
 
     public WebElement getDellCheckBox() {
         if(dellCheckBox == null){
+            waitForPresenceOfElement(FilterContentLocators.DELL_CHECK_BOX.getPath());
             dellCheckBox = this.driver.findElement(FilterContentLocators.DELL_CHECK_BOX.getPath());
         }
         return dellCheckBox;
@@ -66,6 +70,7 @@ public class FilterContent extends BasePO {
 
     public WebElement getSubmitPriceButton() {
         if(submitPriceButton == null){
+            waitForPresenceOfElement(FilterContentLocators.SUBMIT_PRICE_BUTTON.getPath());
             submitPriceButton = this.driver.findElement(FilterContentLocators.SUBMIT_PRICE_BUTTON.getPath());
         }
         return submitPriceButton;
@@ -86,13 +91,14 @@ public class FilterContent extends BasePO {
     }
 
     public DellNotebooksPage clickOnBrandsCheckBox(){
-        waitForElementToAppear(getDellCheckBox()).click();
+        waitForElementToAppear(getDellCheckBox());
+        getDellCheckBox().click();
         return new DellNotebooksPage(driver);
     }
 
     public FilterContent enterMinPrice(){
-        Actions actions = new Actions(driver);
         waitForElementToAppear(getMinRangeInput());
+        Actions actions = new Actions(driver);
         actions.scrollToElement(getMinRangeInput()).perform();
         (getMinRangeInput()).clear();
         getMinRangeInput().sendKeys(MIN_PRICE);
@@ -104,7 +110,8 @@ public class FilterContent extends BasePO {
        return this;
     }
     public RangedByPriceNotebooksPage clickOnSubmitButton(){
-        waitForElementBecomeClickable(getSubmitPriceButton()).click();
+        waitForElementBecomeClickable(getSubmitPriceButton());
+        getSubmitPriceButton().click();
         return new RangedByPriceNotebooksPage(driver);
     }
 }

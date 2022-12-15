@@ -21,12 +21,14 @@ public class SortingContent extends BasePO {
 
     public WebElement getSortField(){
         if(sortField == null){
+            waitForPresenceOfElement(SortingContentLocators.SORT_FIELD.getPath());
             sortField = driver.findElement(SortingContentLocators.SORT_FIELD.getPath());
         }
         return sortField;
     }
     public WebElement getBigItemsView(){
         if(bigItemsView == null){
+            waitForPresenceOfElement(SortingContentLocators.BIG_ITEMS_VIEW.getPath());
             bigItemsView = driver.findElement(SortingContentLocators.BIG_ITEMS_VIEW.getPath());
         }
         return bigItemsView;

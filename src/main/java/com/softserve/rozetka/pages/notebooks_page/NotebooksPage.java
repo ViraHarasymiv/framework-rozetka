@@ -20,7 +20,6 @@ public class NotebooksPage extends BasePageWithHeaderAndProductsItems {
     }
 
     public SortingContent getSortingContent() {
-        waitForUrlToBe(URL);
         return sortingContent;
     }
 

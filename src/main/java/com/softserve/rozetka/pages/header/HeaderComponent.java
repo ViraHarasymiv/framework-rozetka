@@ -18,12 +18,14 @@ public class HeaderComponent extends BasePO {
     }
     public WebElement getCatalogButton(){
         if(catalogButton == null){
+            waitForPresenceOfElement(HeaderLocators.CATALOG_BUTTON.getPath());
             catalogButton = this.driver.findElement(HeaderLocators.CATALOG_BUTTON.getPath());
         }
         return catalogButton;
     }
     public WebElement getCartIcon() {
         if(cartIcon == null){
+            waitForPresenceOfElement(HeaderLocators.CART_ICON.getPath());
             cartIcon = this.driver.findElement(HeaderLocators.CART_ICON.getPath());
         }
         return cartIcon;
@@ -31,6 +33,7 @@ public class HeaderComponent extends BasePO {
 
     public WebElement getSearchInput() {
         if(searchInput == null){
+            waitForPresenceOfElement(HeaderLocators.SEARCH_INPUT.getPath());
             searchInput = this.driver.findElement(HeaderLocators.SEARCH_INPUT.getPath());
         }
         return searchInput;
@@ -38,6 +41,7 @@ public class HeaderComponent extends BasePO {
 
     public WebElement getLoginButton() {
         if(loginButton == null){
+            waitForPresenceOfElement(HeaderLocators.LOGIN_BUTTON.getPath());
             loginButton = this.driver.findElement(HeaderLocators.LOGIN_BUTTON.getPath());
         }
         return loginButton;

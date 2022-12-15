@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 
 public class CategoriesMenu extends BasePO {
     private WebElement notebooksAndComputersCategory;
-    private WebElement menuWrapper;
 
     public CategoriesMenu(WebDriver driver) {
         super(driver);
@@ -16,21 +15,14 @@ public class CategoriesMenu extends BasePO {
 
     public WebElement getNotebooksAndComputersCategory() {
         if(notebooksAndComputersCategory == null){
+            waitForPresenceOfElement(MenuCategoriesLocators.NOTEBOOKS_AND_COMPUTERS_CATEGORY.getPath());
             notebooksAndComputersCategory = this.driver.findElement(MenuCategoriesLocators.NOTEBOOKS_AND_COMPUTERS_CATEGORY.getPath());
         }
         return notebooksAndComputersCategory;
     }
 
-    public WebElement getMenuWrapper() {
-        if(menuWrapper == null){
-            menuWrapper = this.driver.findElement(MenuCategoriesLocators.MENU_WRAPPER.getPath());
-        }
-        return menuWrapper;
-    }
-
     public ComputersAndNotebooksPage clickOnNotebooksAndComputersCategory(){
-        waitForElementToAppear(getMenuWrapper());
-        waitForElementToAppear(getNotebooksAndComputersCategory()).click();
+      waitForElementToAppear(getNotebooksAndComputersCategory()).click();
         return new ComputersAndNotebooksPage(driver);
     }
 }
