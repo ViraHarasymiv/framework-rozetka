@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AddingToCartTest extends BaseRunner {
+public class AddingProductsToCartTest extends BaseRunner {
     private static final String EXPECTED_PRODUCT_COUNT_IN_CART = "1";
     private static final String EXPECTED_MULTIPLE_COUNT_IN_CART = "3";
 
