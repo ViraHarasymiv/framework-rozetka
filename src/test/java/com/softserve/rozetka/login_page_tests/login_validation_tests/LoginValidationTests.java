@@ -1,4 +1,4 @@
-package com.softserve.rozetka.login_page_tests.login_validation_tests;
+/*package com.softserve.rozetka.login_page_tests.login_validation_tests;
 
 import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.runners.BaseRunner;
@@ -45,4 +45,4 @@ public class LoginValidationTests extends BaseRunner {
         new LoginPage(driver)
                 .closeLoginForm();
     }
-}
+}*/
