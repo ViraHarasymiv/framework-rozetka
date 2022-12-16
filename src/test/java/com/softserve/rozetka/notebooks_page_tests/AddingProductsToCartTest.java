@@ -35,6 +35,6 @@ public class AddingProductsToCartTest extends BaseRunner {
         String actualProductCountOfInCart = new NotebooksPage(driver)
                 .putMultipleProductsToCart()
                 .getQuantityOfProductsInCart();
-        Assert.assertTrue(actualProductCountOfInCart.equals(EXPECTED_MULTIPLE_COUNT_IN_CART));
+        Assert.assertEquals(actualProductCountOfInCart, EXPECTED_MULTIPLE_COUNT_IN_CART);
     }
 }

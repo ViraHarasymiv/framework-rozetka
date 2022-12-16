@@ -32,6 +32,7 @@ public class NotebooksPage extends BasePageWithHeaderAndProducts {
     public HeaderComponent putMultipleProductsToCart(){
         waitForElementsToAppear(getCartIcons());
         for(int i = 0; i <= 3; i++){
+            waitForElementToAppear(getCartIcons().get(i));
             getCartIcons().get(i).click();
         }
         return getHeaderComponent();

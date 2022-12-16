@@ -18,6 +18,7 @@ public class BasePageWithHeaderAndProducts extends BasePageWithHeader {
 
     public List<ProductItem> getProductItems() {
         productItems = new ArrayList<>();
+        waitForPresenceOfAllElements(ProductLocators.PRODUCTS.getPath());
         List<WebElement> elements = driver.findElements(ProductLocators.PRODUCTS.getPath());
             for(WebElement product: elements) {
                 productItems.add(new ProductItem(driver, product));
@@ -39,10 +40,8 @@ public class BasePageWithHeaderAndProducts extends BasePageWithHeader {
     }
 
     public List<WebElement>getCartIcons(){
-        return getProductItems()
-                .stream()
-                .map(el->el.getCartIcon())
-                .collect(Collectors.toList());
+        waitForPresenceOfAllElements(ProductLocators.CARTS.getPath());
+        return driver.findElements(ProductLocators.CARTS.getPath());
     }
     public List<WebElement>getProducts(){
         waitForPresenceOfAllElements(ProductLocators.PRODUCTS.getPath());
