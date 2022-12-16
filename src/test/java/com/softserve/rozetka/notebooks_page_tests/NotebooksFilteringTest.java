@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 import java.util.List;
 
 public class NotebooksFilteringTest extends BaseRunner {
-    private final static String SEARCH_BRAND = "Dell";
+    private final static String SEARCH_BRAND = "dell";
     private final static int MIN_PRICE = 5000;
     private final static int MAX_PRICE = 20000;
 

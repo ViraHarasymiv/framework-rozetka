@@ -1,33 +1,35 @@
 package com.softserve.rozetka.pages.header;
 
 import com.softserve.rozetka.locators.header_locators.HeaderLocators;
-import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import com.softserve.rozetka.pages.login_component.LoginModal;
-import com.softserve.rozetka.pages.login_page.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HeaderComponent extends BasePO {
+public class HeaderComponent extends BasePage {
     private WebElement searchInput;
     private WebElement loginButton;
     private WebElement catalogButton;
     private WebElement cartIcon;
+    private WebElement compareIcon;
     private WebElement productQuantityInCart;
-   private CategoriesMenu categoriesMenu;
+    private CategoriesMenu categoriesMenu;
 
     public HeaderComponent(WebDriver driver) {
         super(driver);
-       categoriesMenu = new CategoriesMenu(driver);
+        categoriesMenu = new CategoriesMenu(driver);
     }
-    public WebElement getCatalogButton(){
-        if(catalogButton == null){
+
+    public WebElement getCatalogButton() {
+        if (catalogButton == null) {
             waitForPresenceOfElement(HeaderLocators.CATALOG_BUTTON.getPath());
             catalogButton = this.driver.findElement(HeaderLocators.CATALOG_BUTTON.getPath());
         }
         return catalogButton;
     }
+
     public WebElement getCartIcon() {
-        if(cartIcon == null){
+        if (cartIcon == null) {
             waitForPresenceOfElement(HeaderLocators.CART_ICON.getPath());
             cartIcon = this.driver.findElement(HeaderLocators.CART_ICON.getPath());
         }
@@ -35,7 +37,7 @@ public class HeaderComponent extends BasePO {
     }
 
     public WebElement getSearchInput() {
-        if(searchInput == null){
+        if (searchInput == null) {
             waitForPresenceOfElement(HeaderLocators.SEARCH_INPUT.getPath());
             searchInput = this.driver.findElement(HeaderLocators.SEARCH_INPUT.getPath());
         }
@@ -43,7 +45,7 @@ public class HeaderComponent extends BasePO {
     }
 
     public WebElement getProductQuantityInCart() {
-        if(productQuantityInCart == null){
+        if (productQuantityInCart == null) {
             waitForPresenceOfElement(HeaderLocators.PRODUCT_QUANTITY_IN_CART.getPath());
             productQuantityInCart = this.driver.findElement(HeaderLocators.PRODUCT_QUANTITY_IN_CART.getPath());
         }
@@ -51,22 +53,33 @@ public class HeaderComponent extends BasePO {
     }
 
     public WebElement getLoginButton() {
-        if(loginButton == null){
+        if (loginButton == null) {
             waitForPresenceOfElement(HeaderLocators.LOGIN_BUTTON.getPath());
             loginButton = this.driver.findElement(HeaderLocators.LOGIN_BUTTON.getPath());
         }
         return loginButton;
     }
-    public LoginModal clickOnLoginButton(){
+
+    public WebElement getCompareIcon() {
+        if (compareIcon == null) {
+            waitForPresenceOfElement(HeaderLocators.COMPARE_ICON.getPath());
+            compareIcon = this.driver.findElement(HeaderLocators.COMPARE_ICON.getPath());
+        }
+        return compareIcon;
+    }
+
+    public LoginModal clickOnLoginButton() {
         waitForElementToAppear(getLoginButton()).click();
         return new LoginModal(driver);
     }
 
-    public CategoriesMenu clickOnCatalogButton(){
+    public CategoriesMenu clickOnCatalogButton() {
         waitForElementToAppear(getCatalogButton()).click();
         return categoriesMenu;
     }
-    public String getQuantityOfProductsInCart(){
+
+    public String getQuantityOfProductsInCart() {
         return getProductQuantityInCart().getText().replaceAll(" ", "");
     }
+
 }

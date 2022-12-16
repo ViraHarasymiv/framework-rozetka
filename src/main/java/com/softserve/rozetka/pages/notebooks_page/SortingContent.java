@@ -1,14 +1,14 @@
 package com.softserve.rozetka.pages.notebooks_page;
 
 import com.softserve.rozetka.locators.notebooks_page_locators.SortingContentLocators;
-import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import com.softserve.rozetka.pages.decreased_by_price_notebooks_page.DecreasedByPriceNotebooksPage;
 import com.softserve.rozetka.pages.increased_by_price_notebooks_page.IncreasedByPriceNotebooksPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class SortingContent extends BasePO {
+public class SortingContent extends BasePage {
     private WebElement sortField;
     private WebElement bigItemsView;
 

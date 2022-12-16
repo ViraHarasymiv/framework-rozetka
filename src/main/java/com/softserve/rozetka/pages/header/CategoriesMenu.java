@@ -1,12 +1,12 @@
 package com.softserve.rozetka.pages.header;
 
 import com.softserve.rozetka.locators.header_locators.MenuCategoriesLocators;
-import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import com.softserve.rozetka.pages.computers_and_notebooks_page.ComputersAndNotebooksPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CategoriesMenu extends BasePO {
+public class CategoriesMenu extends BasePage {
     private WebElement notebooksAndComputersCategory;
 
     public CategoriesMenu(WebDriver driver) {

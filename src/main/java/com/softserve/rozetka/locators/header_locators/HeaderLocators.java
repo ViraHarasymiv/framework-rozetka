@@ -7,7 +7,8 @@ public enum HeaderLocators {
     CART_ICON(By.xpath("//rz-cart/button")),
     PRODUCT_QUANTITY_IN_CART(By.xpath("//rz-cart//span")),
     SEARCH_INPUT(By.xpath("//input[@name='search']")),
-    LOGIN_BUTTON(By.xpath("//rz-user/button"));
+    LOGIN_BUTTON(By.xpath("//rz-user/button")),
+    COMPARE_ICON(By.xpath("//button[@aria-label='Списки порівнянь']"));
 
     private final By path;
     HeaderLocators(By path) {

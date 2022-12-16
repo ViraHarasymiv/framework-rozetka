@@ -1,16 +1,12 @@
 package com.softserve.rozetka.pages.computers_and_notebooks_page;
 
 import com.softserve.rozetka.locators.computers_and_notebooks_page_locators.MenuSectionLocators;
-import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-import java.time.Duration;
-
-public class MenuSection extends BasePO {
+public class MenuSection extends BasePage {
     private WebElement notebooksMenu;
     private WebElement computersNettopsMonoblocksMenu;
     private WebElement monitorsMenu;

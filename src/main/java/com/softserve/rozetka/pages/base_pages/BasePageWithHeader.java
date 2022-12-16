@@ -1,9 +1,10 @@
-package com.softserve.rozetka.pages;
+package com.softserve.rozetka.pages.base_pages;
 
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import com.softserve.rozetka.pages.header.HeaderComponent;
 import org.openqa.selenium.WebDriver;
 
-public class BasePageWithHeader extends BasePO{
+public class BasePageWithHeader extends BasePage {
     private HeaderComponent headerComponent;
 
     public BasePageWithHeader(WebDriver driver) {

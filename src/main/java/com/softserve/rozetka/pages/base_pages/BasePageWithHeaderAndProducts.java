@@ -1,22 +1,20 @@
-package com.softserve.rozetka.pages;
+package com.softserve.rozetka.pages.base_pages;
 
-import com.softserve.rozetka.locators.product_items_locators.ProductItemsLocators;
 import com.softserve.rozetka.locators.product_items_locators.ProductLocators;
+import com.softserve.rozetka.pages.base_pages.BasePageWithHeader;
 import com.softserve.rozetka.pages.product_item.ProductItem;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class BasePageWithHeaderAndProductsItems extends BasePageWithHeader {
+public class BasePageWithHeaderAndProducts extends BasePageWithHeader {
     private List<ProductItem> productItems;
 
-    public BasePageWithHeaderAndProductsItems(WebDriver driver) {
+    public BasePageWithHeaderAndProducts(WebDriver driver) {
         super(driver);
     }
-
 
     public List<ProductItem> getProductItems() {
         productItems = new ArrayList<>();
@@ -29,7 +27,7 @@ public class BasePageWithHeaderAndProductsItems extends BasePageWithHeader {
     public List<String> getStringTitles(){
         return getProductItems()
                 .stream()
-                .map(el -> el.getTitle().getText())
+                .map(el -> el.getTitle().getText().toLowerCase())
                 .collect(Collectors.toList());
     }
     public List<Integer> getIntegerPrices(){
@@ -49,5 +47,11 @@ public class BasePageWithHeaderAndProductsItems extends BasePageWithHeader {
     public List<WebElement>getProducts(){
         waitForPresenceOfAllElements(ProductLocators.PRODUCTS.getPath());
         return driver.findElements(ProductLocators.PRODUCTS.getPath());
+    }
+    public List<WebElement>getCompareButtons(){
+        return getProductItems()
+                .stream()
+                .map(el->el.getCompareButton())
+                .collect(Collectors.toList());
     }
 }

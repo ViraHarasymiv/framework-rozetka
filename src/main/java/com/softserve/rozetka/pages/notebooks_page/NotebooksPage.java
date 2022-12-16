@@ -1,11 +1,11 @@
 package com.softserve.rozetka.pages.notebooks_page;
 
-import com.softserve.rozetka.pages.BasePageWithHeaderAndProductsItems;
+import com.softserve.rozetka.pages.base_pages.BasePageWithHeaderAndProducts;
 import com.softserve.rozetka.pages.header.HeaderComponent;
 import com.softserve.rozetka.pages.notebook_item_page.NotebookItemPage;
 import org.openqa.selenium.WebDriver;
 
-public class NotebooksPage extends BasePageWithHeaderAndProductsItems {
+public class NotebooksPage extends BasePageWithHeaderAndProducts {
     private final static String URL = "https://rozetka.com.ua/ua/notebooks/c80004/";
     protected FilterContent filterContent;
     protected SortingContent sortingContent;
@@ -30,8 +30,15 @@ public class NotebooksPage extends BasePageWithHeaderAndProductsItems {
         return new NotebookItemPage(driver);
     }
     public HeaderComponent putMultipleProductsToCart(){
+        waitForElementsToAppear(getCartIcons());
         for(int i = 0; i <= 3; i++){
             getCartIcons().get(i).click();
+        }
+        return getHeaderComponent();
+    }
+    public HeaderComponent compareTwoProducts(){
+        for(int i = 0; i < 3; i++){
+            getCompareButtons().get(i).click();
         }
         return getHeaderComponent();
     }

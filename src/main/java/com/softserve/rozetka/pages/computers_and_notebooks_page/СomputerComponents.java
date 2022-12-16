@@ -1,11 +1,11 @@
 package com.softserve.rozetka.pages.computers_and_notebooks_page;
 
 import com.softserve.rozetka.locators.computers_and_notebooks_page_locators.ComputerComponentsLocators;
-import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class СomputerComponents extends BasePO {
+public class СomputerComponents extends BasePage {
     private WebElement title;
     private WebElement ssdMenu;
 

@@ -1,21 +1,22 @@
 package com.softserve.rozetka.pages.product_item;
 
 import com.softserve.rozetka.locators.product_items_locators.ProductItemsLocators;
-import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductItem extends BasePO {
+public class ProductItem extends BasePage {
     private WebElement likeButton;
     private WebElement title;
     private WebElement price;
     private WebElement cartIcon;
     private WebElement root;
-
+    private WebElement compareButton;
 
     public ProductItem(WebDriver driver) {
         super(driver);
     }
+
     public ProductItem(WebDriver driver , WebElement root) {
         super(driver);
         this.root = root;
@@ -47,5 +48,12 @@ public class ProductItem extends BasePO {
             cartIcon = this.root.findElement(ProductItemsLocators.CART_ICON.getPath());
         }
         return cartIcon;
+    }
+
+    public WebElement getCompareButton() {
+        if (compareButton == null) {
+            compareButton = this.root.findElement(ProductItemsLocators.COMPARE_BUTTON.getPath());
+        }
+        return compareButton;
     }
 }

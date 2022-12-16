@@ -1,6 +1,6 @@
 package com.softserve.rozetka.pages.notebook_item_page;
 
-import com.softserve.rozetka.pages.BasePageWithHeader;
+import com.softserve.rozetka.pages.base_pages.BasePageWithHeader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 

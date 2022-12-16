@@ -1,7 +1,7 @@
 package com.softserve.rozetka.pages.notebooks_page;
 
 import com.softserve.rozetka.locators.notebooks_page_locators.FilterContentLocators;
-import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import com.softserve.rozetka.pages.dell_notebooks_page.DellNotebooksPage;
 import com.softserve.rozetka.pages.ranged_by_price_notebooks_page.RangedByPriceNotebooksPage;
 import com.softserve.rozetka.utils.BrandsOptionsReader;
@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
-public class FilterContent extends BasePO {
+public class FilterContent extends BasePage {
     private WebElement brandField;
     private WebElement dellCheckBox;
     private List<WebElement> checkBoxes;
