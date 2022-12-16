@@ -1,9 +1,11 @@
 package com.softserve.rozetka.pages.dell_notebooks_page;
 
 import com.softserve.rozetka.pages.BasePageWithHeaderAndProductsItems;
+import com.softserve.rozetka.pages.product_item.ProductItem;
 import org.openqa.selenium.WebDriver;
-import java.util.List;
+import org.openqa.selenium.WebElement;
 
+import java.util.List;
 
 public class DellNotebooksPage extends BasePageWithHeaderAndProductsItems {
     private static final String URL = "https://rozetka.com.ua/ua/notebooks/c80004/producer=dell/";

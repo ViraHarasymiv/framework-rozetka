@@ -1,6 +1,7 @@
 package com.softserve.rozetka.pages.ranged_by_price_notebooks_page;
 
 import com.softserve.rozetka.pages.BasePageWithHeaderAndProductsItems;
+import com.softserve.rozetka.pages.product_item.ProductItem;
 import org.openqa.selenium.WebDriver;
 import java.util.List;
 

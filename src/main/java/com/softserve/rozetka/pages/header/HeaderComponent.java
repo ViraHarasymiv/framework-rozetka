@@ -12,6 +12,7 @@ public class HeaderComponent extends BasePO {
     private WebElement loginButton;
     private WebElement catalogButton;
     private WebElement cartIcon;
+    private WebElement productQuantityInCart;
    private CategoriesMenu categoriesMenu;
 
     public HeaderComponent(WebDriver driver) {
@@ -41,6 +42,14 @@ public class HeaderComponent extends BasePO {
         return searchInput;
     }
 
+    public WebElement getProductQuantityInCart() {
+        if(productQuantityInCart == null){
+            waitForPresenceOfElement(HeaderLocators.PRODUCT_QUANTITY_IN_CART.getPath());
+            productQuantityInCart = this.driver.findElement(HeaderLocators.PRODUCT_QUANTITY_IN_CART.getPath());
+        }
+        return productQuantityInCart;
+    }
+
     public WebElement getLoginButton() {
         if(loginButton == null){
             waitForPresenceOfElement(HeaderLocators.LOGIN_BUTTON.getPath());
@@ -56,5 +65,8 @@ public class HeaderComponent extends BasePO {
     public CategoriesMenu clickOnCatalogButton(){
         waitForElementToAppear(getCatalogButton()).click();
         return categoriesMenu;
+    }
+    public String getQuantityOfProductsInCart(){
+        return getProductQuantityInCart().getText().replaceAll(" ", "");
     }
 }

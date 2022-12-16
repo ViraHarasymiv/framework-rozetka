@@ -40,6 +40,9 @@ public class BasePO {
     protected void waitForPresenceOfElement(By locator){
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
+    protected void waitForPresenceOfAllElements(By locator){
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+    }
 
     protected void waitForElementsToAppear(List<WebElement>elements){
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));
@@ -52,6 +55,11 @@ public class BasePO {
     }
     protected void waitForUrlToBe(String URL){
         wait.until(ExpectedConditions.urlToBe(URL));
+    }
+
+    public void waitForPageLoadComplete() {
+        new WebDriverWait(driver, Duration.ofSeconds(TIME)).until(
+                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
 }

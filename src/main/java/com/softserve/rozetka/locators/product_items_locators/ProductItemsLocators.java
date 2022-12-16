@@ -5,14 +5,13 @@ import org.openqa.selenium.By;
 public enum ProductItemsLocators {
     LIKE(By.xpath("./rz-catalog-tile/app-goods-tile-default/div/div[2]/div[1]/app-goods-wishlist/button")),
     TITLE(By.xpath("./rz-catalog-tile/app-goods-tile-default/div/div[2]/a[2]/span")),
-    PRICE(By.xpath("./rz-catalog-tile/app-goods-tile-default/div/div[2]/div[4]/div[2]/p/span[1]"));
+    PRICE(By.xpath("./rz-catalog-tile/app-goods-tile-default/div/div[2]/div[4]/div[2]/p/span[1]")),
+    CART_ICON(By.xpath("./rz-catalog-tile/app-goods-tile-default/div/div[2]/div[4]/div[2]/app-buy-button/button"));
 
     private final By path;
-
     ProductItemsLocators(By path) {
         this.path = path;
     }
-
     public By getPath() {
         return path;
     }
