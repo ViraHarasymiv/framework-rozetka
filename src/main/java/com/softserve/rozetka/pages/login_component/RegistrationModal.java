@@ -1,10 +1,10 @@
 package com.softserve.rozetka.pages.login_component;
 import com.softserve.rozetka.locators.login_modal_locators.RegistrationModalLocators;
-import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class RegistrationModal extends BasePO {
+public class RegistrationModal extends BasePage {
     private WebElement nameField;
     private WebElement surnameField;
     private WebElement phoneField;
