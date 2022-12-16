@@ -1,12 +1,12 @@
 package com.softserve.rozetka.pages.login_component;
 
 import com.softserve.rozetka.locators.login_modal_locators.LoginModalLocators;
-import com.softserve.rozetka.pages.BasePO;
+import com.softserve.rozetka.pages.base_pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class LoginModal extends BasePO {
+public class LoginModal extends BasePage {
     private static final String INVALID_EMAIL  = "testdqwerty123";
     private static final String INVALID_PASSWORD  = "qwerty123";
     public static final String UNREGISTERED_EMAIL  = "testqwerty123@gmail.com";
