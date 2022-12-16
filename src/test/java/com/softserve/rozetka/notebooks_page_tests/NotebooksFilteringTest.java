@@ -2,7 +2,6 @@ package com.softserve.rozetka.notebooks_page_tests;
 
 import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
-import com.softserve.rozetka.pages.product_item.ProductItem;
 import com.softserve.rozetka.runners.BaseRunner;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -32,6 +31,7 @@ public class NotebooksFilteringTest extends BaseRunner {
                 .getFilterContent()
                 .enterValidBrand()
                 .clickOnBrandsCheckBox()
+                .getProductItems()
                 .getStringTitles();
         Assert.assertTrue(actualResults
                 .stream()
@@ -45,6 +45,7 @@ public class NotebooksFilteringTest extends BaseRunner {
                 .enterMinPrice()
                 .enterMaxPrice()
                 .clickOnSubmitButton()
+                .getProductItems()
                 .getIntegerPrices();
         Assert.assertTrue(actualResults
                 .stream()

@@ -30,6 +30,7 @@ public class NotebooksSortingTest extends BaseRunner {
         List<Integer> actualPrices = new NotebooksPage(driver)
                 .getSortingContent()
                 .selectLowerToHigherOption()
+                .getProductItems()
                 .getIntegerPrices();
         Assert.assertTrue(actualPrices.equals(actualPrices
                 .stream()
@@ -40,6 +41,7 @@ public class NotebooksSortingTest extends BaseRunner {
     public void checkSortingFromHigherToLowerPrice(){
         List<Integer> actualPrices = new SortingContent(driver)
                 .selectHigherToLowerOption()
+                .getProductItems()
                 .getIntegerPrices();
         Assert.assertTrue(actualPrices.equals(actualPrices
                 .stream()

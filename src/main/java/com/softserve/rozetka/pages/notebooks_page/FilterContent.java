@@ -39,6 +39,7 @@ public class FilterContent extends BasePage {
 
     public List<WebElement> getCheckBoxes() {
         if(checkBoxes == null){
+            waitForPresenceOfAllElements(FilterContentLocators.CHECKBOXES.getPath());
             checkBoxes = this.driver.findElements(FilterContentLocators.CHECKBOXES.getPath());
         }
         return checkBoxes;

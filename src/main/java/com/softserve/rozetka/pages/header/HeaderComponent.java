@@ -81,5 +81,4 @@ public class HeaderComponent extends BasePage {
     public String getQuantityOfProductsInCart() {
         return getProductQuantityInCart().getText().replaceAll(" ", "");
     }
-
 }

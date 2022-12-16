@@ -5,55 +5,79 @@ import com.softserve.rozetka.pages.base_pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class ProductItem extends BasePage {
-    private WebElement likeButton;
-    private WebElement title;
-    private WebElement price;
-    private WebElement cartIcon;
-    private WebElement root;
-    private WebElement compareButton;
+    private List<WebElement> likeButtons;
+    private List<WebElement> titles;
+    private List<WebElement> prices;
+    private List<WebElement> cartIcons;
+    private List<WebElement> products;
+    private List<WebElement> compareButtons;
 
     public ProductItem(WebDriver driver) {
         super(driver);
     }
 
-    public ProductItem(WebDriver driver , WebElement root) {
-        super(driver);
-        this.root = root;
+    public List<WebElement> getLikeButtons() {
+        if (likeButtons == null) {
+            waitForPresenceOfAllElements(ProductItemsLocators.LIKE.getPath());
+            likeButtons = this.driver.findElements(ProductItemsLocators.LIKE.getPath());
+        }
+        return likeButtons;
     }
 
-    public WebElement getLikeButton() {
-        if (likeButton == null) {
-            likeButton = this.root.findElement(ProductItemsLocators.LIKE.getPath());
+    public List<WebElement> getTitles() {
+        if (titles == null) {
+            waitForPresenceOfAllElements(ProductItemsLocators.TITLE.getPath());
+            titles = this.driver.findElements(ProductItemsLocators.TITLE.getPath());
         }
-        return likeButton;
+        return titles;
     }
 
-    public WebElement getTitle() {
-        if (title == null) {
-            title = this.root.findElement(ProductItemsLocators.TITLE.getPath());
+    public List<WebElement> getPrices() {
+        if (prices == null) {
+            waitForPresenceOfAllElements(ProductItemsLocators.PRICE.getPath());
+            prices = this.driver.findElements(ProductItemsLocators.PRICE.getPath());
         }
-        return title;
+        return prices;
     }
 
-    public WebElement getPrice() {
-        if (price == null) {
-            price = this.root.findElement(ProductItemsLocators.PRICE.getPath());
+    public List<WebElement> getCartIcons() {
+        if (cartIcons == null) {
+            waitForPresenceOfAllElements(ProductItemsLocators.CART_ICON.getPath());
+            cartIcons = this.driver.findElements(ProductItemsLocators.CART_ICON.getPath());
         }
-        return price;
+        return cartIcons;
     }
 
-    public WebElement getCartIcon() {
-        if (cartIcon == null) {
-            cartIcon = this.root.findElement(ProductItemsLocators.CART_ICON.getPath());
+    public List<WebElement> getProducts() {
+        if (products == null) {
+            waitForPresenceOfAllElements(ProductItemsLocators.PRODUCTS.getPath());
+            products = this.driver.findElements(ProductItemsLocators.PRODUCTS.getPath());
         }
-        return cartIcon;
+        return products;
     }
 
-    public WebElement getCompareButton() {
-        if (compareButton == null) {
-            compareButton = this.root.findElement(ProductItemsLocators.COMPARE_BUTTON.getPath());
+    public List<WebElement> getCompareButtons() {
+        if (compareButtons == null) {
+            waitForPresenceOfAllElements(ProductItemsLocators.COMPARE_BUTTON.getPath());
+            compareButtons = this.driver.findElements(ProductItemsLocators.COMPARE_BUTTON.getPath());
         }
-        return compareButton;
+        return compareButtons;
+    }
+    public List<String>getStringTitles(){
+        return getTitles()
+                .stream()
+                .map(element -> element.getText().toLowerCase())
+                .collect(Collectors.toList());
+    }
+    public List<Integer>getIntegerPrices(){
+        return getPrices()
+                .stream()
+                .map(el -> el.getText().replaceAll(" ", ""))
+                .map(element -> Integer.parseInt(element))
+                .collect(Collectors.toList());
     }
 }
