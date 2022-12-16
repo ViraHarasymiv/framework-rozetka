@@ -2,8 +2,6 @@ package com.softserve.rozetka.pages.login_component;
 
 import com.softserve.rozetka.locators.login_modal_locators.LoginModalLocators;
 import com.softserve.rozetka.pages.BasePO;
-import com.softserve.rozetka.pages.login_page.LoginPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

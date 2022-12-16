@@ -61,6 +61,5 @@ public class BasePO {
         new WebDriverWait(driver, Duration.ofSeconds(TIME)).until(
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
-
 }
 
