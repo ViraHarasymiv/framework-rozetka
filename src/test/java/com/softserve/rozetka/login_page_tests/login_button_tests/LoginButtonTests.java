@@ -1,11 +1,6 @@
-package com.softserve.rozetka.login_page_tests.login_button_tests;
+/*package com.softserve.rozetka.login_page_tests.login_button_tests;
 
-import com.softserve.rozetka.locators.login_modal_locators.LoginModalLocators;
-import com.softserve.rozetka.locators.login_modal_locators.LoginPageElements;
-import com.softserve.rozetka.locators.login_modal_locators.RemindPasswordPageElements;
 import com.softserve.rozetka.pages.homepage.HomePage;
-import com.softserve.rozetka.pages.login_component.LoginModal;
-import com.softserve.rozetka.pages.login_page.LoginPage;
 import com.softserve.rozetka.runners.BaseRunner;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -52,4 +47,4 @@ public class LoginButtonTests extends BaseRunner{
         Assert.assertEquals(driver.findElement(LoginPageElements.getHideShowPasswordButtonHref()).getAttribute("href"), SHOW_ATTRIBUTE_HIDESHOW_PASSWORD);
         Assert.assertEquals(driver.findElement(LoginPageElements.getPasswordField()).getAttribute("type"), "text");
     }
-}
+}*/
