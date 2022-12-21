@@ -121,4 +121,3 @@ public class LoginModal extends BasePage {
         return this;
     }
 }
-

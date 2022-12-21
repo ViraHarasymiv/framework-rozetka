@@ -63,5 +63,4 @@ public class RemindPasswordModal extends BasePage {
         getCloseFormButton().click();
         return this;
     }
-
 }

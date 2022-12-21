@@ -4,6 +4,7 @@ import com.softserve.rozetka.pages.base_pages.ProductsPage;
 import com.softserve.rozetka.pages.header.HeaderComponent;
 import com.softserve.rozetka.pages.notebook_item_page.NotebookItemPage;
 import com.softserve.rozetka.pages.product_item.ProductItem;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 public class NotebooksPage extends ProductsPage {
@@ -32,12 +33,22 @@ public class NotebooksPage extends ProductsPage {
         return sortingContent;
     }
 
-    public NotebookItemPage clickOnProductItem(){
+    @Step("Click in the first notebook's item in the Notebooks Page")
+    public NotebookItemPage clickOnFirstProductItem(){
         getProductItems()
                 .getProducts()
                 .get(0).click();
         return new NotebookItemPage(driver);
     }
+
+    public NotebookItemPage clickOnSecondProductItem(){
+        getProductItems()
+                .getProducts()
+                .get(1).click();
+        return new NotebookItemPage(driver);
+    }
+
+    @Step("Click on the cart's icons of the multiple notebook's items in the Notebooks Page")
     public HeaderComponent putMultipleProductsToCart(){
         for(int i = 0; i <= 3; i++){
             waitForElementToAppear(getProductItems().getCartIcons().get(i));
@@ -45,10 +56,19 @@ public class NotebooksPage extends ProductsPage {
         }
         return getHeaderComponent();
     }
-    public HeaderComponent compareTwoProducts(){
-        for(int i = 0; i < 3; i++){
-            getProductItems().getCompareButtons().get(i).click();
-        }
-        return getHeaderComponent();
+
+    @Step("Click on the compare icon of the first notebook's item in the Notebooks Page")
+    public String getFirstProductToCompare(){
+            waitForElementToAppear(getProductItems().getCompareButtons().get(0));
+            getProductItems().getCompareButtons().get(0).click();
+        return getProductItems().getStringTitles().get(0);
+    }
+
+    @Step("Click on the compare icon of the second notebook's item in the Notebooks Page")
+    public String getSecondProductToCompare(){
+        waitForElementToAppear(getProductItems().getCompareButtons().get(1));
+        getProductItems().getCompareButtons().get(1).click();
+        return getProductItems().getStringTitles().get(1);
     }
 }
+

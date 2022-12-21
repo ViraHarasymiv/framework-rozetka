@@ -1,10 +1,12 @@
 package com.softserve.rozetka.runners;
 
+import com.softserve.rozetka.listeners.TestListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
+@Listeners({TestListener.class})
 public class BaseRunner {
     private static final String ROZETKA_URL = "https://rozetka.com.ua/ua/";
     protected WebDriver driver;
@@ -13,7 +15,6 @@ public class BaseRunner {
     public void beforeSuite(){
         WebDriverManager.chromedriver().setup();
     }
-
 
     public void setDriver(){
         driver = new ChromeDriver();
@@ -27,6 +28,11 @@ public class BaseRunner {
             driver.quit();
         }
     }
+
+    public WebDriver getDriver(){
+        return driver;
+    }
+
     @AfterMethod
     public void closeWindow(){
         afterSuite();

@@ -17,4 +17,3 @@ public class DellNotebooksPage extends ProductsPage {
         return super.getProductItems();
     }
 }
-

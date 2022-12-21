@@ -6,6 +6,7 @@ import com.softserve.rozetka.pages.dell_notebooks_page.DellNotebooksPage;
 import com.softserve.rozetka.pages.ranged_by_price_notebooks_page.RangedByPriceNotebooksPage;
 import com.softserve.rozetka.utils.BrandsOptionsReader;
 import com.softserve.rozetka.utils.PricesOptionsReader;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -19,11 +20,6 @@ public class FilterContent extends BasePage {
     private WebElement minRangeInput;
     private WebElement maxRangeInput;
     private WebElement submitPriceButton;
-
-    private static final String VALID_BRAND = BrandsOptionsReader.get().getValidBrand();
-    private static final String INVALID_BRAND = BrandsOptionsReader.get().getInValidBrand();
-    private static final String MIN_PRICE = PricesOptionsReader.get().getMinPriceRange();
-    private static final String MAX_PRICE = PricesOptionsReader.get().getMaxPriceRange();
 
     public FilterContent(WebDriver driver) {
         super(driver);
@@ -76,40 +72,49 @@ public class FilterContent extends BasePage {
         }
         return submitPriceButton;
     }
-    public FilterContent enterValidBrand(){
+
+    @Step("Type a valid brand's name: {0} in the 'Бренд' field")
+    public FilterContent enterValidBrand(String validBrandName){
         waitForElementToAppear(getBrandField());
         Actions actions = new Actions(driver);
-        actions.sendKeys(getBrandField(),VALID_BRAND).perform();
+        actions.sendKeys(getBrandField(),validBrandName).perform();
         return this;
     }
 
-    public List<WebElement> enterInvalidBrand(){
+    @Step("Type an invalid brand's name: {0} in the 'Бренд' field")
+    public List<WebElement> enterInvalidBrand(String invalidBrandName){
         waitForElementToAppear(getBrandField());
         Actions actions = new Actions(driver);
-        actions.sendKeys(getBrandField(),INVALID_BRAND).perform();
+        actions.sendKeys(getBrandField(),invalidBrandName).perform();
         waitForElementsToDisappear(getCheckBoxes());
         return this.driver.findElements(FilterContentLocators.CHECKBOXES.getPath());
     }
 
+    @Step("Click on the typed brand's checkbox")
     public DellNotebooksPage clickOnBrandsCheckBox(){
         waitForElementToAppear(getDellCheckBox());
         getDellCheckBox().click();
         return new DellNotebooksPage(driver);
     }
 
-    public FilterContent enterMinPrice(){
+    @Step("Scroll to the price range inputs and type the minimum price value: {0} in the input field")
+    public FilterContent enterMinPrice(String minPriceValue){
         waitForElementToAppear(getMinRangeInput());
         Actions actions = new Actions(driver);
         actions.scrollToElement(getMinRangeInput()).perform();
         (getMinRangeInput()).clear();
-        getMinRangeInput().sendKeys(MIN_PRICE);
+        getMinRangeInput().sendKeys(minPriceValue);
         return this;
     }
-    public FilterContent enterMaxPrice(){
-       getMaxRangeInput().clear();
-       getMaxRangeInput().sendKeys(MAX_PRICE);
-       return this;
+
+    @Step("Type the maximum price value: {0} in the input field")
+    public FilterContent enterMaxPrice(String maxPriceValue){
+        getMaxRangeInput().clear();
+        getMaxRangeInput().sendKeys(maxPriceValue);
+        return this;
     }
+
+    @Step("Click on the 'OK' button")
     public RangedByPriceNotebooksPage clickOnSubmitButton(){
         waitForElementBecomeClickable(getSubmitPriceButton());
         getSubmitPriceButton().click();

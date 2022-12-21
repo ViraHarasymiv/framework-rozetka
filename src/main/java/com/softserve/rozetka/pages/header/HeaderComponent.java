@@ -3,6 +3,7 @@ package com.softserve.rozetka.pages.header;
 import com.softserve.rozetka.locators.header_locators.HeaderLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
 import com.softserve.rozetka.pages.login_component.LoginModal;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -14,10 +15,12 @@ public class HeaderComponent extends BasePage {
     private WebElement compareIcon;
     private WebElement productQuantityInCart;
     private CategoriesMenu categoriesMenu;
+    private ComparingListModal comparingListModal;
 
     public HeaderComponent(WebDriver driver) {
         super(driver);
         categoriesMenu = new CategoriesMenu(driver);
+        comparingListModal = new ComparingListModal(driver);
     }
 
     public WebElement getCatalogButton() {
@@ -44,6 +47,7 @@ public class HeaderComponent extends BasePage {
         return searchInput;
     }
 
+
     public WebElement getProductQuantityInCart() {
         if (productQuantityInCart == null) {
             waitForPresenceOfElement(HeaderLocators.PRODUCT_QUANTITY_IN_CART.getPath());
@@ -68,16 +72,32 @@ public class HeaderComponent extends BasePage {
         return compareIcon;
     }
 
+    public CategoriesMenu getCategoriesMenu() {
+        return categoriesMenu;
+    }
+
+    public ComparingListModal getComparingListModal() {
+        return comparingListModal;
+    }
+
     public LoginModal clickOnLoginButton() {
         waitForElementToAppear(getLoginButton()).click();
         return new LoginModal(driver);
     }
 
-    public CategoriesMenu clickOnCatalogButton() {
-        waitForElementToAppear(getCatalogButton()).click();
-        return categoriesMenu;
+    @Step("Click on the compare icon in the page header")
+    public ComparingListModal clickOnCompareIcon(){
+        waitForElementToAppear(getCompareIcon()).click();
+        return getComparingListModal();
     }
 
+    @Step("Click on the 'Каталог' button")
+    public CategoriesMenu clickOnCatalogButton() {
+        waitForElementToAppear(getCatalogButton()).click();
+        return getCategoriesMenu();
+    }
+
+    @Step("Pay attention to the product's quantity in the cart")
     public String getQuantityOfProductsInCart() {
         return getProductQuantityInCart().getText().replaceAll(" ", "");
     }

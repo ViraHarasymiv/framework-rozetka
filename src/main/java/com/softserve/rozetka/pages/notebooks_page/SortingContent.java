@@ -4,6 +4,7 @@ import com.softserve.rozetka.locators.notebooks_page_locators.SortingContentLoca
 import com.softserve.rozetka.pages.base_pages.BasePage;
 import com.softserve.rozetka.pages.decreased_by_price_notebooks_page.DecreasedByPriceNotebooksPage;
 import com.softserve.rozetka.pages.increased_by_price_notebooks_page.IncreasedByPriceNotebooksPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -34,6 +35,7 @@ public class SortingContent extends BasePage {
         return bigItemsView;
     }
 
+    @Step("Select the 'Від дешевих до дорогих' option")
     public IncreasedByPriceNotebooksPage selectLowerToHigherOption(){
         waitForElementToAppear(getSortField());
         Select select = new Select(getSortField());
@@ -41,6 +43,7 @@ public class SortingContent extends BasePage {
         return new IncreasedByPriceNotebooksPage(driver);
     }
 
+    @Step("Select the 'Від дорогих до дешевих' option")
     public DecreasedByPriceNotebooksPage selectHigherToLowerOption(){
         waitForElementToAppear(getSortField());
         Select select = new Select(getSortField());

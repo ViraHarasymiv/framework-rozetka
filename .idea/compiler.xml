@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="com.softserve.rozetka" target="11" />
-      <module name="team_16" target="11" />
+      <module name="team_16" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
