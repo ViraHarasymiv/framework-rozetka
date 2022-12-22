@@ -44,23 +44,13 @@ public class NotebooksPage extends ProductsPage {
                 .get(1).click();
         return new NotebookItemPage(driver);
     }
-    @Step("Click on the cart's icon of the first notebook's item in the Notebooks Page")
-    public NotebooksPage putFirstProductToCart(){
-           waitForElementToAppear(getProductItems().getCartIcons().get(0));
-           getProductItems().getCartIcons().get(0).click();
-        return this;
-    }
-
-    @Step("Click on the cart's icon of the second notebook's item in the Notebooks Page")
-    public NotebooksPage putSecondProductToCart(){
-        waitForElementToAppear(getProductItems().getCartIcons().get(1));
-        getProductItems().getCartIcons().get(1).click();
-        return this;
-    }
-    @Step("Click on the cart's icon of the third notebook's item in the Notebooks Page")
-    public HeaderComponent putThirdProductToCart(){
-        waitForElementToAppear(getProductItems().getCartIcons().get(2));
-        getProductItems().getCartIcons().get(2).click();
+    @Step("Click on the multiple notebook's cart icons in the Notebooks Page")
+    public HeaderComponent putMultipleProductsToCart(){
+        waitForElementsToAppear(getProductItems().getCartIcons());
+           for (int i = 0; i < 3; i++){
+               waitForElementToAppear(getProductItems().getCartIcons().get(i));
+               waitForElementBecomeClickable(getProductItems().getCartIcons().get(i)).click();
+           }
         return getHeaderComponent();
     }
 

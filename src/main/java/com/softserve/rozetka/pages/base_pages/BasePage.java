@@ -1,8 +1,6 @@
 package com.softserve.rozetka.pages.base_pages;
 
-import com.softserve.rozetka.locators.product_items_locators.ProductItemsLocators;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -54,5 +52,7 @@ public class BasePage {
         new WebDriverWait(driver, Duration.ofSeconds(TIME)).until(
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
-
+    protected void waitForTextToBePresent(WebElement element, String text){
+        wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+    }
 }

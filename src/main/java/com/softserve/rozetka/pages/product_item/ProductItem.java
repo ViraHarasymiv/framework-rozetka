@@ -46,9 +46,6 @@ public class ProductItem extends BasePage {
         return prices;
     }
 
-    public By getCartIconPath(){
-        return ProductItemsLocators.CART_ICON.getPath();
-    }
     public List<WebElement> getCartIcons() {
         if (cartIcons == null) {
             waitForPresenceOfAllElements(ProductItemsLocators.CART_ICON.getPath());

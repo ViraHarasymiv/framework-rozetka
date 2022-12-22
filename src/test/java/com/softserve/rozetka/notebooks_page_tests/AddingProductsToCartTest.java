@@ -41,7 +41,7 @@ public class AddingProductsToCartTest extends BaseRunner {
                 .clickOnFirstProductItem()
                 .getBuyOptions()
                 .putItemToCart()
-                .getQuantityOfProductsInCart();
+                .getQuantityOfProductsInCart(EXPECTED_PRODUCT_COUNT_IN_CART);
         Assert.assertTrue(actualProductCountOfInCart.contentEquals(EXPECTED_PRODUCT_COUNT_IN_CART),
                 "Expected product count in the cart should be equal to " + EXPECTED_PRODUCT_COUNT_IN_CART);
     }
@@ -51,10 +51,8 @@ public class AddingProductsToCartTest extends BaseRunner {
     @Severity(SeverityLevel.CRITICAL)
     public void checkAddingMultipleNotebooksToCart(){
         String actualProductCountOfInCart = new NotebooksPage(driver)
-                .putFirstProductToCart()
-                .putSecondProductToCart()
-                .putThirdProductToCart()
-                .getQuantityOfProductsInCart();
+                .putMultipleProductsToCart()
+                .getQuantityOfProductsInCart(EXPECTED_MULTIPLE_COUNT_IN_CART);
         Assert.assertEquals(actualProductCountOfInCart, EXPECTED_MULTIPLE_COUNT_IN_CART,
                 "Expected product count in the cart should be equal to " + EXPECTED_MULTIPLE_COUNT_IN_CART);
     }

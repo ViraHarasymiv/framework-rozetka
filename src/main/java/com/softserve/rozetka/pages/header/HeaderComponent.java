@@ -98,7 +98,8 @@ public class HeaderComponent extends BasePage {
     }
 
     @Step("Pay attention to the product's quantity in the cart")
-    public String getQuantityOfProductsInCart() {
+    public String getQuantityOfProductsInCart(String text) {
+        waitForTextToBePresent(getProductQuantityInCart(), text);
         return getProductQuantityInCart()
                 .getText().trim().replaceAll(" ", "");
     }

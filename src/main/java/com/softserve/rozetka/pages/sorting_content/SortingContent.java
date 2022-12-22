@@ -42,7 +42,7 @@ public class SortingContent extends BasePage {
     @Step("Select the 'Від дешевих до дорогих' option")
     public IncreasedByPriceNotebooksPage selectLowerToHigherOption(){
         waitForElementToAppear(getSortFieldPath());
-        Select select = new Select(getSortField());
+        Select select = new Select(waitForElementToAppear(getSortFieldPath()));
         select.selectByVisibleText(FROM_LOWER_TO_HIGHER_OPTION);
         return new IncreasedByPriceNotebooksPage(driver);
     }
@@ -50,7 +50,7 @@ public class SortingContent extends BasePage {
     @Step("Select the 'Від дорогих до дешевих' option")
     public DecreasedByPriceNotebooksPage selectHigherToLowerOption(){
         waitForElementToAppear(getSortFieldPath());
-        Select select = new Select(getSortField());
+        Select select = new Select(waitForElementToAppear(getSortFieldPath()));
         select.selectByVisibleText(FROM_HIGHER_TO_LOWER_OPTION);
         return new DecreasedByPriceNotebooksPage(driver);
     }
