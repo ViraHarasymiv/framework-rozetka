@@ -4,11 +4,13 @@ import com.softserve.rozetka.locators.login_modal_locators.LoginModalLocators;
 import com.softserve.rozetka.locators.login_modal_locators.RegistrationModalLocators;
 import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.runners.BaseRunner;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.softserve.rozetka.pages.login_component.LoginModal;
 
+@Feature("Login fields validation")
 public class LoginValidationTests extends BaseRunner {
     private static final String INVALID_EMAIL_OR_PHONE_MESSAGE  = "Введено невірну адресу ел. пошти або номер телефону";
     private static final String TYPE_OF_EMAIL_PHONE_FIELD  = "form__row validation_type_error";
@@ -23,6 +25,10 @@ public class LoginValidationTests extends BaseRunner {
     }
 
     @Test(priority = 1)
+    @Description("Check error \"Введено невірну адресу ел. пошти або номер телефону\" in the login form when entering an email without a domain name")
+    @Severity(SeverityLevel.NORMAL)
+    @Link("https://github.com/Test-Automation-Crash-Course-24-10-22/team_16/issues/10")
+    @Issue("10")
     public void checkErrorInvalidEmail() {
         new LoginModal(driver)
                 .enterInvalidEmail()
