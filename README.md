@@ -7,7 +7,7 @@ The target website is https://rozetka.com.ua/ua/
 
 Automated tests:
 1. Checking sorting notebooks by price.
-2. Checkin filtering notebooks by the valid and invalid brand's name (negative test example).
+2. Checking filtering notebooks by the valid and invalid brand's name (negative test example).
 3. Checking filtering notebooks by the price range.
 
 ## Executing the Tests
