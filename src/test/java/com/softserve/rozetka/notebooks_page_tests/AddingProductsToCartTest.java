@@ -55,7 +55,7 @@ public class AddingProductsToCartTest extends BaseRunner {
                 .putSecondProductToCart()
                 .putThirdProductToCart()
                 .getQuantityOfProductsInCart();
-        Assert.assertTrue(actualProductCountOfInCart.contentEquals(EXPECTED_MULTIPLE_COUNT_IN_CART),
+        Assert.assertEquals(actualProductCountOfInCart, EXPECTED_MULTIPLE_COUNT_IN_CART,
                 "Expected product count in the cart should be equal to " + EXPECTED_MULTIPLE_COUNT_IN_CART);
     }
 }
