@@ -1,6 +1,7 @@
 package com.softserve.rozetka.pages.login_component;
 import com.softserve.rozetka.locators.login_modal_locators.RegistrationModalLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -59,31 +60,42 @@ public class RegistrationModal extends BasePage {
         return closeFormButton;
     }
 
+    @Step("Click on the \"Ім'я\" field in the registration modal")
     public RegistrationModal clickOnNameField(){
         waitForElementToAppear(getNameField());
         getNameField().click();
         return this;
     }
+
+    @Step("Click on the \"Прізвище\" field in the registration modal")
     public RegistrationModal clickOnSurnameField(){
         waitForElementToAppear(getSurnameField());
         getSurnameField().click();
         return this;
     }
+
+    @Step("Click on the \"Номер телефону\" field in the registration modal")
     public RegistrationModal clickOnPhoneField(){
         waitForElementToAppear(getPhoneField());
         getPhoneField().click();
         return this;
     }
+
+    @Step("Click on the \"Ел. пошта\" field in the registration modal")
     public RegistrationModal clickOnEmailField(){
         waitForElementToAppear(getEmailField());
         getEmailField().click();
         return this;
     }
+
+    @Step("Click on the \"Придумайте пароль\" field in the registration modal")
     public RegistrationModal clickOnPasswordField(){
         waitForElementToAppear(getPasswordField());
         getPasswordField().click();
         return this;
     }
+
+    @Step("Click on the close form button in the registration modal")
     public RegistrationModal clickOnCloseFormButton(){
         waitForElementToAppear(getCloseFormButton());
         getCloseFormButton().click();

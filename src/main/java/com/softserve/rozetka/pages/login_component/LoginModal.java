@@ -2,6 +2,7 @@ package com.softserve.rozetka.pages.login_component;
 
 import com.softserve.rozetka.locators.login_modal_locators.LoginModalLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -72,7 +73,7 @@ public class LoginModal extends BasePage {
         return remindPasswordButton;
     }
 
-    public WebElement getHideShowPasswordButton() {
+    public WebElement getHideShowPasswordCheckBox() {
         if(hideShowPasswordButton == null){
             waitForPresenceOfElement(LoginModalLocators.HIDE_SHOW_PASSWORD_BUTTON.getPath());
             hideShowPasswordButton = this.driver.findElement(LoginModalLocators.HIDE_SHOW_PASSWORD_BUTTON.getPath());
@@ -87,17 +88,23 @@ public class LoginModal extends BasePage {
         }
         return hideShowPasswordButtonHref;
     }
+
+    @Step("Enter the value of e-mail without domain in the \"Ел. пошта або телефон\" input field ")
     public LoginModal enterInvalidEmail(){
         waitForElementToAppear(getEmailAndPhoneField());
         Actions actions = new Actions(driver);
         actions.click(getEmailAndPhoneField()).sendKeys(INVALID_EMAIL).perform();
         return this;
     }
+
+    @Step("Click on the \"Пароль\" field in the login modal")
     public LoginModal clickOnPasswordField(){
         waitForElementToAppear(getPasswordField());
         (getPasswordField()).click();
         return this;
     }
+
+    @Step("Enter the invalid value in the \"Пароль\" input field ")
     public LoginModal enterInvalidPassword(){
         waitForElementToAppear(getPasswordField());
         Actions actions = new Actions(driver);
@@ -105,19 +112,24 @@ public class LoginModal extends BasePage {
         return this;
     }
 
+    @Step("Click on the \"Зареєструватися\" button in the login modal")
     public LoginModal clickOnSignInButton(){
         waitForElementToAppear(getSignInButton());
         getSignInButton().click();
         return this;
     }
+
+    @Step("Click on the \"Нагадати пароль\" button in the login modal")
     public LoginModal clickOnRemindPasswordButton(){
         waitForElementToAppear(getRemindPasswordButton());
         getRemindPasswordButton().click();
         return this;
     }
-    public LoginModal clickOnHideShowPasswordButton(){
-        waitForElementToAppear(getHideShowPasswordButton());
-        getHideShowPasswordButton().click();
+
+    @Step("Click on the Hide/Show password check box in the login modal")
+    public LoginModal clickOnHideShowPasswordCheckBox(){
+        waitForElementToAppear(getHideShowPasswordCheckBox());
+        getHideShowPasswordCheckBox().click();
         return this;
     }
 }

@@ -22,7 +22,7 @@ public class LoginButtonTests extends BaseRunner{
         setDriver();
         new HomePage(driver)
             .getHeaderComponent()
-            .clickOnLoginButton();
+            .clickOnLoginIcon();
     }
 
     @Test(priority = 1)
@@ -60,8 +60,8 @@ public class LoginButtonTests extends BaseRunner{
     public void checkHideShowPasswordButtonShowsPasswordOnEvenNumberClicks(){
         new LoginModal(driver)
                 .enterInvalidPassword()
-                .clickOnHideShowPasswordButton()
-                .clickOnHideShowPasswordButton();
+                .clickOnHideShowPasswordCheckBox()
+                .clickOnHideShowPasswordCheckBox();
         Assert.assertEquals(driver.findElement(LoginModalLocators.HIDE_SHOW_PASSWORD_BUTTON_HREF.getPath()).getAttribute("href"), HIDE_ATTRIBUTE_HIDESHOW_PASSWORD);
         Assert.assertEquals(driver.findElement(LoginModalLocators.PASSWORD_FIELD.getPath()).getAttribute("type"), "password");
     }
@@ -74,7 +74,7 @@ public class LoginButtonTests extends BaseRunner{
     public void checkHideShowPasswordButtonShowsPasswordOnOddNumberClicks(){
         new LoginModal(driver)
                 .enterInvalidPassword()
-                .clickOnHideShowPasswordButton();
+                .clickOnHideShowPasswordCheckBox();
         Assert.assertEquals(driver.findElement(LoginModalLocators.HIDE_SHOW_PASSWORD_BUTTON_HREF.getPath()).getAttribute("href"), SHOW_ATTRIBUTE_HIDESHOW_PASSWORD);
         Assert.assertEquals(driver.findElement(LoginModalLocators.PASSWORD_FIELD.getPath()).getAttribute("type"), "text");
     }

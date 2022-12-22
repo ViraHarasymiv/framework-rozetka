@@ -1,7 +1,6 @@
 package com.softserve.rozetka.login_page_tests.login_validation_tests;
 
 import com.softserve.rozetka.locators.login_modal_locators.LoginModalLocators;
-import com.softserve.rozetka.locators.login_modal_locators.RegistrationModalLocators;
 import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.runners.BaseRunner;
 import io.qameta.allure.*;
@@ -21,7 +20,7 @@ public class LoginValidationTests extends BaseRunner {
         setDriver();
         new HomePage(driver)
                 .getHeaderComponent()
-                .clickOnLoginButton();
+                .clickOnLoginIcon();
     }
 
     @Test(priority = 1)

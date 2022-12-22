@@ -56,7 +56,7 @@ public class HeaderComponent extends BasePage {
         return productQuantityInCart;
     }
 
-    public WebElement getLoginButton() {
+    public WebElement getLoginIcon() {
         if (loginButton == null) {
             waitForPresenceOfElement(HeaderLocators.LOGIN_BUTTON.getPath());
             loginButton = this.driver.findElement(HeaderLocators.LOGIN_BUTTON.getPath());
@@ -80,8 +80,9 @@ public class HeaderComponent extends BasePage {
         return comparingListModal;
     }
 
-    public LoginModal clickOnLoginButton() {
-        waitForElementToAppear(getLoginButton()).click();
+    @Step("Click on the login icon in the page header")
+    public LoginModal clickOnLoginIcon() {
+        waitForElementToAppear(getLoginIcon()).click();
         return new LoginModal(driver);
     }
 
