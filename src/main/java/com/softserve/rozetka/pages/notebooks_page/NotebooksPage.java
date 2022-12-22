@@ -47,10 +47,8 @@ public class NotebooksPage extends ProductsPage {
     @Step("Click on the multiple notebook's cart icons in the Notebooks Page")
     public HeaderComponent putMultipleProductsToCart(){
         waitForElementsToAppear(getProductItems().getCartIcons());
-           for (int i = 1; i < 4; i++){
-               waitForElementToAppear(getProductItems().getCartIcons().get(i));
-               waitForElementBecomeClickable(getProductItems().getCartIcons().get(i)).click();
-               waitForTextToBePresent(getProductItems().getCartIcons().get(i),String.valueOf(i));
+           for (int i = 0; i < 3; i++){
+              waitForElementBecomeClickable(getProductItems().getCartIcons().get(i)).click();
            }
         return getHeaderComponent();
     }
