@@ -7,8 +7,12 @@ The target website is https://rozetka.com.ua/ua/
 
 Automated tests:
 1. Checking sorting notebooks by price.
-2. Checkin filtering notebooks by the valid and invalid brand's name (negative test example).
+2. Checking filtering notebooks by the valid and invalid brand's name (negative test example).
 3. Checking filtering notebooks by the price range.
+4. Checking redirection to the password recovery modal from the login modal after clicking the "Нагадати пароль" button.
+5. Checking the hide/show password button in the login form shows/hides the password for an odd/even number of clicks.
+6. Checking redirection to the registration modal from the login modal after clicking the "Зареєструватися" button
+7. Checking the error "Введено невірну адресу ел. пошти або номер телефону" in the authorization form when entering an email without a domain name
 
 ## Executing the Tests
 
