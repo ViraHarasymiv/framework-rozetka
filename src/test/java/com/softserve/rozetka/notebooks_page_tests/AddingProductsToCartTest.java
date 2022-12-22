@@ -4,6 +4,7 @@ import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
 import com.softserve.rozetka.runners.BaseRunner;
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
@@ -16,6 +17,7 @@ import org.testng.annotations.Test;
  * @author Vira Harasymiv
  *
  */
+@Feature("Adding notebooks to the cart")
 public class AddingProductsToCartTest extends BaseRunner {
     private static final String EXPECTED_PRODUCT_COUNT_IN_CART = "1";
     private static final String EXPECTED_MULTIPLE_COUNT_IN_CART = "3";
@@ -40,7 +42,7 @@ public class AddingProductsToCartTest extends BaseRunner {
                 .getBuyOptions()
                 .putItemToCart()
                 .getQuantityOfProductsInCart();
-        Assert.assertTrue(actualProductCountOfInCart.equals(EXPECTED_PRODUCT_COUNT_IN_CART),
+        Assert.assertTrue(actualProductCountOfInCart.contentEquals(EXPECTED_PRODUCT_COUNT_IN_CART),
                 "Expected product count in the cart should be equal to " + EXPECTED_PRODUCT_COUNT_IN_CART);
     }
 
@@ -49,9 +51,11 @@ public class AddingProductsToCartTest extends BaseRunner {
     @Severity(SeverityLevel.CRITICAL)
     public void checkAddingMultipleNotebooksToCart(){
         String actualProductCountOfInCart = new NotebooksPage(driver)
-                .putMultipleProductsToCart()
+                .putFirstProductToCart()
+                .putSecondProductToCart()
+                .putThirdProductToCart()
                 .getQuantityOfProductsInCart();
-        Assert.assertEquals(actualProductCountOfInCart,
+        Assert.assertTrue(actualProductCountOfInCart.contentEquals(EXPECTED_MULTIPLE_COUNT_IN_CART),
                 "Expected product count in the cart should be equal to " + EXPECTED_MULTIPLE_COUNT_IN_CART);
     }
 }

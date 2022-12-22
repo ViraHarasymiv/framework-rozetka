@@ -2,7 +2,7 @@ package com.softserve.rozetka.notebooks_page_tests;
 
 import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
-import com.softserve.rozetka.pages.notebooks_page.SortingContent;
+import com.softserve.rozetka.pages.sorting_content.SortingContent;
 import com.softserve.rozetka.runners.BaseRunner;
 import io.qameta.allure.*;
 import org.testng.Assert;
@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
  * @author Vira Harasymiv
  *
  */
+@Feature("Sorting notebooks by price")
 public class NotebooksSortingTest extends BaseRunner {
 
     @BeforeMethod
@@ -53,7 +54,8 @@ public class NotebooksSortingTest extends BaseRunner {
     @Link("https://github.com/Test-Automation-Crash-Course-24-10-22/team_16/issues/24")
     @Issue("24")
     public void checkSortingFromHigherToLowerPrice(){
-        List<Integer> actualPrices = new SortingContent(driver)
+        List<Integer> actualPrices = new NotebooksPage(driver)
+                .getSortingContent()
                 .selectHigherToLowerOption()
                 .getProductItems()
                 .getIntegerPrices();

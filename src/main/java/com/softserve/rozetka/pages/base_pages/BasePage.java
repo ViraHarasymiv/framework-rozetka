@@ -1,19 +1,26 @@
 package com.softserve.rozetka.pages.base_pages;
 
+import com.softserve.rozetka.locators.product_items_locators.ProductItemsLocators;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
 public class BasePage {
-    private static final int TIME = 100;
+    private static final int TIME = 10000;
+    private static final int POLLING_TIME = 5;
     protected WebDriver driver;
     protected WebDriverWait wait;
 
     public BasePage(WebDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(TIME));
+    }
+
+    protected WebElement waitForElementToAppear(By locator){
+        return  wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     protected WebElement waitForElementToAppear(WebElement element){
@@ -33,7 +40,11 @@ public class BasePage {
         wait.until(ExpectedConditions.invisibilityOfAllElements(elements));
     }
     protected WebElement waitForElementBecomeClickable(WebElement element){
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
+        return wait
+                .withTimeout(Duration.ofSeconds(TIME))
+                .pollingEvery(Duration.ofSeconds(POLLING_TIME))
+                .ignoring(StaleElementReferenceException.class)
+                .until(ExpectedConditions.elementToBeClickable(element));
     }
     protected void waitForUrlToBe(String URL){
         wait.until(ExpectedConditions.urlToBe(URL));
@@ -43,4 +54,5 @@ public class BasePage {
         new WebDriverWait(driver, Duration.ofSeconds(TIME)).until(
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
+
 }

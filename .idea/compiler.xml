@@ -6,12 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="team_16" />
         <module name="com.softserve.rozetka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="com.softserve.rozetka" target="11" />
+      <module name="com.softserve.rozetka" target="1.8" />
       <module name="team_16" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -93,12 +93,13 @@ public class HeaderComponent extends BasePage {
 
     @Step("Click on the 'Каталог' button")
     public CategoriesMenu clickOnCatalogButton() {
-        waitForElementToAppear(getCatalogButton()).click();
+        waitForElementBecomeClickable(getCatalogButton()).click();
         return getCategoriesMenu();
     }
 
     @Step("Pay attention to the product's quantity in the cart")
     public String getQuantityOfProductsInCart() {
-        return getProductQuantityInCart().getText().replaceAll(" ", "");
+        return getProductQuantityInCart()
+                .getText().trim().replaceAll(" ", "");
     }
 }

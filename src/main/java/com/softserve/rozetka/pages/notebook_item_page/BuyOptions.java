@@ -37,6 +37,7 @@ public class BuyOptions extends BasePage {
 
     @Step("Click on the cart icon")
     public HeaderComponent putItemToCart(){
+        waitForElementToAppear(getCartButton());
         Actions actions = new Actions(driver);
         actions.moveToElement(getCartButton()).click().perform();
         return new HeaderComponent(driver);

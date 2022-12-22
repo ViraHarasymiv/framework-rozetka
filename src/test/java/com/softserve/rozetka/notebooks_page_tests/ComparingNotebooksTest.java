@@ -4,10 +4,7 @@ import com.softserve.rozetka.pages.header.HeaderComponent;
 import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
 import com.softserve.rozetka.runners.BaseRunner;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,6 +16,7 @@ import java.util.List;
  * @author Vira Harasymiv
  *
  */
+@Feature("Comparing notebooks")
 public class ComparingNotebooksTest extends BaseRunner {
 
     @BeforeMethod

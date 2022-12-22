@@ -17,6 +17,7 @@ import java.util.List;
  * @author Vira Harasymiv
  *
  */
+@Feature("Filtering notebooks")
 public class NotebooksFilteringTest extends BaseRunner {
     private static final String VALID_BRAND = BrandsOptionsReader.get().getValidBrand();;
     private static final String INVALID_BRAND = BrandsOptionsReader.get().getInValidBrand();
@@ -79,7 +80,8 @@ public class NotebooksFilteringTest extends BaseRunner {
     public void checkNotebooksFilteringByInvalidBrandName() {
     List<WebElement>allCheckBoxes = new NotebooksPage(driver)
                 .getFilterContent()
-                .enterInvalidBrand(INVALID_BRAND);
+                .enterInvalidBrand(INVALID_BRAND)
+                .getBrandsCheckBoxes();
                 Assert.assertTrue(allCheckBoxes.isEmpty(),
                         "The brand name is invalid. Brand checkboxes shouldn't be shown");
     }

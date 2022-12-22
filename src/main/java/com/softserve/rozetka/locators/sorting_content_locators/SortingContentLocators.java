@@ -1,4 +1,4 @@
-package com.softserve.rozetka.locators.notebooks_page_locators;
+package com.softserve.rozetka.locators.sorting_content_locators;
 
 import org.openqa.selenium.By;
 

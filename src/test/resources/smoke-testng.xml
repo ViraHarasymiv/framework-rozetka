@@ -6,6 +6,8 @@
             <class name="com.softserve.rozetka.notebooks_page_tests.AddingProductsToCartTest"/>
             <class name="com.softserve.rozetka.notebooks_page_tests.NotebooksFilteringTest"/>
             <class name="com.softserve.rozetka.notebooks_page_tests.NotebooksSortingTest"/>
+            <class name="com.softserve.rozetka.login_page_tests.login_button_tests.LoginButtonTests"></class>
+            <class name="com.softserve.rozetka.login_page_tests.login_validation_tests.LoginValidationTests"></class>
         </classes>
     </test>
 </suite>

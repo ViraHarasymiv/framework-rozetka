@@ -4,9 +4,8 @@ import com.softserve.rozetka.locators.notebooks_page_locators.FilterContentLocat
 import com.softserve.rozetka.pages.base_pages.BasePage;
 import com.softserve.rozetka.pages.dell_notebooks_page.DellNotebooksPage;
 import com.softserve.rozetka.pages.ranged_by_price_notebooks_page.RangedByPriceNotebooksPage;
-import com.softserve.rozetka.utils.BrandsOptionsReader;
-import com.softserve.rozetka.utils.PricesOptionsReader;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -25,10 +24,13 @@ public class FilterContent extends BasePage {
         super(driver);
     }
 
+    public By getBrandPath(){
+        return FilterContentLocators.BRAND_FIELD.getPath();
+    }
     public WebElement getBrandField() {
         if(brandField == null){
-            waitForPresenceOfElement(FilterContentLocators.BRAND_FIELD.getPath());
-            brandField = this.driver.findElement(FilterContentLocators.BRAND_FIELD.getPath());
+            waitForPresenceOfElement(getBrandPath());
+            brandField = this.driver.findElement(getBrandPath());
         }
         return brandField;
     }
@@ -40,11 +42,14 @@ public class FilterContent extends BasePage {
         }
         return checkBoxes;
     }
+    public By getMinRangeInputPath(){
+        return FilterContentLocators.MIN_RANGE_INPUT.getPath();
+    }
 
     public WebElement getMinRangeInput() {
         if(minRangeInput == null){
-            waitForPresenceOfElement(FilterContentLocators.MIN_RANGE_INPUT.getPath());
-            minRangeInput = this.driver.findElement(FilterContentLocators.MIN_RANGE_INPUT.getPath());
+            waitForPresenceOfElement(getMinRangeInputPath());
+            minRangeInput = this.driver.findElement(getMinRangeInputPath());
         }
         return minRangeInput;
     }
@@ -75,17 +80,21 @@ public class FilterContent extends BasePage {
 
     @Step("Type a valid brand's name: {0} in the 'Бренд' field")
     public FilterContent enterValidBrand(String validBrandName){
-        waitForElementToAppear(getBrandField());
+        waitForElementToAppear(getBrandPath());
         Actions actions = new Actions(driver);
         actions.sendKeys(getBrandField(),validBrandName).perform();
         return this;
     }
 
     @Step("Type an invalid brand's name: {0} in the 'Бренд' field")
-    public List<WebElement> enterInvalidBrand(String invalidBrandName){
-        waitForElementToAppear(getBrandField());
+    public FilterContent enterInvalidBrand(String invalidBrandName){
+        waitForElementToAppear(getBrandPath());
         Actions actions = new Actions(driver);
         actions.sendKeys(getBrandField(),invalidBrandName).perform();
+        return this;
+    }
+    @Step("Pay attention to the brand's checkboxes visibility ")
+    public List<WebElement> getBrandsCheckBoxes(){
         waitForElementsToDisappear(getCheckBoxes());
         return this.driver.findElements(FilterContentLocators.CHECKBOXES.getPath());
     }
@@ -99,7 +108,7 @@ public class FilterContent extends BasePage {
 
     @Step("Scroll to the price range inputs and type the minimum price value: {0} in the input field")
     public FilterContent enterMinPrice(String minPriceValue){
-        waitForElementToAppear(getMinRangeInput());
+        waitForElementToAppear(getMinRangeInputPath());
         Actions actions = new Actions(driver);
         actions.scrollToElement(getMinRangeInput()).perform();
         (getMinRangeInput()).clear();

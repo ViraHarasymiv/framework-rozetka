@@ -3,6 +3,7 @@ package com.softserve.rozetka.pages.product_item;
 import com.softserve.rozetka.locators.product_items_locators.ProductItemsLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -45,6 +46,9 @@ public class ProductItem extends BasePage {
         return prices;
     }
 
+    public By getCartIconPath(){
+        return ProductItemsLocators.CART_ICON.getPath();
+    }
     public List<WebElement> getCartIcons() {
         if (cartIcons == null) {
             waitForPresenceOfAllElements(ProductItemsLocators.CART_ICON.getPath());
