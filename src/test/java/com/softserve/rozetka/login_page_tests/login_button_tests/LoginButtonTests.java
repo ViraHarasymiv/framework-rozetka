@@ -33,8 +33,8 @@ public class LoginButtonTests extends BaseRunner{
     public void checkOpenPasswordRecoveryFormAfterClickingOnRemindPasswordButton() {
         new LoginModal(driver)
                 .clickOnRemindPasswordButton();
-        Assert.assertEquals(driver.findElement(RemindPasswordModalLocators.TEMPORARY_PASSWORD_BUTTON.getPath()).getText(), "Отримати тимчасовий пароль");
-        Assert.assertEquals(driver.findElement(RemindPasswordModalLocators.REMEMBERED_YOUR_PASSWORD_BUTTON.getPath()).getText(), "Я згадав свій пароль");
+        Assert.assertEquals(driver.findElement(RemindPasswordModalLocators.GET_TEMPORARY_PASSWORD_BUTTON.getPath()).getText(), "Отримати тимчасовий пароль");
+        Assert.assertEquals(driver.findElement(RemindPasswordModalLocators.I_REMEMBERED_MY_PASSWORD_BUTTON.getPath()).getText(), "Я згадав свій пароль");
     }
 
     @Test(priority = 2)

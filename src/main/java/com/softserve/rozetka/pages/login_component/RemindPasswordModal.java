@@ -25,15 +25,15 @@ public class RemindPasswordModal extends BasePage {
     }
     public WebElement getTemporaryPasswordButton() {
         if(temporaryPasswordButton == null){
-            waitForPresenceOfElement(RemindPasswordModalLocators.TEMPORARY_PASSWORD_BUTTON.getPath());
-            temporaryPasswordButton = this.driver.findElement(RemindPasswordModalLocators.TEMPORARY_PASSWORD_BUTTON.getPath());
+            waitForPresenceOfElement(RemindPasswordModalLocators.GET_TEMPORARY_PASSWORD_BUTTON.getPath());
+            temporaryPasswordButton = this.driver.findElement(RemindPasswordModalLocators.GET_TEMPORARY_PASSWORD_BUTTON.getPath());
         }
         return temporaryPasswordButton;
     }
     public WebElement getRememberedYourPasswordButton() {
         if(rememberedYourPasswordButton == null){
-            waitForPresenceOfElement(RemindPasswordModalLocators.REMEMBERED_YOUR_PASSWORD_BUTTON.getPath());
-            rememberedYourPasswordButton = this.driver.findElement(RemindPasswordModalLocators.REMEMBERED_YOUR_PASSWORD_BUTTON.getPath());
+            waitForPresenceOfElement(RemindPasswordModalLocators.I_REMEMBERED_MY_PASSWORD_BUTTON.getPath());
+            rememberedYourPasswordButton = this.driver.findElement(RemindPasswordModalLocators.I_REMEMBERED_MY_PASSWORD_BUTTON.getPath());
         }
         return rememberedYourPasswordButton;
     }
