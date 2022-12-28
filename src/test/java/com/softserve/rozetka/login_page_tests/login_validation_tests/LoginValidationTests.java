@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.softserve.rozetka.pages.login_component.LoginModal;
 
-@Feature("Login validation test")
+@Feature("Login validation")
 public class LoginValidationTests extends BaseRunner {
     private static final String INVALID_EMAIL_OR_PHONE_MESSAGE  = "Введено невірну адресу ел. пошти або номер телефону";
     private static final String TYPE_OF_EMAIL_PHONE_FIELD  = "form__row validation_type_error";
