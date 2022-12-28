@@ -16,10 +16,10 @@ public class ComputersAndNotebooksPage extends BasePageWithHeader {
    }
 
     public MenuSection getMenuSection() {
-        waitForUrlToBe(URL);
+        waitForUrlContainsText(URL);
         return menuSection;
     }
     public СomputerComponents getСomputerComponents(){
-        waitForUrlToBe(URL);
+        waitForUrlContainsText(URL);
         return сomputerComponents;}
 }

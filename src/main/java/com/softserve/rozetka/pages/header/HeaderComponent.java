@@ -6,6 +6,7 @@ import com.softserve.rozetka.pages.login_component.LoginModal;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class HeaderComponent extends BasePage {
     private WebElement searchInput;
@@ -16,11 +17,21 @@ public class HeaderComponent extends BasePage {
     private WebElement productQuantityInCart;
     private CategoriesMenu categoriesMenu;
     private ComparingListModal comparingListModal;
+    private CartModal cartModal;
 
     public HeaderComponent(WebDriver driver) {
         super(driver);
         categoriesMenu = new CategoriesMenu(driver);
         comparingListModal = new ComparingListModal(driver);
+        cartModal = new CartModal(driver);
+    }
+
+    public CartModal getCartModal() {
+        return cartModal;
+    }
+
+    public void setCartModal(CartModal cartModal) {
+        this.cartModal = cartModal;
     }
 
     public WebElement getCatalogButton() {
@@ -91,16 +102,23 @@ public class HeaderComponent extends BasePage {
         return getComparingListModal();
     }
 
-    @Step("Click on the 'Каталог' button")
+    @Step(value = "Click on the 'Каталог' button")
     public CategoriesMenu clickOnCatalogButton() {
         waitForElementBecomeClickable(getCatalogButton()).click();
         return getCategoriesMenu();
     }
 
-    @Step("Pay attention to the product's quantity in the cart")
+    @Step("Pay attention to the product's quantity in the cart icon in the page header")
     public String getQuantityOfProductsInCart(String text) {
         waitForTextToBePresent(getProductQuantityInCart(),text);
         return getProductQuantityInCart()
-                .getText().trim().replaceAll(" ", "");
+                .getText().trim().replaceAll("\\D", "");
+    }
+
+    @Step("Click on the cart icon in the page header")
+    public CartModal clickOnTheCartIcon(){
+        Actions actions = new Actions(driver);
+        actions.click(getCartIcon()).perform();
+        return getCartModal();
     }
 }

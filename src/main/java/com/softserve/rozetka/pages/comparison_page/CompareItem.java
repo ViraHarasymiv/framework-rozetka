@@ -24,7 +24,7 @@ public class CompareItem extends BasePage {
         return productTitles;
     }
 
-    @Step("Check the selected notebooks titles")
+    @Step("Pay attention to the notebooks titles ")
     public List<String> getStringProductTitles(){
         return  getProductTitles()
                 .stream()

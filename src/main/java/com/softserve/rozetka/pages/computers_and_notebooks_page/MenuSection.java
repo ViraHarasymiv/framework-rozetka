@@ -2,6 +2,7 @@ package com.softserve.rozetka.pages.computers_and_notebooks_page;
 
 import com.softserve.rozetka.locators.computers_and_notebooks_page_locators.MenuSectionLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
+import com.softserve.rozetka.pages.computers_page.ComputersPage;
 import com.softserve.rozetka.pages.notebooks_page.NotebooksPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
@@ -68,9 +69,15 @@ public class MenuSection extends BasePage {
         return cablesAndAdaptersMenu;
     }
 
-    @Step("Click on the 'Ноутбуки' category")
+    @Step(value = "Click on the 'Ноутбуки' category")
     public NotebooksPage clickOnNotebooksMenu()  {
         getNotebooksMenu().click();
         return new NotebooksPage(driver);
+    }
+
+    @Step(value = "Click on the 'Комп'ютери, неттопи, моноблоки' category")
+    public ComputersPage clickOnComputersNettopsMonoblocksMenu(){
+        getComputersNettopsMonoblocksMenu().click();
+        return new ComputersPage(driver);
     }
 }

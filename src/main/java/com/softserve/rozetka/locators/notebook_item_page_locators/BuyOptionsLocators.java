@@ -3,7 +3,7 @@ package com.softserve.rozetka.locators.notebook_item_page_locators;
 import org.openqa.selenium.By;
 
 public enum BuyOptionsLocators {
-    PRODUCT_PRICE(By.xpath("//h1[@class='product__title']")),
+    PRODUCT_PRICE(By.xpath("//span[@class='product-prices__symbol']/..")),
     CART_BUTTON(By.xpath("//button[contains(@class, 'buy-button button button--w')]")),
     CREDIT_BUTTON(By.xpath("//button[contains(text(), 'Купити в кредит')]")),
     COMPARE_ICON(By.xpath("//button[contains(@class, 'compare')]")),

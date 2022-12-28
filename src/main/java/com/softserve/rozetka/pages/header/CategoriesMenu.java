@@ -22,7 +22,7 @@ public class CategoriesMenu extends BasePage {
         return notebooksAndComputersCategory;
     }
 
-    @Step("Click on the 'Ноутбуки та комп'ютери' menu")
+    @Step(value = "Click on the 'Ноутбуки та комп'ютери' menu")
     public ComputersAndNotebooksPage clickOnNotebooksAndComputersCategory(){
         waitForElementToAppear(getNotebooksAndComputersCategory()).click();
         return new ComputersAndNotebooksPage(driver);

@@ -1,4 +1,4 @@
-package com.softserve.rozetka.pages.homepage;
+package com.softserve.rozetka.pages.home_page;
 
 import com.softserve.rozetka.pages.base_pages.BasePageWithHeader;
 import org.openqa.selenium.WebDriver;

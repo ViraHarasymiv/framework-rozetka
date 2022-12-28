@@ -40,7 +40,7 @@ public class ComparingListModal extends BasePage {
         return removeComparingItems;
     }
 
-    @Step("Click on the compare 'Ноутбуки 2' link")
+    @Step("Click on the compare link")
     public ComparisonPage clickOnCompareLink(){
         getCompareLink().click();
         return new ComparisonPage(driver);

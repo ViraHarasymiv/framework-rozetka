@@ -1,4 +1,4 @@
-package com.softserve.rozetka.pages.notebook_item_page;
+package com.softserve.rozetka.pages.buy_options_content;
 
 import com.softserve.rozetka.locators.notebook_item_page_locators.BuyOptionsLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
@@ -27,6 +27,14 @@ public class BuyOptions extends BasePage {
         return compareIcon;
     }
 
+    public WebElement getProductPrice() {
+        if(productPrice == null){
+            waitForPresenceOfElement(BuyOptionsLocators.PRODUCT_PRICE.getPath());
+            productPrice = driver.findElement(BuyOptionsLocators.PRODUCT_PRICE.getPath());
+        }
+        return productPrice;
+    }
+
     public WebElement getCartButton() {
         if(cartButton == null){
             waitForPresenceOfElement(BuyOptionsLocators.CART_BUTTON.getPath());
@@ -41,5 +49,11 @@ public class BuyOptions extends BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(getCartButton()).click().perform();
         return new HeaderComponent(driver);
+    }
+
+    @Step("Pay attention to the notebook's price")
+    public Integer getIntegerProductPrice(){
+        waitForElementToAppear(getProductPrice());
+        return Integer.parseInt(getProductPrice().getText().trim().replaceAll("\\D", ""));
     }
 }

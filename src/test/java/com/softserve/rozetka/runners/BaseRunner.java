@@ -2,9 +2,14 @@ package com.softserve.rozetka.runners;
 
 import com.softserve.rozetka.listeners.TestListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Listeners({TestListener.class})
 public class BaseRunner {
@@ -37,4 +42,5 @@ public class BaseRunner {
     public void closeWindow(){
         afterSuite();
     }
+
 }

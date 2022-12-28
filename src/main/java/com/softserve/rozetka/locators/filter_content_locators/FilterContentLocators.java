@@ -1,4 +1,4 @@
-package com.softserve.rozetka.locators.notebooks_page_locators;
+package com.softserve.rozetka.locators.filter_content_locators;
 
 import org.openqa.selenium.By;
 
@@ -7,8 +7,7 @@ public enum FilterContentLocators {
     CHECKBOXES(By.xpath("//rz-filter-section-autocomplete/ul/li/a[@data-id]")),
     MIN_RANGE_INPUT(By.xpath("//input[@formcontrolname='min']")),
     MAX_RANGE_INPUT(By.xpath("//input[@formcontrolname='max']")),
-    SUBMIT_PRICE_BUTTON(By.xpath("//fieldset//button[@type='submit']")),
-    DELL_CHECK_BOX(By.xpath("//a[@data-id='Dell']"));
+    SUBMIT_PRICE_BUTTON(By.xpath("//fieldset//button[@type='submit']"));
 
     private final By path;
 

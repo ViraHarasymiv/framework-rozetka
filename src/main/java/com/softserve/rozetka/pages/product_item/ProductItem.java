@@ -3,7 +3,6 @@ package com.softserve.rozetka.pages.product_item;
 import com.softserve.rozetka.locators.product_items_locators.ProductItemsLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -71,7 +70,7 @@ public class ProductItem extends BasePage {
     }
 
     @Step("Pay attention to the products titles")
-    public List<String>getStringTitles(){
+    public List<String> getStringTitles() {
         return getTitles()
                 .stream()
                 .map(element -> element.getText().toLowerCase())
@@ -79,10 +78,10 @@ public class ProductItem extends BasePage {
     }
 
     @Step("Pay attention to the products prices")
-    public List<Integer>getIntegerPrices(){
+    public List<Integer> getIntegerPrices() {
         return getPrices()
                 .stream()
-                .map(el -> el.getText().replaceAll(" ", ""))
+                .map(el -> el.getText().replaceAll("\\D", ""))
                 .map(element -> Integer.parseInt(element))
                 .collect(Collectors.toList());
     }

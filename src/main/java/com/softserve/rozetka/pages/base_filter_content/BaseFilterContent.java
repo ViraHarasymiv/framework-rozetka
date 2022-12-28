@@ -1,9 +1,9 @@
-package com.softserve.rozetka.pages.notebooks_page;
+package com.softserve.rozetka.pages.base_filter_content;
 
-import com.softserve.rozetka.locators.notebooks_page_locators.FilterContentLocators;
+import com.softserve.rozetka.locators.filter_content_locators.FilterContentLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
-import com.softserve.rozetka.pages.dell_notebooks_page.DellNotebooksPage;
-import com.softserve.rozetka.pages.ranged_by_price_notebooks_page.RangedByPriceNotebooksPage;
+import com.softserve.rozetka.pages.brand_products_page.BrandProductsPage;
+import com.softserve.rozetka.pages.ranged_by_price_products_page.RangedByPriceProductsPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,15 +12,14 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
-public class FilterContent extends BasePage {
+public class BaseFilterContent extends BasePage {
     private WebElement brandField;
-    private WebElement dellCheckBox;
-    private List<WebElement> checkBoxes;
+    private List<WebElement> brandCheckBoxes;
     private WebElement minRangeInput;
     private WebElement maxRangeInput;
     private WebElement submitPriceButton;
 
-    public FilterContent(WebDriver driver) {
+    public BaseFilterContent(WebDriver driver) {
         super(driver);
     }
 
@@ -35,12 +34,12 @@ public class FilterContent extends BasePage {
         return brandField;
     }
 
-    public List<WebElement> getCheckBoxes() {
-        if(checkBoxes == null){
+    public List<WebElement> getBrandCheckBoxes() {
+        if(brandCheckBoxes == null){
             waitForPresenceOfAllElements(FilterContentLocators.CHECKBOXES.getPath());
-            checkBoxes = this.driver.findElements(FilterContentLocators.CHECKBOXES.getPath());
+            brandCheckBoxes = this.driver.findElements(FilterContentLocators.CHECKBOXES.getPath());
         }
-        return checkBoxes;
+        return brandCheckBoxes;
     }
     public By getMinRangeInputPath(){
         return FilterContentLocators.MIN_RANGE_INPUT.getPath();
@@ -62,13 +61,6 @@ public class FilterContent extends BasePage {
         return maxRangeInput;
     }
 
-    public WebElement getDellCheckBox() {
-        if(dellCheckBox == null){
-            waitForPresenceOfElement(FilterContentLocators.DELL_CHECK_BOX.getPath());
-            dellCheckBox = this.driver.findElement(FilterContentLocators.DELL_CHECK_BOX.getPath());
-        }
-        return dellCheckBox;
-    }
 
     public WebElement getSubmitPriceButton() {
         if(submitPriceButton == null){
@@ -79,7 +71,7 @@ public class FilterContent extends BasePage {
     }
 
     @Step("Type a valid brand's name: {0} in the 'Бренд' field")
-    public FilterContent enterValidBrand(String validBrandName){
+    public BaseFilterContent enterValidBrand(String validBrandName){
         waitForElementToAppear(getBrandPath());
         Actions actions = new Actions(driver);
         actions.sendKeys(getBrandField(),validBrandName).perform();
@@ -87,7 +79,7 @@ public class FilterContent extends BasePage {
     }
 
     @Step("Type an invalid brand's name: {0} in the 'Бренд' field")
-    public FilterContent enterInvalidBrand(String invalidBrandName){
+    public BaseFilterContent enterInvalidBrand(String invalidBrandName){
         waitForElementToAppear(getBrandPath());
         Actions actions = new Actions(driver);
         actions.sendKeys(getBrandField(),invalidBrandName).perform();
@@ -95,19 +87,24 @@ public class FilterContent extends BasePage {
     }
     @Step("Pay attention to the brand's checkboxes visibility ")
     public List<WebElement> getBrandsCheckBoxes(){
-        waitForElementsToDisappear(getCheckBoxes());
+        waitForElementsToDisappear(getBrandCheckBoxes());
         return this.driver.findElements(FilterContentLocators.CHECKBOXES.getPath());
     }
 
     @Step("Click on the typed brand's checkbox")
-    public DellNotebooksPage clickOnBrandsCheckBox(){
-        waitForElementToAppear(getDellCheckBox());
-        getDellCheckBox().click();
-        return new DellNotebooksPage(driver);
+    public BrandProductsPage clickOnBrandsCheckBox(String brand){
+        waitForElementsToAppear(getBrandsCheckBoxes());
+        WebElement brandCheckBox = getBrandsCheckBoxes()
+                .stream()
+                .filter(web -> web.getText().toLowerCase().contains(brand))
+                .findAny().get();
+        waitForElementToAppear(brandCheckBox);
+        brandCheckBox.click();
+        return new BrandProductsPage(driver);
     }
 
     @Step("Scroll to the price range inputs and type the minimum price value: {0} in the input field")
-    public FilterContent enterMinPrice(String minPriceValue){
+    public BaseFilterContent enterMinPrice(String minPriceValue){
         waitForElementToAppear(getMinRangeInputPath());
         Actions actions = new Actions(driver);
         actions.scrollToElement(getMinRangeInput()).perform();
@@ -117,16 +114,16 @@ public class FilterContent extends BasePage {
     }
 
     @Step("Type the maximum price value: {0} in the input field")
-    public FilterContent enterMaxPrice(String maxPriceValue){
+    public BaseFilterContent enterMaxPrice(String maxPriceValue){
         getMaxRangeInput().clear();
         getMaxRangeInput().sendKeys(maxPriceValue);
         return this;
     }
 
     @Step("Click on the 'OK' button")
-    public RangedByPriceNotebooksPage clickOnSubmitButton(){
+    public RangedByPriceProductsPage clickOnSubmitButton(){
         waitForElementBecomeClickable(getSubmitPriceButton());
         getSubmitPriceButton().click();
-        return new RangedByPriceNotebooksPage(driver);
+        return new RangedByPriceProductsPage(driver);
     }
 }

@@ -7,7 +7,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class BasePage {
-    private static final int TIME = 10000;
+    private static final int TIME = 60000;
     private static final int POLLING_TIME = 5;
     protected WebDriver driver;
     protected WebDriverWait wait;
@@ -44,8 +44,8 @@ public class BasePage {
                 .ignoring(StaleElementReferenceException.class)
                 .until(ExpectedConditions.elementToBeClickable(element));
     }
-    protected void waitForUrlToBe(String URL){
-        wait.until(ExpectedConditions.urlToBe(URL));
+    protected void waitForUrlContainsText(String UrlText){
+        wait.until(ExpectedConditions.urlContains(UrlText));
     }
 
     public void waitForPageLoadComplete() {

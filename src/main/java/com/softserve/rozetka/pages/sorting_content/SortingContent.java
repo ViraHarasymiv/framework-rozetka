@@ -2,13 +2,14 @@ package com.softserve.rozetka.pages.sorting_content;
 
 import com.softserve.rozetka.locators.sorting_content_locators.SortingContentLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
-import com.softserve.rozetka.pages.decreased_by_price_notebooks_page.DecreasedByPriceNotebooksPage;
-import com.softserve.rozetka.pages.increased_by_price_notebooks_page.IncreasedByPriceNotebooksPage;
+import com.softserve.rozetka.pages.decreased_by_price_products_page.DecreasedByPriceProductsPage;
+import com.softserve.rozetka.pages.increased_by_price_products_page.IncreasedByPriceProductsPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
 
 public class SortingContent extends BasePage {
     private WebElement sortField;
@@ -40,19 +41,18 @@ public class SortingContent extends BasePage {
     }
 
     @Step("Select the 'Від дешевих до дорогих' option")
-    public IncreasedByPriceNotebooksPage selectLowerToHigherOption(){
+    public IncreasedByPriceProductsPage selectLowerToHigherOption(){
         waitForElementToAppear(getSortField());
         Select select = new Select(getSortField());
         select.selectByVisibleText(FROM_LOWER_TO_HIGHER_OPTION);
-        return new IncreasedByPriceNotebooksPage(driver);
+        return new IncreasedByPriceProductsPage(driver);
     }
 
     @Step("Select the 'Від дорогих до дешевих' option")
-    public DecreasedByPriceNotebooksPage selectHigherToLowerOption(){
-        waitForElementToAppear(getSortField());
+    public DecreasedByPriceProductsPage selectHigherToLowerOption(){
         waitForElementToAppear(getSortField());
         Select select = new Select(getSortField());
         select.selectByVisibleText(FROM_HIGHER_TO_LOWER_OPTION);
-        return new DecreasedByPriceNotebooksPage(driver);
+        return new DecreasedByPriceProductsPage(driver);
     }
 }
