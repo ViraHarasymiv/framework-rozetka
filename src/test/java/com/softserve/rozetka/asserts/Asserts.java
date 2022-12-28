@@ -46,8 +46,8 @@ public class Asserts {
 
     @Step(value = "Check if the items titles are equal to the selected to compare ones")
     public static void checkTwoItemsComparing(String firstProductTitle, String secondProductTitle, List<String> actualResults){
-        Assert.assertTrue(firstProductTitle.equals(actualResults.get(1)) &&
-                secondProductTitle.equals(actualResults.get(0)),
+        Assert.assertTrue(firstProductTitle.contains(actualResults.get(1)) &&
+                secondProductTitle.contains(actualResults.get(0)),
                 "Products titles in the Comparison Page: " + actualResults.get(1) + " and " + actualResults.get(0)
         + "should be equal to the selected to compare ones: " + firstProductTitle + " and " + secondProductTitle);
     }

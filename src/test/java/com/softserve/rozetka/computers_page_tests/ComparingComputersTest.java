@@ -45,6 +45,9 @@ public class ComparingComputersTest extends BaseRunner {
                 .getProductSection()
                 .getCompareItem()
                 .getStringProductTitles();
+        System.out.println(firstProductTitle);
+        System.out.println(secondProductTitle);
+        System.out.println(actualResults);
         Asserts.checkTwoItemsComparing(firstProductTitle,secondProductTitle,actualResults);
     }
 }
