@@ -3,11 +3,13 @@ package com.softserve.rozetka.login_page_tests.login_validation_tests;
 import com.softserve.rozetka.locators.login_modal_locators.LoginModalLocators;
 import com.softserve.rozetka.pages.home_page.HomePage;
 import com.softserve.rozetka.runners.BaseRunner;
+import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.softserve.rozetka.pages.login_component.LoginModal;
 
+@Feature("Login validation test")
 public class LoginValidationTests extends BaseRunner {
     private static final String INVALID_EMAIL_OR_PHONE_MESSAGE  = "Введено невірну адресу ел. пошти або номер телефону";
     private static final String TYPE_OF_EMAIL_PHONE_FIELD  = "form__row validation_type_error";
