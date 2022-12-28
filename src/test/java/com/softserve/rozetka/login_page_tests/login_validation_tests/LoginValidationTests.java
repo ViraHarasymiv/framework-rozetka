@@ -1,7 +1,8 @@
 package com.softserve.rozetka.login_page_tests.login_validation_tests;
 
 import com.softserve.rozetka.locators.login_modal_locators.LoginModalLocators;
-import com.softserve.rozetka.pages.home_page.HomePage;
+import com.softserve.rozetka.locators.login_modal_locators.RegistrationModalLocators;
+import com.softserve.rozetka.pages.homepage.HomePage;
 import com.softserve.rozetka.runners.BaseRunner;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

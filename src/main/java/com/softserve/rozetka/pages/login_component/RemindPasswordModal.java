@@ -2,6 +2,7 @@ package com.softserve.rozetka.pages.login_component;
 
 import com.softserve.rozetka.locators.login_modal_locators.RemindPasswordModalLocators;
 import com.softserve.rozetka.pages.base_pages.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -24,15 +25,15 @@ public class RemindPasswordModal extends BasePage {
     }
     public WebElement getTemporaryPasswordButton() {
         if(temporaryPasswordButton == null){
-            waitForPresenceOfElement(RemindPasswordModalLocators.TEMPORARY_PASSWORD_BUTTON.getPath());
-            temporaryPasswordButton = this.driver.findElement(RemindPasswordModalLocators.TEMPORARY_PASSWORD_BUTTON.getPath());
+            waitForPresenceOfElement(RemindPasswordModalLocators.GET_TEMPORARY_PASSWORD_BUTTON.getPath());
+            temporaryPasswordButton = this.driver.findElement(RemindPasswordModalLocators.GET_TEMPORARY_PASSWORD_BUTTON.getPath());
         }
         return temporaryPasswordButton;
     }
     public WebElement getRememberedYourPasswordButton() {
         if(rememberedYourPasswordButton == null){
-            waitForPresenceOfElement(RemindPasswordModalLocators.REMEMBERED_YOUR_PASSWORD_BUTTON.getPath());
-            rememberedYourPasswordButton = this.driver.findElement(RemindPasswordModalLocators.REMEMBERED_YOUR_PASSWORD_BUTTON.getPath());
+            waitForPresenceOfElement(RemindPasswordModalLocators.I_REMEMBERED_MY_PASSWORD_BUTTON.getPath());
+            rememberedYourPasswordButton = this.driver.findElement(RemindPasswordModalLocators.I_REMEMBERED_MY_PASSWORD_BUTTON.getPath());
         }
         return rememberedYourPasswordButton;
     }
@@ -43,21 +44,29 @@ public class RemindPasswordModal extends BasePage {
         }
         return closeFormButton;
     }
+
+    @Step("Click on the \"Ел. пошта або телефон\" field in the registration modal")
     public RemindPasswordModal clickOnEmailAndPhoneField(){
         waitForElementToAppear(getEmailAndPhoneField());
         getEmailAndPhoneField().click();
         return this;
     }
-    public RemindPasswordModal clickOnTemporaryPasswordButton(){
+
+    @Step("Click on the \"Отримати тимчасовий пароль\" field in the registration modal")
+    public RemindPasswordModal clickOnGetTemporaryPasswordButton(){
         waitForElementToAppear(getTemporaryPasswordButton());
         getTemporaryPasswordButton().click();
         return this;
     }
+
+    @Step("Click on the \"Я згадав свій пароль\" field in the registration modal")
     public RemindPasswordModal clickOnRememberedYourPasswordButton(){
         waitForElementToAppear(getRememberedYourPasswordButton());
         getRememberedYourPasswordButton().click();
         return this;
     }
+
+    @Step("Click on the close form button in the registration modal")
     public RemindPasswordModal clickOnCloseFormButton(){
         waitForElementToAppear(getCloseFormButton());
         getCloseFormButton().click();
