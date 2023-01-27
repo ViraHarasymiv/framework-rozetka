@@ -1,8 +1,8 @@
 package com.softserve.rozetka.pages.header;
 
-import com.softserve.rozetka.locators.header_locators.HeaderLocators;
-import com.softserve.rozetka.pages.base_pages.BasePage;
-import com.softserve.rozetka.pages.login_component.LoginModal;
+import com.softserve.rozetka.locators.headerLocators.HeaderLocators;
+import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.loginComponent.LoginModal;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

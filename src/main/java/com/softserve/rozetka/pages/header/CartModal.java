@@ -1,7 +1,7 @@
 package com.softserve.rozetka.pages.header;
 
-import com.softserve.rozetka.locators.header_locators.CartModalLocators;
-import com.softserve.rozetka.pages.base_pages.BasePage;
+import com.softserve.rozetka.locators.headerLocators.CartModalLocators;
+import com.softserve.rozetka.pages.basePages.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -1,8 +1,8 @@
 package com.softserve.rozetka.pages.header;
 
-import com.softserve.rozetka.locators.header_locators.MenuCategoriesLocators;
-import com.softserve.rozetka.pages.base_pages.BasePage;
-import com.softserve.rozetka.pages.computers_and_notebooks_page.ComputersAndNotebooksPage;
+import com.softserve.rozetka.locators.headerLocators.MenuCategoriesLocators;
+import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.computersAndNotebooksPage.ComputersAndNotebooksPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

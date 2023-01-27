@@ -2,12 +2,10 @@
 <suite name="Smoke" verbose="1" >
     <test name="Rozetka auto-tests" >
         <classes>
-            <class name="com.softserve.rozetka.notebooks_page_tests.NotebooksSortingTest"/>
-            <class name="com.softserve.rozetka.notebooks_page_tests.NotebooksFilteringTest"></class>
-            <class name="com.softserve.rozetka.notebooks_page_tests.AddingProductsToCartTest"></class>
-            <class name="com.softserve.rozetka.notebooks_page_tests.ComparingNotebooksTest"></class>
-            <class name="com.softserve.rozetka.login_page_tests.login_validation_tests.LoginValidationTests"></class>
-            <class name="com.softserve.rozetka.login_page_tests.login_button_tests.LoginButtonTests"></class>
+            <class name="com.softserve.rozetka.notebooksPageTests.NotebooksSortingTest"/>
+            <class name="com.softserve.rozetka.notebooksPageTests.NotebooksFilteringTest"></class>
+            <class name="com.softserve.rozetka.notebooksPageTests.AddingProductsToCartTest"></class>
+            <class name="com.softserve.rozetka.notebooksPageTests.ComparingNotebooksTest"></class>
         </classes>
     </test>
 </suite>

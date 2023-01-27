@@ -1,8 +1,8 @@
 package com.softserve.rozetka.pages.header;
 
-import com.softserve.rozetka.locators.header_locators.ComparingListModalLocators;
-import com.softserve.rozetka.pages.base_pages.BasePage;
-import com.softserve.rozetka.pages.comparison_page.ComparisonPage;
+import com.softserve.rozetka.locators.headerLocators.ComparingListModalLocators;
+import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.comparisonPage.ComparisonPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
