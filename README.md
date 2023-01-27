@@ -28,27 +28,7 @@ mvn clean test
 - Generate the report:
 ```shell
 allure serve target/allure-results
-```
-- Execute [test-case #10](https://github.com/Test-Automation-Crash-Course-24-10-22/team_16/issues/10):
-```shell
-mvn -Dtest=LoginValidationTests#checkErrorInvalidEmail test
-```
-- Execute [test-case #11](https://github.com/Test-Automation-Crash-Course-24-10-22/team_16/issues/11):
-```shell
-mvn -Dtest=LoginButtonTests#checkOpenSignInModalAfterClickingOnSignInButton test
-```
-- Execute [test-case #12](https://github.com/Test-Automation-Crash-Course-24-10-22/team_16/issues/12):
-```shell
-mvn -Dtest=LoginButtonTests#checkHideShowPasswordButtonShowsPasswordOnEvenNumberClicks test
-```
-- Execute [test-case #13](https://github.com/Test-Automation-Crash-Course-24-10-22/team_16/issues/13):
-```shell
-mvn -Dtest=LoginButtonTests#checkHideShowPasswordButtonShowsPasswordOnOddNumberClicks test
-```
-- Execute [test-case #14](https://github.com/Test-Automation-Crash-Course-24-10-22/team_16/issues/14):
-```shell
-mvn -Dtest=LoginButtonTests#checkOpenPasswordRecoveryFormAfterClickingOnRemindPasswordButton test
-```
+
 - Execute [test-case #21](https://github.com/Test-Automation-Crash-Course-24-10-22/team_16/issues/21):
 ```shell
 mvn -Dtest=NotebooksFilteringTest#checkNotebooksFilteringByValidBrandName test
