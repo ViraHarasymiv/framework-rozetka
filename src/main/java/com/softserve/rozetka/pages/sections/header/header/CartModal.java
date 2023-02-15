@@ -1,12 +1,12 @@
-package com.softserve.rozetka.pages.header;
+package com.softserve.rozetka.pages.sections.header.header;
 
 import com.softserve.rozetka.locators.headerLocators.CartModalLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.basePages.BaseElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CartModal extends BasePage {
+public class CartModal extends BaseElement {
     private WebElement productPrice;
     private WebElement cartCounterInput;
 
@@ -31,11 +31,11 @@ public class CartModal extends BasePage {
     }
 
     @Step("Change the product's count to {0}")
-    public HeaderComponent changeTheItemCount(String itemCount){
+    public Header changeTheItemCount(String itemCount){
         getCartCounterInput().click();
         getCartCounterInput().clear();
         getCartCounterInput().sendKeys(itemCount);
-        return new HeaderComponent(driver);
+        return new Header(driver);
     }
 
     @Step("Pay attention to the product's price in the cart modal")

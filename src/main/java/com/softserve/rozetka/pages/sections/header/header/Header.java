@@ -1,14 +1,14 @@
-package com.softserve.rozetka.pages.header;
+package com.softserve.rozetka.pages.sections.header.header;
 
 import com.softserve.rozetka.locators.headerLocators.HeaderLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
-import com.softserve.rozetka.pages.loginComponent.LoginModal;
+import com.softserve.rozetka.pages.basePages.BaseElement;
+import com.softserve.rozetka.pages.sections.header.loginComponent.LoginModal;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class HeaderComponent extends BasePage {
+public class Header extends BaseElement {
     private WebElement searchInput;
     private WebElement loginButton;
     private WebElement catalogButton;
@@ -19,7 +19,7 @@ public class HeaderComponent extends BasePage {
     private ComparingListModal comparingListModal;
     private CartModal cartModal;
 
-    public HeaderComponent(WebDriver driver) {
+    public Header(WebDriver driver) {
         super(driver);
         categoriesMenu = new CategoriesMenu(driver);
         comparingListModal = new ComparingListModal(driver);

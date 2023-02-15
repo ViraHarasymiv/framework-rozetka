@@ -1,7 +1,7 @@
-package com.softserve.rozetka.pages.productItem;
+package com.softserve.rozetka.pages.sections.header.productItem;
 
 import com.softserve.rozetka.locators.productItemsLocators.ProductItemsLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.basePages.BaseElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProductItem extends BasePage {
+public class ProductItem extends BaseElement {
     private List<WebElement> likeButtons;
     private List<WebElement> titles;
     private List<WebElement> prices;

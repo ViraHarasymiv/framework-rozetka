@@ -1,7 +1,7 @@
 package com.softserve.rozetka.pages.decreasedByPriceProductsPage;
 
 import com.softserve.rozetka.pages.basePages.ProductsPage;
-import com.softserve.rozetka.pages.productItem.ProductItem;
+import com.softserve.rozetka.pages.sections.header.productItem.ProductItem;
 import org.openqa.selenium.WebDriver;
 
 public class DecreasedByPriceProductsPage extends ProductsPage {

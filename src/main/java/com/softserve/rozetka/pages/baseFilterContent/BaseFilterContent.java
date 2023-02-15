@@ -1,7 +1,7 @@
 package com.softserve.rozetka.pages.baseFilterContent;
 
 import com.softserve.rozetka.locators.filterContentLocators.FilterContentLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.basePages.BaseElement;
 import com.softserve.rozetka.pages.brandProductsPage.BrandProductsPage;
 import com.softserve.rozetka.pages.rangedByPriceProductsPage.RangedByPriceProductsPage;
 import io.qameta.allure.Step;
@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
-public class BaseFilterContent extends BasePage {
+public class BaseFilterContent extends BaseElement {
     private WebElement brandField;
     private List<WebElement> brandCheckBoxes;
     private WebElement minRangeInput;

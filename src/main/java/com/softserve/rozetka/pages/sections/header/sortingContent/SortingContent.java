@@ -1,7 +1,7 @@
-package com.softserve.rozetka.pages.sortingContent;
+package com.softserve.rozetka.pages.sections.header.sortingContent;
 
 import com.softserve.rozetka.locators.sortingContentLocators.SortingContentLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.basePages.BaseElement;
 import com.softserve.rozetka.pages.decreasedByPriceProductsPage.DecreasedByPriceProductsPage;
 import com.softserve.rozetka.pages.increasedByPriceProductsPage.IncreasedByPriceProductsPage;
 import io.qameta.allure.Step;
@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class SortingContent extends BasePage {
+public class SortingContent extends BaseElement {
     private WebElement sortField;
     private WebElement bigItemsView;
 

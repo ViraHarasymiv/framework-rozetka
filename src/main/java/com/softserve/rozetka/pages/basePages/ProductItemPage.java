@@ -1,11 +1,11 @@
 package com.softserve.rozetka.pages.basePages;
 
 import com.softserve.rozetka.locators.notebookItemPageLocators.NotebookItemPageLocators;
-import com.softserve.rozetka.pages.buyOptionsContent.BuyOptions;
+import com.softserve.rozetka.pages.sections.header.buyOptionsContent.BuyOptions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductItemPage extends BasePageWithHeader{
+public class ProductItemPage extends BasePage {
     private WebElement productTitle;
     private BuyOptions buyOptions;
     private WebElement productId;

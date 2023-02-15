@@ -3,7 +3,7 @@ package com.softserve.rozetka.pages.notebooksPage;
 import com.softserve.rozetka.pages.basePages.ProductsPage;
 import com.softserve.rozetka.pages.baseFilterContent.BaseFilterContent;
 import com.softserve.rozetka.pages.notebookItemPage.NotebookItemPage;
-import com.softserve.rozetka.pages.productItem.ProductItem;
+import com.softserve.rozetka.pages.sections.header.productItem.ProductItem;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 

@@ -1,14 +1,14 @@
-package com.softserve.rozetka.pages.buyOptionsContent;
+package com.softserve.rozetka.pages.sections.header.buyOptionsContent;
 
 import com.softserve.rozetka.locators.notebookItemPageLocators.BuyOptionsLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
-import com.softserve.rozetka.pages.header.HeaderComponent;
+import com.softserve.rozetka.pages.basePages.BaseElement;
+import com.softserve.rozetka.pages.sections.header.header.Header;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class BuyOptions extends BasePage {
+public class BuyOptions extends BaseElement {
     private WebElement productPrice;
     private WebElement cartButton;
     private WebElement creditButton;
@@ -44,11 +44,11 @@ public class BuyOptions extends BasePage {
     }
 
     @Step("Click on the cart icon")
-    public HeaderComponent putItemToCart(){
+    public Header putItemToCart(){
         waitForElementToAppear(getCartButton());
         Actions actions = new Actions(driver);
         actions.moveToElement(getCartButton()).click().perform();
-        return new HeaderComponent(driver);
+        return new Header(driver);
     }
 
     @Step("Pay attention to the notebook's price")

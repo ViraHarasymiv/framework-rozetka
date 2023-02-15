@@ -1,13 +1,13 @@
 package com.softserve.rozetka.pages.basePages;
 
 import com.softserve.rozetka.pages.baseFilterContent.BaseFilterContent;
-import com.softserve.rozetka.pages.header.HeaderComponent;
-import com.softserve.rozetka.pages.sortingContent.SortingContent;
-import com.softserve.rozetka.pages.productItem.ProductItem;
+import com.softserve.rozetka.pages.sections.header.header.Header;
+import com.softserve.rozetka.pages.sections.header.sortingContent.SortingContent;
+import com.softserve.rozetka.pages.sections.header.productItem.ProductItem;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
-public class ProductsPage extends BasePageWithHeader{
+public class ProductsPage extends BasePage {
     private ProductItem productItem;
     private SortingContent sortingContent;
     private BaseFilterContent baseFilterContent;
@@ -51,7 +51,7 @@ public class ProductsPage extends BasePageWithHeader{
     }
 
     @Step("Click on the first three product's cart icons")
-    public HeaderComponent putMultipleProductsToCart() {
+    public Header putMultipleProductsToCart() {
         waitForElementsToAppear(getProductItems().getCartIcons());
         for (int i = 0; i < 3; i++) {
             waitForElementToAppear(getProductItems().getCartIcons().get(i));

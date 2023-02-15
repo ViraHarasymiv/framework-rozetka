@@ -1,14 +1,14 @@
 package com.softserve.rozetka.pages.computersAndNotebooksPage;
 
 import com.softserve.rozetka.locators.computersAndNotebooksPageLocators.MenuSectionLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.basePages.BaseElement;
 import com.softserve.rozetka.pages.computersPage.ComputersPage;
 import com.softserve.rozetka.pages.notebooksPage.NotebooksPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MenuSection extends BasePage {
+public class MenuSection extends BaseElement {
     private WebElement notebooksMenu;
     private WebElement computersNettopsMonoblocksMenu;
     private WebElement monitorsMenu;

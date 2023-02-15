@@ -1,11 +1,11 @@
-package com.softserve.rozetka.pages.loginComponent;
+package com.softserve.rozetka.pages.sections.header.loginComponent;
 import com.softserve.rozetka.locators.loginModalLocators.RegistrationModalLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.basePages.BaseElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class RegistrationModal extends BasePage {
+public class RegistrationModal extends BaseElement {
     private WebElement nameField;
     private WebElement surnameField;
     private WebElement phoneField;

@@ -1,10 +1,10 @@
 package com.softserve.rozetka.pages.computersAndNotebooksPage;
 
-import com.softserve.rozetka.pages.basePages.BasePageWithHeader;
+import com.softserve.rozetka.pages.basePages.BasePage;
 import org.openqa.selenium.WebDriver;
 
 
-public class ComputersAndNotebooksPage extends BasePageWithHeader {
+public class ComputersAndNotebooksPage extends BasePage {
     private static final String URL = "https://rozetka.com.ua/ua/computers-notebooks/c80253/";
     private MenuSection menuSection;
     private СomputerComponents сomputerComponents;

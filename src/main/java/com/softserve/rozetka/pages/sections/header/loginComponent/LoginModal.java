@@ -1,13 +1,13 @@
-package com.softserve.rozetka.pages.loginComponent;
+package com.softserve.rozetka.pages.sections.header.loginComponent;
 
 import com.softserve.rozetka.locators.loginModalLocators.LoginModalLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.basePages.BaseElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class LoginModal extends BasePage {
+public class LoginModal extends BaseElement {
     private static final String INVALID_EMAIL  = "testdqwerty123";
     private static final String INVALID_PASSWORD  = "qwerty123";
     public static final String UNREGISTERED_EMAIL  = "testqwerty123@gmail.com";

@@ -2,7 +2,7 @@ package com.softserve.rozetka.computersPageTests;
 
 import com.softserve.rozetka.asserts.Asserts;
 import com.softserve.rozetka.pages.computersPage.ComputersPage;
-import com.softserve.rozetka.pages.header.HeaderComponent;
+import com.softserve.rozetka.pages.sections.header.header.Header;
 import com.softserve.rozetka.pages.homePage.HomePage;
 import com.softserve.rozetka.runners.BaseRunner;
 import io.qameta.allure.*;
@@ -39,7 +39,7 @@ public class ComparingComputersTest extends BaseRunner {
                 .getFirstProductToCompare();
         String secondProductTitle = new ComputersPage(driver)
                 .getSecondProductToCompare();
-        List<String> actualResults = new HeaderComponent(driver)
+        List<String> actualResults = new Header(driver)
                 .clickOnCompareIcon()
                 .clickOnCompareLink()
                 .getProductSection()

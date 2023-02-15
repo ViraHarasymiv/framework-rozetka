@@ -1,12 +1,12 @@
-package com.softserve.rozetka.pages.loginComponent;
+package com.softserve.rozetka.pages.sections.header.loginComponent;
 
 import com.softserve.rozetka.locators.loginModalLocators.RemindPasswordModalLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.basePages.BaseElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class RemindPasswordModal extends BasePage {
+public class RemindPasswordModal extends BaseElement {
     private WebElement emailAndPhoneField;
     private WebElement temporaryPasswordButton;
     private WebElement rememberedYourPasswordButton;

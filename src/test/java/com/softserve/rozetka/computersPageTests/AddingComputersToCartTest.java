@@ -1,9 +1,7 @@
 package com.softserve.rozetka.computersPageTests;
 
 import com.softserve.rozetka.asserts.Asserts;
-import com.softserve.rozetka.pages.computerItemPage.ComputerItemPage;
 import com.softserve.rozetka.pages.computersPage.ComputersPage;
-import com.softserve.rozetka.pages.header.CartModal;
 import com.softserve.rozetka.pages.homePage.HomePage;
 import com.softserve.rozetka.runners.BaseRunner;
 import com.softserve.rozetka.utils.ItemCountReader;

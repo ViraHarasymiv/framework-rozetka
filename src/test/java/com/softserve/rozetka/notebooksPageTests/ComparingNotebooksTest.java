@@ -1,7 +1,7 @@
 package com.softserve.rozetka.notebooksPageTests;
 
 import com.softserve.rozetka.asserts.Asserts;
-import com.softserve.rozetka.pages.header.HeaderComponent;
+import com.softserve.rozetka.pages.sections.header.header.Header;
 import com.softserve.rozetka.pages.homePage.HomePage;
 import com.softserve.rozetka.pages.notebooksPage.NotebooksPage;
 import com.softserve.rozetka.runners.BaseRunner;
@@ -40,7 +40,7 @@ public class ComparingNotebooksTest extends BaseRunner {
                 .getFirstProductToCompare();
         String secondProductTitle = new NotebooksPage(driver)
                 .getSecondProductToCompare();
-        List<String> actualResults = new HeaderComponent(driver)
+        List<String> actualResults = new Header(driver)
                 .clickOnCompareIcon()
                 .clickOnCompareLink()
                 .getProductSection()

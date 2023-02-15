@@ -1,13 +1,13 @@
-package com.softserve.rozetka.pages.header;
+package com.softserve.rozetka.pages.sections.header.header;
 
 import com.softserve.rozetka.locators.headerLocators.MenuCategoriesLocators;
-import com.softserve.rozetka.pages.basePages.BasePage;
+import com.softserve.rozetka.pages.basePages.BaseElement;
 import com.softserve.rozetka.pages.computersAndNotebooksPage.ComputersAndNotebooksPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CategoriesMenu extends BasePage {
+public class CategoriesMenu extends BaseElement {
     private WebElement notebooksAndComputersCategory;
 
     public CategoriesMenu(WebDriver driver) {

@@ -1,9 +1,9 @@
 package com.softserve.rozetka.pages.comparisonPage;
 
-import com.softserve.rozetka.pages.basePages.BasePageWithHeader;
+import com.softserve.rozetka.pages.basePages.BasePage;
 import org.openqa.selenium.WebDriver;
 
-public class ComparisonPage extends BasePageWithHeader {
+public class ComparisonPage extends BasePage {
     private ProductSection productSection;
 
     public ComparisonPage(WebDriver driver) {
